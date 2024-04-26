@@ -1,0 +1,11 @@
+Model.year,Make,Model,Vehicle.class,Motor..kW.,Transmission,Fuel.type,City..kWh.100.km.,Highway..kWh.100.km.,Combined..kWh.100.km.,City..Le.100.km.,Highway..Le.100.km.,Combined..Le.100.km.,Range..km.,CO2.emissions..g.km.,CO2.rating,Smog.rating,Recharge.time..h., Price(EUR) 
+2018,Hyundai,IONIQ Electric,Mid-size,88,A1,B,13.7,17.4,15.5,1.6,1.9,1.7,200,0,10,10,4," 40,950.00 € "
+2022,Hyundai,IONIQ 5 Long Range,Full-size,168,A1,B,15.5,21.7,18.6,1.8,2.4,2.1,488,0,10,10,8.5," 49,950.00 € "
+2019,Hyundai,Kona Electric,Sport utility vehicle: Small,150,A1,B,16.2,19.3,17.4,1.8,2.2,2,415,0,10,10,9," 37,000.00 € "
+2020,Kia,Soul EV (180 Ah),Station wagon: Small,150,A1,B,16.8,21.1,18.6,1.9,2.4,2.1,383,0,10,10,9.5," 38,990.00 € "
+2021,Kia,Niro EV,Station wagon: Small,150,A1,B,17,20.6,18.6,1.9,2.3,2.1,385,0,10,10,9.5," 41,990.00 € "
+2018,Tesla,Model S 75D,Full-size,386,A1,B,20.6,19.9,20.3,2.3,2.2,2.3,417,0,10,10,12," 80,000.00 € "
+2019,Tesla,Model 3 Standard Range,Mid-size,211,A1,B,14.8,16.5,15.6,1.7,1.9,1.7,151,0,10,10,3.7," 69,000.00 € "
+2020,Jaguar,I-PACE,Sport utility vehicle: Small,294,A1,B,26.2,29.1,27.5,2.9,3.3,3.1,377,0,10,10,13," 96,579.50 € "
+2021,Tesla,Model 3 Performance,Mid-size,321,A1,B,17.8,19.6,18.6,2,2.2,2.1,507,0,10,10,10," 63,990.00 € "
+2022,MINI,Cooper SE 3 Door,Subcompact,135,A1,B,17.6,20.9,19.1,2,2.3,2.1,183,0,10,10,4," 39,900.00 € "
