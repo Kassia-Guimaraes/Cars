@@ -1,6 +1,6 @@
-Model.year,Make,Model,Vehicle.class,Motor..kW.,Engine.size..L.,Cylinders,Transmission,Fuel.type.1,Combined.Le.100.km,Range.1..km.,Recharge.time..h.,Fuel.type.2,City..L.100.km.,Highway..L.100.km.,Combined..L.100.km.,Range.2..km.,CO2.emissions..g.km.,CO2.rating,Smog.rating,Preço (EUR)
-2018,Hyundai,IONIQ Electric Plus,Mid-size,45,1.6,4,AM6,B/X*,2.0 ([17.7 kWh + 0.0 L]/100 km),47,2.3,X,4.4,4.6,4.5,961,46,10,7,"44,900."
-2019,Kia,Niro Hybrid,Crossover,141,1.6,4,Automatic (Dual-Clutch 7-speed),Hybrid,3.8,1150,N/A,N/A,4.0,3.6,3.8,N/A,89,0,6,"39,000."
-2019,Hyundai,Ioniq Hybrid,Sedan,104,1.6,4,Automatic (Dual-Clutch 6-speed),Hybrid,3.6,1118,N/A,N/A,3.3,3.9,3.6,N/A,85,0,6,"37,000."
-2020,Volvo,S90 T8 AWD,Mid-size,65,2,4,AS8,B/Z*,3.2 ([27.7 kWh + 0.0 L]/100 km),34,3,Z,8.9,7.1,8.1,753,100,10,7,"83,500."
-2022,Jeep,Grand Cherokee 4xe,Sport utility vehicle: Standard,100,2,4,A8,B/X*,4.2 ([36.0 kWh + 0.0 L]/100 km),42,3.4,X,10.3,9.7,10,719,110,9,7,"65,000."
+Model.year,Make,Model,Price (EUR)
+2018,Hyundai,IONIQ Electric Plus,44900
+2019,Kia,Niro Hybrid,39000
+2019,Hyundai,Ioniq Hybrid,37000
+2020,Volvo,S90 T8 AWD,83500
+2022,Jeep,Grand Cherokee 4xe,65000

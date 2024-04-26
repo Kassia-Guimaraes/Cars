@@ -1,16 +1,16 @@
-Model.year,Make,Model,Vehicle.class,Engine.size..L.,Cylinders,Transmission,Fuel.type,City..L.100.km.,Highway..L.100.km.,Combined..L.100.km.,Combined..mpg.,CO2.emissions..g.km.,CO2.rating,Smog.rating, Price (EUR) 
-2018,Hyundai,Santa Fe AWD,Sport utility vehicle: Small,3.3,6,AS6,X,13,9.7,11.5,25,269,4,3," 35,000.00 € "
-2019,Hyundai,Sonata,Full-size,2,4,AS8,X,10.4,7.4,9.1,31,212,5,5," 29,990.00 € "
-2020,Hyundai,Veloster Turbo,Compact,1.6,4,AM7,X,8.5,6.9,7.8,36,184,7,5," 34,990.00 € "
-2021,Hyundai,Venue,Mid-size,1.6,4,AV1,X,7.9,7,7.5,38,178,7,5," 22,950.00 € "
-2022,Hyundai,Palisade AWD,Sport utility vehicle: Standard,3.8,6,AS8,X,12.3,9.6,11.1,25,265,4,5," 51,000.00 € "
-2018,Volvo,V60 CC T5 AWD,Station wagon: Small,2,4,AS8,Z,10.8,7.8,9.4,30,220,5,3," 38,000.00 € "
-2019,Volvo,V60 CC T5 AWD,Station wagon: Small,2,4,AS8,Z,10.8,7.6,9.3,30,218,5,5," 39,000.00 € "
-2020,Volvo,V60 CC T5 AWD,Station wagon: Small,2,4,AS8,Z,10.8,7.7,9.4,30,220,5,5," 40,000.00 € "
-2021,Volvo,V60 CC T5 AWD,Station wagon: Small,2,4,AS8,Z,10.8,7.7,9.4,30,220,5,5," 41,000.00 € "
-2022,Volvo,V60 CC T5 AWD,Station wagon: Small,2,4,AS8,Z,10.9,7.7,9.5,30,221,5,5," 42,000.00 € "
-2018,Jeep,Grand Cherokee Sport,Sport utility vehicle: Small,3.6,6,A8,D,11.2,8.5,10,28,268,4,3," 35,000.00 € "
-2019,Jeep,Compass,Sport utility vehicle: Small,2.4,4,A6,X,10.6,7.6,9.3,30,218,5,5," 31,900.00 € "
-2020,Jeep,Wrangler Unlimit Sport,Sport utility vehicle: Small,3.6,6,A8,D,10.6,8.1,9.5,30,255,4,1," 43,000.00 € "
-2021,Jeep,Gladiator 4X4 Eco Pickup,Truck: Small pickup,3.6,6,A8,D,10.8,8.5,9.8,29,263,4,1," 40,000.00 € "
-2022,Jeep,Renegade,Sport utility vehicle: Small,1.3,4,A9,X,9.8,7.4,8.7,32,204,6,6," 26,990.00 € "
+Model.year,Make,Model, Price (EUR) 
+2018,Hyundai,Santa Fe AWD,35000
+2019,Hyundai,Sonata,29990
+2020,Hyundai,Veloster Turbo,34990
+2021,Hyundai,Venue,22950
+2022,Hyundai,Palisade AWD,51000
+2018,Volvo,V60 CC T5 AWD,38000
+2019,Volvo,V60 CC T5 AWD,39000
+2020,Volvo,V60 CC T5 AWD,40000
+2021,Volvo,V60 CC T5 AWD,41000
+2022,Volvo,V60 CC T5 AWD,42000
+2018,Jeep,Grand Cherokee Sport,35000
+2019,Jeep,Compass,31900
+2020,Jeep,Wrangler Unlimit Sport,43000
+2021,Jeep,Gladiator 4X4 Eco Pickup,40000
+2022,Jeep,Renegade,26990
