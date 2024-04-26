@@ -1,5 +1,5 @@
 import pandas as pd
-import os
+import numpy as np
 
 ### fuel prices
 fuels_price = pd.read_csv('./initial-data/fuel-prices.csv', sep=',')
@@ -20,6 +20,11 @@ fuels_price = fuels_price.drop(['Regular Gasoline (euro/liter)'], axis=1) #colun
 for column_name in fuels_price.columns.tolist():
     fuels_price[column_name] = fuels_price[column_name].fillna(round(fuels_price[column_name].mean(),3))
 
+electricity_price = pd.read_csv(
+    './initial-data/electricity-price.csv', sep=',')
+
+fuels_price['Electricity (euro/kWh)'] = electricity_price['Eletricidade (euro/kWh)']
+
 fuels_price.to_csv('./modificated-data/fuels-price.csv', index=False)
 
 
@@ -36,7 +41,8 @@ eletrics = eletrics.rename(columns={'Model year':'Year',
                                     'Combined (kWh/100 km)':'Combined (E) (kWh/100 km)',
                                     'City (Le/100 km)':'City (E) (Le/100 km)',
                                     'Highway (Le/100 km)':'Highway (E) (Le/100 km)',
-                                    'Combined (Le/100 km)':'Combined (E) (Le/100 km)'
+                                    'Combined (Le/100 km)':'Combined (E) (Le/100 km)',
+                                    'Motor (kW)':'Engine Power (kW)'
                                     })
 
 eletrics = eletrics.drop(['_id','CO2 emissions (g/km)','CO2 rating','Smog rating','Transmission'], axis=1) #sobreposição de dados, uma vez que já temos estas informações
@@ -68,7 +74,7 @@ hybrids['Combined kWh/100 km'] = hybrids['Combined kWh/100 km'].str.replace(r'\[
 
 hybrids = hybrids.apply(lambda x: x.str.strip() if x.dtype == 'object' else x) #excluindo os espaços vazios depois dos nomes
 
-hybrids = hybrids.drop(['_id','CO2 emissions (g/km)','CO2 rating','Smog rating','Cylinders','Engine size (L)','Transmission'], axis=1) #sobreposição de dados, uma vez que já temos estas informações
+hybrids = hybrids.drop(['_id','CO2 emissions (g/km)','CO2 rating','Smog rating','Cylinders','Transmission'], axis=1) #sobreposição de dados, uma vez que já temos estas informações
 
 hybrids = hybrids.rename(columns={'Model year': 'Year'})
 
@@ -76,17 +82,22 @@ hybrids = hybrids[(hybrids['Year']>=2018) & (hybrids['Year']<=2022)] #deixar ape
 
 hybrids['Fuel type 2'] = hybrids['Fuel type 2'].replace(['X','Z'],['G','PG']) #trocar b por e = eletric
 
-hybrids = hybrids[['Year','Make','Model','Vehicle class','Motor (kW)','Fuel type 1','Combined Le/100 km','Combined kWh/100 km','Combined L/100 km','Range 1 (km)','Recharge time (h)','Fuel type 2','City (L/100 km)','Highway (L/100 km)','Combined (L/100 km)','Range 2 (km)']]
+hybrids = hybrids[['Year','Make','Model','Vehicle class','Motor (kW)','Engine size (L)','Fuel type 1','Combined Le/100 km','Combined kWh/100 km','Combined L/100 km','Range 1 (km)','Recharge time (h)','Fuel type 2','City (L/100 km)','Highway (L/100 km)','Combined (L/100 km)','Range 2 (km)']]
+
+hybrids['Engine size (L)'] = hybrids['Engine size (L)']*1000
 
 hybrids = hybrids.rename(columns={'Combined Le/100 km':'Combined (E) (Le/100 km)',
                                   'Combined L/100 km':'Combined (E) (L/100 km)',
                                   'Combined kWh/100 km':'Combined (E) (kWh/100 km)',
                                   'City (L/100 km)':'City (F) (L/100 km)',
                                   'Highway (L/100 km)':'Highway (F) (L/100 km)',
-                                  'Combined (L/100 km)':'Combined (F) (L/100 km)'})
+                                  'Combined (L/100 km)':'Combined (F) (L/100 km)',
+                                  'Engine size (L)':'Engine Capacity (cm3)',
+                                  'Motor (KW)':'Engine Power (kW)'})
 
+hybrids = hybrids.sort_values(by='Year')
 
-hybrids.to_csv('./modificated-data/consumption-hydrids.csv', index=False)
+hybrids.to_csv('./modificated-data/consumption-hybrids.csv', index=False)
 
 
 
@@ -96,10 +107,90 @@ fossil_fuels = pd.read_csv('./initial-data/consumption-fossilfuels.csv', sep=','
 
 fossil_fuels = fossil_fuels.drop(["CO2 emissions g/km","CO2 rating","Smog rating",'Transmission','Combined mpg','Cylinders'], axis=1) #sobreposição de dados, uma vez que já temos estas informações
 
-fossil_fuels = fossil_fuels.rename(columns={'Model Year':'Year',
+fossil_fuels['Engine size L'] = fossil_fuels['Engine size L']*1000
+
+fossil_fuels = fossil_fuels.rename(columns={'Model year':'Year',
                                             'City L/100 km':'City (F) (L/100 km)',
-                                            'Highway L/100 km':'Highway (F) (L/100 km)','Combined L/100 km':'Combined (F) (L/100 km)'})
+                                            'Highway L/100 km':'Highway (F) (L/100 km)',
+                                            'Combined L/100 km':'Combined (F) (L/100 km)',
+                                            'Engine size L':'Engine Capacity (cm3)'})
 
 fossil_fuels['Fuel type'] = fossil_fuels['Fuel type'].replace(['X','Z','E'],['G','PG','ET']) #trocar a sigla dos combustíveis
 
 fossil_fuels.to_csv('./modificated-data/consumption-fossilfuels.csv', index=False)
+
+
+
+
+### prices 
+
+price_eletrics = pd.read_csv('./initial-data/cars-price/price-eletrics.csv', sep=',')
+price_fossil_fuel = pd.read_csv('./initial-data/cars-price/price-fuelfossil.csv', sep=',')
+price_hybrids = pd.read_csv('./initial-data/cars-price/price-hybrids.csv', sep=',')
+
+
+consumptions = [eletrics, fossil_fuels, hybrids]
+price_fuels = [price_eletrics, price_fossil_fuel, price_hybrids]
+
+for comsumption, price_fuel in zip(consumptions, price_fuels):
+
+    comsumption['Price (euros)'] = [0] * len(comsumption)
+
+    years = price_fuel['Model.year'].values
+    models = price_fuel['Model'].values
+    prices = price_fuel['Price (euros)'].values
+
+    for year, model, price in zip(years, models, prices):
+        condition = (comsumption['Year'] == year) & (
+            comsumption['Model'] == model)
+        comsumption.loc[condition, 'Price (euros)'] = price
+
+    if comsumption.equals(consumptions[0]):
+        comsumption.to_csv('./modificated-data/consumption-eletrics.csv', index=False)
+
+    elif comsumption.equals(consumptions[1]):
+        comsumption.to_csv('./modificated-data/consumption-fossilfuels.csv', index=False)
+
+    elif comsumption.equals(consumptions[2]):
+        comsumption.to_csv('./modificated-data/consumption-hybrids.csv', index=False)
+
+
+
+
+### emissions
+pt_2018 = pd.read_csv('./initial-data/PT-2018.csv', sep=',', low_memory=False)
+pt_2019 = pd.read_csv('./initial-data/PT-2019.csv', sep=',')
+pt_2020 = pd.read_csv('./initial-data/PT-2020.csv', sep=',')
+pt_2021 = pd.read_csv('./initial-data/PT-2021.csv', sep=',', low_memory=False)
+pt_2022 = pd.read_csv('./initial-data/PT-2022.csv', sep=',')
+
+to_drop = ['Country','VFN','Mp','Mh','Man','MMS','Tan','Va','Ct','Cr','r', 'm (kg)','Enedc (g/km)','At1 (mm)',
+           'At2 (mm)','Fm','z (Wh/km)','Electric range (km)','IT','Ernedc (g/km)','Erwltp (g/km)','De','Vf',
+           'Date of registration','Fuel consumption ','Status','T']
+
+to_rename = {'V':'Version','Mk':'Make','Cn':'Model','Mt':'Test weight (kg)','Ewltp (g/km)':'Test Emission CO2 (g/km)',
+             'W (mm)':'Whell Base (mm)','ec (cm3)':'Engine Capacity (cm3)','ep (KW)':'Engine Power (kW)','year':'Year','Ft':'Fuel type'}
+
+
+fuels_name = ['electric','diesel','diesel/electric','DIESEL','DIESEL/ELECTRIC','PETROL/ELECTRIC',
+              'petrol','Electric','PETROL','ELECTRIC','Diesel','Petrol']
+
+fuels_rename = ['E','D','H','D','H','H','G','E','G','E','D','G']
+
+
+for df in [pt_2018, pt_2019, pt_2020, pt_2021, pt_2022]:
+
+    df.drop(to_drop, axis=1, inplace=True) #excluindo colunas
+    df.rename(columns=to_rename, inplace=True) #renomeando as colunas
+    df['Fuel type'] = df['Fuel type'].replace(fuels_name,fuels_rename) #trocando os nomes dos combustíveis
+    df.dropna(subset=['Fuel type'], inplace=True) #excluindo os nan da coluna dos combustíveis
+
+    for i in ['lpg','ng','LPG','NG','HYDROGEN']: #retirando alguns tipos de combustíveis que não vamos utlizar
+        df.drop(df[df['Fuel type'] == i].index, inplace=True)
+
+
+pt_2018.to_csv('./modificated-data/PT-2018.csv', index=False)
+pt_2019.to_csv('./modificated-data/PT-2019.csv', index=False)
+pt_2020.to_csv('./modificated-data/PT-2020.csv', index=False)
+pt_2021.to_csv('./modificated-data/PT-2021.csv', index=False)
+pt_2022.to_csv('./modificated-data/PT-2022.csv', index=False)
