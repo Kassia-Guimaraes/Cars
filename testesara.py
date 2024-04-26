@@ -2,7 +2,7 @@ import pandas as pd
 
 eletrics = pd.read_csv(
     './modificated-data/consumption-eletrics.csv', sep=',')
-fossilfuels = pd.read_csv(
+fossil_fuels = pd.read_csv(
     './modificated-data/consumption-fossilfuels.csv', sep=',')
 hydrids = pd.read_csv(
     './modificated-data/consumption-hydrids.csv', sep=',')
@@ -13,7 +13,7 @@ price_fossil_fuel = pd.read_csv(
 price_hybrids = pd.read_csv(
     './initial-data/cars-price/price-hybrids.csv', sep=',')
 
-consumptions = [eletrics, fossilfuels, hydrids]
+consumptions = [eletrics, fossil_fuels, hydrids]
 price_fuels = [price_eletrics, price_fossil_fuel, price_hybrids]
 
 for comsumption, price_fuel in zip(consumptions, price_fuels):
