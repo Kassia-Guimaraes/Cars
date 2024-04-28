@@ -1,15 +1,25 @@
-Model.year,Make,Model,Price (euros)
-2018,Hyundai,IONIQ Electric Plus,44900
-2019,Kia,Niro Hybrid,39000
-2019,Hyundai,Ioniq Hybrid,37000
-2020,Volvo,S90 T8 AWD,83500
-2022,Jeep,Grand Cherokee 4xe,65000
-2018,Mercedes,GLE 550e 4MATIC,90000
-2018,Audi,A3 e-tron,50000
-2019,Mercedes,GLC 350e 4MATIC,60000
-2020,Mercedes,S 560e,120000
-2020,Audi,Q5 TFSIe,55000
-2021,Audi,Q5 55 TFSI e quattro,65000
-2021,Audi,A8 L Sedan 60 TFSI e quattro,130000
-2022,Volvo,XC60 T8 AWD Recharge Extended Range,80000
-2022,Audi,A7 Sportback 55 TFSI e quattro,75000
+Model.year,Make,Model,Price (euros),Fuel type
+2018,Hyundai,IONIQ Electric Plus,44900,H
+2019,Kia,Niro Hybrid,39000,H
+2019,Hyundai,Ioniq Hybrid,37000,H
+2020,Volvo,S90 T8 AWD,83500,H
+2022,Jeep,Grand Cherokee 4xe,65000,H
+2018,Mercedes,GLE 550e 4MATIC,90000,H
+2018,Audi,A3 e-tron,50000,H
+2019,Mercedes,GLC 350e 4MATIC,60000,H
+2020,Mercedes,S 560e,120000,H
+2020,Audi,Q5 TFSIe,55000,H
+2021,Audi,Q5 55 TFSI e quattro,65000,H
+2021,Audi,A8 L Sedan 60 TFSI e quattro,130000,H
+2022,Volvo,XC60 T8 AWD Recharge Extended Range,80000,H
+2022,Audi,A7 Sportback 55 TFSI e quattro,75000,H
+2018,BMW,i3s Rex,35000,H
+2019,BMW,530e,45000,H
+2020,BMW,X3 xDrive30e,65000,H
+2021,BMW,330e,52000,H
+2022,BMW,745Le xDrive,90000,H
+2018,Ford,Fusion Energi,25000,H
+2019,Ford,Fusion Energi,27000,H
+2020,Ford,Espace Plug-in Hybrid,30000,H
+2021,Ford,Espace Plug-in Hybrid,32000,H
+2022,Ford,Espace Plug-in Hybrid,35000,H

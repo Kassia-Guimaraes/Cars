@@ -1,0 +1,31 @@
+Model.year,Make,Model,Price (euros),Fuel type
+2018,Hyundai,IONIQ Electric,40950,E
+2022,Hyundai,IONIQ 5 Long Range,49950,E
+2019,Hyundai,Kona Electric,37000,E
+2020,Kia,Soul EV (180 Ah),38990,E
+2021,Kia,Niro EV,41990,E
+2018,Tesla,Model S 75D,80000,E
+2019,Tesla,Model 3 Standard Range,69000,E
+2020,Jaguar,I-PACE,96579,E
+2021,Tesla,Model 3 Performance,63990,E
+2022,MINI,Cooper SE 3 Door,39900,E
+2018,Nissan,LEAF,30000,E
+2018,Tesla,Model X 100D,120000,E
+2019,Audi,e-tron 55 quattro,80000,E
+2019,Tesla,Model X Performance (22 Wheels),130000,E
+2020,Volkswagen,e-Golf,35000,E
+2020,Tesla,Model S Long Range,90000,E
+2021,Volvo,XC40 Recharge,45000,E
+2021,Tesla,Model Y Long Range AWD,60000,E
+2022,Mercedes,EQB 350 4MATIC SUV,55000,E
+2022,Tesla,Model Y Performance,70000,E
+2018,VOLKSWAGEN,GOLF,15000,E
+2019,VOLKSWAGEN,UP,14000,E
+2020,VOLKSWAGEN,ID3 PRO 150 KW,23000,E
+2021,VOLKSWAGEN,ID. 4 PROM 150 KW,30000,E
+2022,VOLKSWAGEN,ID.5 PRO 150 KW,48000,E
+2018,Ford,Focus Electric,29000,E
+2019,SMART,EQ fortwo coupe,13000,E
+2020,SMART,EQ FORFOUR,10000,E
+2021,Ford,Mustang Mach-E Standard Range,42000,E
+2022,Ford,F-150 Lightning Extended Range,65000,E

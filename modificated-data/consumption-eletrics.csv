@@ -2,10 +2,10 @@ Year,Make,Model,Vehicle class,Engine Power (kW),Fuel type,City (E) (kWh/100 km),
 2018,BMW,i3,Subcompact,125,E,16.2,19.7,17.8,1.8,2.2,2.0,183,5.0,0
 2018,BMW,i3s,Subcompact,135,E,17.1,21.1,18.9,1.9,2.4,2.1,172,5.0,0
 2018,Chevrolet,Bolt EV,Station wagon: Small,150,E,16.4,19.0,17.6,1.8,2.1,2.0,383,9.3,0
-2018,Ford,Focus Electric,Compact,107,E,17.7,21.8,19.6,2.0,2.5,2.2,185,5.5,0
+2018,Ford,Focus Electric,Compact,107,E,17.7,21.8,19.6,2.0,2.5,2.2,185,5.5,29000
 2018,Hyundai,IONIQ Electric,Mid-size,88,E,13.7,17.4,15.5,1.6,1.9,1.7,200,4.0,40950
 2018,Kia,Soul EV,Station wagon: Small,81,E,16.8,22.4,19.3,1.9,2.5,2.2,179,5.0,0
-2018,Nissan,LEAF,Mid-size,110,E,16.9,21.1,18.8,1.9,2.4,2.1,242,8.0,0
+2018,Nissan,LEAF,Mid-size,110,E,16.9,21.1,18.8,1.9,2.4,2.1,242,8.0,30000
 2018,smart,fortwo electric drive cabriolet,Two-seater,60,E,18.7,23.1,20.7,2.1,2.6,2.3,92,3.0,0
 2018,smart,fortwo electric drive coupe,Two-seater,60,E,16.9,22.3,19.3,1.9,2.5,2.2,93,3.0,0
 2018,Tesla,Model 3 Mid Range,Mid-size,202,E,16.4,17.9,17.1,1.8,2.0,1.9,418,10.0,0
@@ -17,10 +17,10 @@ Year,Make,Model,Vehicle class,Engine Power (kW),Fuel type,City (E) (kWh/100 km),
 2018,Tesla,Model S 100D,Full-size,386,E,20.7,20.5,20.6,2.3,2.3,2.3,539,12.0,0
 2018,Tesla,Model S P100D,Full-size,568,E,22.6,20.0,21.5,2.5,2.3,2.4,507,12.0,0
 2018,Tesla,Model X 75D,Sport utility vehicle: Standard,386,E,23.0,21.9,22.5,2.6,2.5,2.5,383,12.0,0
-2018,Tesla,Model X 100D,Sport utility vehicle: Standard,386,E,24.3,23.7,24.0,2.7,2.7,2.7,475,12.0,0
+2018,Tesla,Model X 100D,Sport utility vehicle: Standard,386,E,24.3,23.7,24.0,2.7,2.7,2.7,475,12.0,120000
 2018,Tesla,Model X P100D,Sport utility vehicle: Standard,568,E,25.4,23.6,24.6,2.8,2.7,2.8,465,12.0,0
 2018,Volkswagen,e-Golf,Compact,100,E,16.8,18.6,17.4,1.9,2.1,2.0,201,5.3,0
-2019,Audi,e-tron 55 quattro,Sport utility vehicle: Standard,300,E,28.0,28.5,28.3,3.2,3.2,3.2,329,10.0,0
+2019,Audi,e-tron 55 quattro,Sport utility vehicle: Standard,300,E,28.0,28.5,28.3,3.2,3.2,3.2,329,10.0,80000
 2019,BMW,i3 (120 Ah),Subcompact,125,E,16.8,20.6,18.5,1.9,2.3,2.1,246,7.0,0
 2019,BMW,i3s (120 Ah),Subcompact,135,E,16.8,20.6,18.5,1.9,2.3,2.1,246,7.0,0
 2019,Chevrolet,Bolt EV,Station wagon: Small,150,E,16.4,19.0,17.6,1.8,2.1,2.0,383,9.3,0
@@ -81,7 +81,7 @@ Year,Make,Model,Vehicle class,Engine Power (kW),Fuel type,City (E) (kWh/100 km),
 2020,Tesla,"Model 3 Long Range AWD Performance (19"" Wheels)",Mid-size,358,E,17.6,18.7,18.1,2.0,2.1,2.0,489,10.0,0
 2020,Tesla,"Model 3 Long Range AWD Performance (20"" Wheels)",Mid-size,358,E,17.8,19.6,18.6,2.0,2.2,2.1,481,10.0,0
 2020,Tesla,Model S Standard Range,Full-size,398,E,18.5,20.0,19.2,2.1,2.2,2.2,462,9.0,0
-2020,Tesla,Model S Long Range,Full-size,398,E,18.2,19.5,18.8,2.0,2.2,2.1,600,12.0,0
+2020,Tesla,Model S Long Range,Full-size,398,E,18.2,19.5,18.8,2.0,2.2,2.1,600,12.0,90000
 2020,Tesla,Model S Long Range Plus (pre-15/6/20),Full-size,398,E,17.2,18.9,18.0,1.9,2.1,2.0,629,12.0,0
 2020,Tesla,Model S Long Range Plus,Full-size,398,E,17.3,18.8,17.9,1.9,2.1,2.0,647,12.0,0
 2020,Tesla,"Model S Performance (19"" Wheels)",Full-size,580,E,20.1,20.2,20.2,2.3,2.3,2.3,560,12.0,0
@@ -94,13 +94,13 @@ Year,Make,Model,Vehicle class,Engine Power (kW),Fuel type,City (E) (kWh/100 km),
 2020,Tesla,Model Y Long Range AWD,Sport utility vehicle: Small,358,E,16.5,18.3,17.3,1.9,2.1,1.9,509,10.0,0
 2020,Tesla,Model Y Performance,Sport utility vehicle: Small,358,E,16.3,18.7,17.4,1.8,2.1,2.0,507,10.0,0
 2020,Tesla,"Model Y Performance (21"" Wheels)",Sport utility vehicle: Small,358,E,18.1,19.8,18.9,2.0,2.2,2.1,468,10.0,0
-2020,Volkswagen,e-Golf,Compact,100,E,17.4,19.9,18.6,1.9,2.3,2.1,198,5.3,0
+2020,Volkswagen,e-Golf,Compact,100,E,17.4,19.9,18.6,1.9,2.3,2.1,198,5.3,35000
 2021,Audi,e-tron 55 quattro,Sport utility vehicle: Standard,300,E,26.9,27.0,27.0,3.0,3.0,3.0,357,10.0,0
 2021,Audi,e-tron Sportback 55 quattro,Sport utility vehicle: Standard,300,E,27.6,27.0,27.3,3.1,3.0,3.1,351,10.0,0
 2021,BMW,i3 (120 Ah),Subcompact,125,E,16.8,20.6,18.5,1.9,2.3,2.1,246,7.0,0
 2021,BMW,i3s (120 Ah),Subcompact,135,E,16.8,20.6,18.5,1.9,2.3,2.1,246,7.0,0
 2021,Chevrolet,Bolt EV,Station wagon: Small,150,E,16.5,19.5,17.8,1.9,2.2,2.0,417,10.0,0
-2021,Ford,Mustang Mach-E Standard Range,Station wagon: Small,198,E,19.9,22.4,21.0,2.2,2.5,2.4,370,8.8,0
+2021,Ford,Mustang Mach-E Standard Range,Station wagon: Small,198,E,19.9,22.4,21.0,2.2,2.5,2.4,370,8.8,42000
 2021,Ford,Mustang Mach-E Standard Range AWD,Station wagon: Small,198,E,21.0,24.5,22.6,2.4,2.7,2.5,340,8.5,0
 2021,Ford,"Mustang Mach-E Extended Range (19"" Wheels)",Station wagon: Small,216,E,20.2,23.2,21.5,2.3,2.6,2.4,483,10.9,0
 2021,Ford,Mustang Mach-E Extended Range AWD,Station wagon: Small,258,E,21.8,25.0,23.2,2.4,2.8,2.6,435,10.7,0
@@ -139,11 +139,11 @@ Year,Make,Model,Vehicle class,Engine Power (kW),Fuel type,City (E) (kWh/100 km),
 2021,Tesla,"Model X Performance (20"" Wheels)",Sport utility vehicle: Standard,580,E,21.0,22.1,21.5,2.4,2.5,2.4,549,12.0,0
 2021,Tesla,"Model X Performance (22"" Wheels)",Sport utility vehicle: Standard,580,E,23.7,25.3,24.4,2.7,2.8,2.7,483,12.0,0
 2021,Tesla,Model Y Standard Range,Sport utility vehicle: Small,211,E,15.0,17.6,16.2,1.7,2.0,1.8,393,8.0,0
-2021,Tesla,Model Y Long Range AWD,Sport utility vehicle: Small,270,E,15.9,17.9,16.8,1.8,2.0,1.9,525,10.0,0
+2021,Tesla,Model Y Long Range AWD,Sport utility vehicle: Small,270,E,15.9,17.9,16.8,1.8,2.0,1.9,525,10.0,60000
 2021,Tesla,Model Y Performance,Sport utility vehicle: Small,312,E,18.2,19.8,18.9,2.0,2.2,2.1,488,10.0,0
 2021,Volkswagen,ID.4 Pro,Sport utility vehicle: Small,150,E,20.2,23.4,21.7,2.3,2.6,2.4,400,7.5,0
 2021,Volkswagen,ID.4 AWD Pro,Sport utility vehicle: Small,220,E,21.5,23.9,22.5,2.4,2.7,2.5,386,7.5,0
-2021,Volvo,XC40 Recharge,Sport utility vehicle: Small,300,E,24.5,29.2,26.6,2.8,3.3,3.0,335,8.0,0
+2021,Volvo,XC40 Recharge,Sport utility vehicle: Small,300,E,24.5,29.2,26.6,2.8,3.3,3.0,335,8.0,45000
 2022,Audi,e-tron 55 quattro,Sport utility vehicle: Standard,300,E,26.9,27.0,27.0,3.0,3.0,3.0,357,10.0,0
 2022,Audi,e-tron Sportback 55 quattro,Sport utility vehicle: Standard,300,E,27.6,27.0,27.3,3.1,3.0,3.1,351,10.0,0
 2022,Audi,"e-tron S Sportback quattro (20"" Wheels)",Sport utility vehicle: Standard,370,E,28.6,27.0,27.9,3.2,3.0,3.1,341,10.0,0
@@ -162,7 +162,7 @@ Year,Make,Model,Vehicle class,Engine Power (kW),Fuel type,City (E) (kWh/100 km),
 2022,Chevrolet,Bolt EUV,Station wagon: Small,150,E,16.8,20.1,18.3,1.9,2.3,2.1,397,7.5,0
 2022,Chevrolet,Bolt EV,Station wagon: Small,150,E,16.0,19.2,17.5,1.8,2.2,2.0,417,7.5,0
 2022,Ford,F-150 Lightning Standard Range,Pickup truck: Standard,318,E,27.5,34.5,30.6,3.1,3.9,3.4,370,11.8,0
-2022,Ford,F-150 Lightning Extended Range,Pickup truck: Standard,420,E,26.9,33.3,29.8,3.0,3.7,3.3,515,10.1,0
+2022,Ford,F-150 Lightning Extended Range,Pickup truck: Standard,420,E,26.9,33.3,29.8,3.0,3.7,3.3,515,10.1,65000
 2022,Ford,F-150 Lightning Platinum,Pickup truck: Standard,420,E,28.7,35.0,31.5,3.2,3.9,3.5,483,9.3,0
 2022,Ford,Mustang Mach-E Standard Range,Sport utility vehicle: Small,198,E,19.0,21.9,20.3,2.1,2.5,2.3,397,8.1,0
 2022,Ford,Mustang Mach-E Standard Range AWD,Sport utility vehicle: Small,198,E,21.1,24.3,22.6,2.4,2.7,2.5,360,8.0,0
@@ -189,7 +189,7 @@ Year,Make,Model,Vehicle class,Engine Power (kW),Fuel type,City (E) (kWh/100 km),
 2022,Lucid,"Air Grand Touring AWD (19"" Wheels)",Full-size,611,E,16.1,15.8,16.0,1.8,1.8,1.8,830,13.0,0
 2022,Lucid,"Air Grand Touring AWD (21"" Wheels)",Full-size,611,E,17.4,17.1,17.3,2.0,1.9,1.9,755,13.0,0
 2022,Mazda,MX-30,Mid-size,107,E,21.4,24.6,22.8,2.4,2.8,2.6,161,5.3,0
-2022,Mercedes-Benz,EQB 350 4MATIC SUV,Sport utility vehicle: Small,215,E,21.1,22.4,21.7,2.4,2.5,2.5,365,7.5,0
+2022,Mercedes-Benz,EQB 350 4MATIC SUV,Sport utility vehicle: Small,215,E,21.1,22.4,21.7,2.4,2.5,2.5,365,7.5,55000
 2022,Mercedes-Benz,EQS 580 4MATIC Sedan,Full-size,385,E,23.0,21.1,22.4,2.6,2.4,2.5,547,11.25,0
 2022,MINI,Cooper SE 3 Door,Subcompact,135,E,17.6,20.9,19.1,2.0,2.3,2.1,183,4.0,39900
 2022,Nissan,LEAF (40 kWh),Mid-size,110,E,17.0,21.2,18.9,1.9,2.4,2.1,240,8.0,0
@@ -221,7 +221,7 @@ Year,Make,Model,Vehicle class,Engine Power (kW),Fuel type,City (E) (kWh/100 km),
 2022,Tesla,"Model X Plaid (22"" Wheels)",Sport utility vehicle: Standard,750,E,22.3,23.8,22.9,2.5,2.7,2.6,500,14.0,0
 2022,Tesla,Model Y AWD,Sport utility vehicle: Small,291,E,16.3,18.1,17.1,1.8,2.0,1.9,449,9.0,0
 2022,Tesla,Model Y Long Range AWD,Sport utility vehicle: Small,291,E,16.5,17.9,17.2,1.9,2.0,1.9,531,10.0,0
-2022,Tesla,Model Y Performance,Sport utility vehicle: Small,312,E,18.2,19.8,18.9,2.0,2.2,2.1,488,10.0,0
+2022,Tesla,Model Y Performance,Sport utility vehicle: Small,312,E,18.2,19.8,18.9,2.0,2.2,2.1,488,10.0,70000
 2022,Volkswagen,ID.4 Pro,Sport utility vehicle: Small,150,E,18.7,22.0,20.2,2.1,2.5,2.3,422,7.5,0
 2022,Volkswagen,ID.4 AWD Pro,Sport utility vehicle: Small,220,E,21.0,23.2,22.0,2.4,2.6,2.5,394,7.5,0
 2022,Volvo,C40 Recharge Twin,Sport utility vehicle: Small,300,E,22.2,26.1,23.9,2.5,2.9,2.7,364,8.0,0

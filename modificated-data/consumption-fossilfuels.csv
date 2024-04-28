@@ -39,7 +39,7 @@ Year,Make,Model,Vehicle class,Engine Capacity (cm3),Fuel type,City (F) (L/100 km
 2018,Audi,A8,Full-size,4000.0,PG,15.1,9.1,12.4,0
 2018,Audi,A8L,Full-size,4000.0,PG,15.1,9.1,12.4,0
 2018,Audi,Q3,Compact,2000.0,PG,11.6,8.3,10.1,0
-2018,Audi,Q3 quattro,Compact,2000.0,PG,11.9,8.4,10.3,0
+2018,Audi,Q3 quattro,Compact,2000.0,PG,11.9,8.4,10.3,40000
 2018,Audi,Q5,Sport utility vehicle: Small,2000.0,PG,10.4,8.6,9.6,0
 2018,Audi,Q7,Sport utility vehicle: Standard,2000.0,PG,12.2,9.5,11.0,0
 2018,Audi,Q7,Sport utility vehicle: Standard,3000.0,PG,12.6,9.4,11.1,0
@@ -199,8 +199,8 @@ Year,Make,Model,Vehicle class,Engine Capacity (cm3),Fuel type,City (F) (L/100 km
 2018,Chevrolet,Cruze,Compact,1400.0,G,8.0,5.9,7.1,0
 2018,Chevrolet,Cruze Premier,Compact,1400.0,G,8.1,6.0,7.2,0
 2018,Chevrolet,Cruze,Compact,1400.0,G,8.6,5.8,7.4,0
-2018,Chevrolet,Cruze Diesel,Compact,1600.0,D,7.7,5.0,6.5,0
-2018,Chevrolet,Cruze Diesel,Compact,1600.0,D,7.8,4.6,6.3,0
+2018,Chevrolet,Cruze Diesel,Compact,1600.0,D,7.7,5.0,6.5,25000
+2018,Chevrolet,Cruze Diesel,Compact,1600.0,D,7.8,4.6,6.3,25000
 2018,Chevrolet,Cruze Hatchback,Mid-size,1400.0,G,8.1,6.2,7.3,0
 2018,Chevrolet,Cruze Hatchback Premier,Mid-size,1400.0,G,8.4,6.4,7.5,0
 2018,Chevrolet,Cruze Hatchback,Mid-size,1400.0,G,8.6,6.2,7.5,0
@@ -319,7 +319,7 @@ Year,Make,Model,Vehicle class,Engine Capacity (cm3),Fuel type,City (F) (L/100 km
 2018,FIAT,500X,Sport utility vehicle: Small,2400.0,G,10.7,7.8,9.4,0
 2018,FIAT,500X AWD,Sport utility vehicle: Small,2400.0,G,11.0,8.0,9.7,0
 2018,Ford,C-MAX Hybrid,Full-size,2000.0,G,5.7,6.2,5.9,0
-2018,Ford,EcoSport,Sport utility vehicle: Small,1000.0,G,8.6,8.1,8.4,0
+2018,Ford,EcoSport,Sport utility vehicle: Small,1000.0,G,8.6,8.1,8.4,18000
 2018,Ford,EcoSport AWD,Sport utility vehicle: Small,2000.0,G,10.2,8.0,9.3,0
 2018,Ford,Edge,Sport utility vehicle: Small,2000.0,G,11.5,8.0,9.9,0
 2018,Ford,Edge (Start/Stop),Sport utility vehicle: Small,2000.0,G,11.3,8.0,9.9,0
@@ -344,7 +344,7 @@ Year,Make,Model,Vehicle class,Engine Capacity (cm3),Fuel type,City (F) (L/100 km
 2018,Ford,F-150,Pickup truck: Standard,2700.0,G,11.9,9.0,10.6,0
 2018,Ford,F-150 (LT Tire Pkg),Pickup truck: Standard,2700.0,G,12.0,9.4,10.8,0
 2018,Ford,F-150 (Payload Pkg),Pickup truck: Standard,2700.0,G,12.3,9.4,11.0,0
-2018,Ford,F-150,Pickup truck: Standard,3000.0,D,10.8,8.0,9.5,0
+2018,Ford,F-150,Pickup truck: Standard,3000.0,D,10.8,8.0,9.5,35000
 2018,Ford,F-150 (LT Tire Pkg),Pickup truck: Standard,3000.0,D,10.8,8.4,9.7,0
 2018,Ford,F-150,Pickup truck: Standard,3300.0,G,12.3,9.4,11.0,0
 2018,Ford,F-150 FFV,Pickup truck: Standard,3300.0,G,12.3,9.3,10.9,0
@@ -558,7 +558,7 @@ Year,Make,Model,Vehicle class,Engine Capacity (cm3),Fuel type,City (F) (L/100 km
 2018,Infiniti,QX30 AWD,Compact,2000.0,PG,10.6,8.0,9.4,0
 2018,Infiniti,QX60 AWD,Sport utility vehicle: Small,3500.0,PG,12.5,9.0,10.9,0
 2018,Infiniti,QX80 4WD,Sport utility vehicle: Standard,5600.0,PG,17.4,12.2,15.1,0
-2018,Jaguar,F-PACE 20d,Sport utility vehicle: Small,2000.0,D,8.9,7.2,8.1,0
+2018,Jaguar,F-PACE 20d,Sport utility vehicle: Small,2000.0,D,8.9,7.2,8.1,45000
 2018,Jaguar,F-PACE 25t,Sport utility vehicle: Small,2000.0,PG,10.7,8.8,9.9,0
 2018,Jaguar,F-PACE 35t,Sport utility vehicle: Small,3000.0,PG,13.3,10.0,11.8,0
 2018,Jaguar,F-TYPE Convertible,Two-seater,2000.0,PG,10.2,7.8,9.2,0
@@ -782,7 +782,7 @@ Year,Make,Model,Vehicle class,Engine Capacity (cm3),Fuel type,City (F) (L/100 km
 2018,Mercedes-Benz,C 300 4MATIC Cabriolet,Subcompact,2000.0,PG,10.8,8.0,9.6,0
 2018,Mercedes-Benz,C 300 4MATIC Coupe,Subcompact,2000.0,PG,10.5,7.8,9.3,0
 2018,Mercedes-Benz,C 300 4MATIC Wagon,Station wagon: Mid-size,2000.0,PG,10.7,8.0,9.5,0
-2018,Mercedes-Benz,CLA 250,Compact,2000.0,PG,9.6,6.6,8.2,0
+2018,Mercedes-Benz,CLA 250,Compact,2000.0,PG,9.6,6.6,8.2,30000
 2018,Mercedes-Benz,CLA 250 4MATIC,Compact,2000.0,PG,9.9,7.3,8.7,0
 2018,Mercedes-Benz,E 300 4MATIC,Mid-size,2000.0,PG,11.0,8.1,9.7,0
 2018,Mercedes-Benz,E 400 4MATIC,Mid-size,3000.0,PG,11.8,8.7,10.4,0
@@ -1108,7 +1108,7 @@ Year,Make,Model,Vehicle class,Engine Capacity (cm3),Fuel type,City (F) (L/100 km
 2019,Aston Martin,Rapide AMR,Subcompact,6000.0,PG,16.7,10.9,14.1,0
 2019,Aston Martin,Vanquish Zagato,Minicompact,6000.0,PG,17.5,11.4,14.7,0
 2019,Aston Martin,Vantage V8,Two-seater,4000.0,PG,12.7,9.4,11.2,0
-2019,Audi,A3,Subcompact,2000.0,G,9.1,6.8,8.1,0
+2019,Audi,A3,Subcompact,2000.0,G,9.1,6.8,8.1,35000
 2019,Audi,A3 quattro,Subcompact,2000.0,G,10.9,7.9,9.6,0
 2019,Audi,A3 Cabriolet quattro,Subcompact,2000.0,G,10.7,7.9,9.5,0
 2019,Audi,A4,Compact,2000.0,PG,8.6,6.9,7.8,0
@@ -1371,8 +1371,8 @@ Year,Make,Model,Vehicle class,Engine Capacity (cm3),Fuel type,City (F) (L/100 km
 2019,Ford,EcoSport,Sport utility vehicle: Small,1000.0,G,8.6,8.1,8.4,0
 2019,Ford,EcoSport AWD,Sport utility vehicle: Small,2000.0,G,10.2,8.0,9.3,0
 2019,Ford,Edge,Sport utility vehicle: Small,2000.0,G,10.9,8.0,9.6,0
-2019,Ford,Edge AWD,Sport utility vehicle: Small,2000.0,G,11.4,8.3,10.0,0
-2019,Ford,Edge AWD,Sport utility vehicle: Small,2700.0,G,12.6,9.2,11.0,0
+2019,Ford,Edge AWD,Sport utility vehicle: Small,2000.0,G,11.4,8.3,10.0,30000
+2019,Ford,Edge AWD,Sport utility vehicle: Small,2700.0,G,12.6,9.2,11.0,30000
 2019,Ford,Escape,Sport utility vehicle: Small,1500.0,G,10.2,7.8,9.1,0
 2019,Ford,Escape FFV,Sport utility vehicle: Small,2500.0,G,11.0,8.0,9.6,0
 2019,Ford,Escape FFV,Sport utility vehicle: Small,2500.0,ET,15.0,10.8,13.1,0
@@ -1405,7 +1405,7 @@ Year,Make,Model,Vehicle class,Engine Capacity (cm3),Fuel type,City (F) (L/100 km
 2019,Ford,F-150 4X4,Pickup truck: Standard,2700.0,G,12.7,9.8,11.4,0
 2019,Ford,F-150 4X4 (LT Tire Pkg),Pickup truck: Standard,2700.0,G,13.1,10.2,11.8,0
 2019,Ford,F-150 4X4 (Payload Pkg),Pickup truck: Standard,2700.0,G,13.1,10.2,11.8,0
-2019,Ford,F-150 4X4,Pickup truck: Standard,3000.0,D,11.8,9.3,10.7,0
+2019,Ford,F-150 4X4,Pickup truck: Standard,3000.0,D,11.8,9.3,10.7,40000
 2019,Ford,F-150 4X4 (LT Tire Pkg),Pickup truck: Standard,3000.0,D,11.8,9.3,10.7,0
 2019,Ford,F-150 4X4 XL/XLT,Pickup truck: Standard,3000.0,D,11.2,8.3,9.9,0
 2019,Ford,F-150 FFV 4X4,Pickup truck: Standard,3300.0,G,12.8,10.2,11.6,0
@@ -1635,11 +1635,11 @@ Year,Make,Model,Vehicle class,Engine Capacity (cm3),Fuel type,City (F) (L/100 km
 2019,Jeep,Cherokee 4X4 Active Drive II,Sport utility vehicle: Small,3200.0,G,12.8,9.0,11.1,0
 2019,Jeep,Cherokee 4X4 Active Drive Lock,Sport utility vehicle: Small,2000.0,G,11.8,9.2,10.6,0
 2019,Jeep,Cherokee 4X4 Active Drive Lock,Sport utility vehicle: Small,3200.0,G,12.9,9.9,11.6,0
-2019,Jeep,Compass,Sport utility vehicle: Small,2400.0,G,10.6,7.6,9.3,31900
-2019,Jeep,Compass,Sport utility vehicle: Small,2400.0,G,10.4,7.3,9.0,31900
+2019,Jeep,Compass,Sport utility vehicle: Small,2400.0,G,10.6,7.6,9.3,0
+2019,Jeep,Compass,Sport utility vehicle: Small,2400.0,G,10.4,7.3,9.0,0
 2019,Jeep,Compass 4X4,Sport utility vehicle: Small,2400.0,G,10.8,7.8,9.5,0
 2019,Jeep,Compass 4X4,Sport utility vehicle: Small,2400.0,G,10.8,7.6,9.4,0
-2019,Jeep,Grand Cherokee 4X4 EcoDiesel,Sport utility vehicle: Standard,3000.0,D,11.2,8.5,10.0,0
+2019,Jeep,Grand Cherokee 4X4 EcoDiesel,Sport utility vehicle: Standard,3000.0,D,11.2,8.5,10.0,50000
 2019,Jeep,Grand Cherokee 4X4,Sport utility vehicle: Standard,3600.0,G,12.7,9.6,11.3,0
 2019,Jeep,Grand Cherokee 4X4,Sport utility vehicle: Standard,5700.0,G,16.7,10.9,14.1,0
 2019,Jeep,Grand Cherokee 4X4 SRT,Sport utility vehicle: Standard,6400.0,PG,18.3,12.6,15.7,0
@@ -1688,7 +1688,7 @@ Year,Make,Model,Vehicle class,Engine Capacity (cm3),Fuel type,City (F) (L/100 km
 2019,Lamborghini,Huracan Performante Spyder,Two-seater,5200.0,PG,17.9,13.0,15.7,0
 2019,Lamborghini,Urus,Sport utility vehicle: Standard,4000.0,PG,19.2,14.1,16.9,0
 2019,Land Rover,Discovery,Sport utility vehicle: Standard,3000.0,PG,14.8,11.4,13.3,0
-2019,Land Rover,Discovery Td6 Diesel,Sport utility vehicle: Standard,3000.0,D,11.3,9.2,10.4,0
+2019,Land Rover,Discovery Td6 Diesel,Sport utility vehicle: Standard,3000.0,D,11.3,9.2,10.4,60000
 2019,Land Rover,Discovery Sport,Sport utility vehicle: Small,2000.0,PG,11.4,9.3,10.5,0
 2019,Land Rover,Range Rover 3.0,Sport utility vehicle: Standard,3000.0,PG,14.1,10.3,12.4,0
 2019,Land Rover,Range Rover Td6 Diesel,Sport utility vehicle: Standard,3000.0,D,10.7,8.3,9.6,0
@@ -1699,7 +1699,7 @@ Year,Make,Model,Vehicle class,Engine Capacity (cm3),Fuel type,City (F) (L/100 km
 2019,Land Rover,Range Rover Sport Supercharged,Sport utility vehicle: Standard,5000.0,PG,14.1,10.7,12.6,0
 2019,Land Rover,Range Rover Evoque,Sport utility vehicle: Small,2000.0,PG,10.9,8.0,9.6,0
 2019,Land Rover,Range Rover Evoque Convertible,Sport utility vehicle: Small,2000.0,PG,11.2,8.2,9.8,0
-2019,Land Rover,Range Rover Velar D180,Sport utility vehicle: Small,2000.0,D,9.2,7.8,8.5,0
+2019,Land Rover,Range Rover Velar D180,Sport utility vehicle: Small,2000.0,D,9.2,7.8,8.5,67500
 2019,Land Rover,Range Rover Velar P300,Sport utility vehicle: Small,2000.0,PG,11.7,9.2,10.6,0
 2019,Land Rover,Range Rover Velar P380,Sport utility vehicle: Small,3000.0,PG,13.0,10.0,11.6,0
 2019,Lexus,ES 300h,Mid-size,2500.0,G,5.5,5.2,5.3,0
@@ -1760,7 +1760,7 @@ Year,Make,Model,Vehicle class,Engine Capacity (cm3),Fuel type,City (F) (L/100 km
 2019,Mazda,CX-5,Sport utility vehicle: Small,2000.0,G,9.7,7.7,8.8,0
 2019,Mazda,CX-5,Sport utility vehicle: Small,2500.0,G,9.7,7.8,8.8,0
 2019,Mazda,CX-5 (Cylinder Deactivation),Sport utility vehicle: Small,2500.0,G,9.3,7.6,8.5,0
-2019,Mazda,CX-5 Diesel 4WD,Sport utility vehicle: Small,2200.0,D,8.9,7.9,8.4,0
+2019,Mazda,CX-5 Diesel 4WD,Sport utility vehicle: Small,2200.0,D,8.9,7.9,8.4,35000
 2019,Mazda,CX-5 4WD,Sport utility vehicle: Small,2500.0,G,10.2,8.2,9.3,0
 2019,Mazda,CX-5 4WD (Cylinder Deactivation),Sport utility vehicle: Small,2500.0,G,9.8,7.9,9.0,0
 2019,Mazda,CX-5 Turbo 4WD,Sport utility vehicle: Small,2500.0,G,10.8,8.7,9.8,0
@@ -2124,13 +2124,13 @@ Year,Make,Model,Vehicle class,Engine Capacity (cm3),Fuel type,City (F) (L/100 km
 2019,Volkswagen,Passat,Mid-size,2000.0,G,9.3,6.5,8.1,0
 2019,Volkswagen,Tiguan,Sport utility vehicle: Small,2000.0,G,10.7,8.0,9.5,0
 2019,Volkswagen,Tiguan 4MOTION,Sport utility vehicle: Small,2000.0,G,11.1,8.1,9.8,0
-2019,Volvo,S60 T5,Compact,2000.0,PG,9.9,6.6,8.4,0
+2019,Volvo,S60 T5,Compact,2000.0,PG,9.9,6.6,8.4,33100
 2019,Volvo,S60 T6 AWD,Compact,2000.0,PG,11.1,7.3,9.4,0
 2019,Volvo,S90 T5 AWD,Mid-size,2000.0,PG,10.6,7.4,9.2,0
 2019,Volvo,S90 T6 AWD,Mid-size,2000.0,PG,11.1,7.3,9.4,0
 2019,Volvo,V60 T5,Station wagon: Small,2000.0,PG,9.9,6.6,8.4,0
 2019,Volvo,V60 T6 AWD,Station wagon: Small,2000.0,PG,11.1,7.3,9.4,0
-2019,Volvo,V60 CC T5 AWD,Station wagon: Small,2000.0,PG,10.8,7.6,9.3,39000
+2019,Volvo,V60 CC T5 AWD,Station wagon: Small,2000.0,PG,10.8,7.6,9.3,0
 2019,Volvo,V90 T6 AWD,Station wagon: Mid-size,2000.0,PG,11.1,7.3,9.4,0
 2019,Volvo,V90 CC T6 AWD,Station wagon: Mid-size,2000.0,PG,11.6,8.1,10.0,0
 2019,Volvo,XC40 T5 AWD,Sport utility vehicle: Small,2000.0,PG,10.3,7.5,9.0,0
@@ -2162,7 +2162,7 @@ Year,Make,Model,Vehicle class,Engine Capacity (cm3),Fuel type,City (F) (L/100 km
 2020,Aston Martin,Vantage V8,Two-seater,4000.0,PG,13.1,9.6,11.5,0
 2020,Aston Martin,Vantage V8,Two-seater,4000.0,PG,16.7,11.2,14.2,0
 2020,Audi,A3,Subcompact,2000.0,G,8.8,6.5,7.8,0
-2020,Audi,A3 quattro,Subcompact,2000.0,G,10.8,8.0,9.5,0
+2020,Audi,A3 quattro,Subcompact,2000.0,G,10.8,8.0,9.5,40000
 2020,Audi,A3 Cabriolet quattro,Subcompact,2000.0,G,10.8,8.0,9.5,0
 2020,Audi,A4 quattro,Compact,2000.0,PG,10.0,7.3,8.8,0
 2020,Audi,A4 allroad quattro,Station wagon: Small,2000.0,PG,10.0,7.4,8.8,0
@@ -2441,7 +2441,7 @@ Year,Make,Model,Vehicle class,Engine Capacity (cm3),Fuel type,City (F) (L/100 km
 2020,Ford,Escape AWD,Sport utility vehicle: Small,2000.0,G,10.4,7.5,9.1,0
 2020,Ford,Escape Hybrid,Sport utility vehicle: Small,2500.0,G,5.4,6.3,5.8,0
 2020,Ford,Escape Hybrid AWD,Sport utility vehicle: Small,2500.0,G,5.5,6.4,5.9,0
-2020,Ford,Expedition 4X4,Sport utility vehicle: Standard,3500.0,G,14.1,10.6,12.5,0
+2020,Ford,Expedition 4X4,Sport utility vehicle: Standard,3500.0,G,14.1,10.6,12.5,50000
 2020,Ford,Expedition MAX 4X4,Sport utility vehicle: Standard,3500.0,G,14.7,11.2,13.1,0
 2020,Ford,Explorer AWD,Sport utility vehicle: Standard,2300.0,G,11.6,8.7,10.3,0
 2020,Ford,Explorer AWD,Sport utility vehicle: Standard,3000.0,G,13.3,9.8,11.8,0
@@ -2460,7 +2460,7 @@ Year,Make,Model,Vehicle class,Engine Capacity (cm3),Fuel type,City (F) (L/100 km
 2020,Ford,F-150 FFV (Payload Pkg),Pickup truck: Standard,5000.0,ET,19.9,15.8,18.0,0
 2020,Ford,F-150 4X4,Pickup truck: Standard,2700.0,G,13.1,10.2,11.8,0
 2020,Ford,F-150 4X4,Pickup truck: Standard,3000.0,D,11.9,9.4,10.8,0
-2020,Ford,F-150 4X4 XL/XLT,Pickup truck: Standard,3000.0,D,11.3,8.5,10.0,0
+2020,Ford,F-150 4X4 XL/XLT,Pickup truck: Standard,3000.0,D,11.3,8.5,10.0,42000
 2020,Ford,F-150 FFV 4X4,Pickup truck: Standard,3300.0,G,12.9,10.2,11.7,0
 2020,Ford,F-150 FFV 4X4,Pickup truck: Standard,3300.0,ET,17.6,13.8,15.9,0
 2020,Ford,F-150 4X4,Pickup truck: Standard,3500.0,G,14.6,10.9,13.0,0
@@ -2688,7 +2688,7 @@ Year,Make,Model,Vehicle class,Engine Capacity (cm3),Fuel type,City (F) (L/100 km
 2020,Jeep,Wrangler 4X4,Sport utility vehicle: Small,3600.0,G,13.7,9.6,11.8,0
 2020,Jeep,Wrangler Unlimited 4X4,Sport utility vehicle: Small,2000.0,G,11.5,10.9,11.2,0
 2020,Jeep,Wrangler Unlimited 4X4 eTorque,Sport utility vehicle: Small,2000.0,G,11.3,10.5,10.9,0
-2020,Jeep,Wrangler Unlimited 4X4 EcoDiesel,Sport utility vehicle: Small,3000.0,D,10.6,8.1,9.5,0
+2020,Jeep,Wrangler Unlimited 4X4 EcoDiesel,Sport utility vehicle: Small,3000.0,D,10.6,8.1,9.5,43000
 2020,Jeep,Wrangler Unlimited 4X4,Sport utility vehicle: Small,3600.0,G,12.9,10.7,11.9,0
 2020,Jeep,Wrangler Unlimited 4X4 eTorque,Sport utility vehicle: Small,3600.0,G,12.6,10.7,11.8,0
 2020,Jeep,Wrangler Unlimited 4X4,Sport utility vehicle: Small,3600.0,G,13.8,10.1,12.2,0
@@ -3105,14 +3105,14 @@ Year,Make,Model,Vehicle class,Engine Capacity (cm3),Fuel type,City (F) (L/100 km
 2020,Volvo,S90 T6 AWD,Mid-size,2000.0,PG,11.3,7.5,9.6,0
 2020,Volvo,V60 T5,Station wagon: Small,2000.0,PG,10.5,7.1,8.9,0
 2020,Volvo,V60 T6 AWD,Station wagon: Small,2000.0,PG,11.0,7.4,9.4,0
-2020,Volvo,V60 CC T5 AWD,Station wagon: Small,2000.0,PG,10.8,7.7,9.4,40000
+2020,Volvo,V60 CC T5 AWD,Station wagon: Small,2000.0,PG,10.8,7.7,9.4,0
 2020,Volvo,XC40 T4,Sport utility vehicle: Small,2000.0,G,10.1,7.2,8.8,0
 2020,Volvo,XC40 T4 AWD,Sport utility vehicle: Small,2000.0,G,10.2,7.5,9.0,0
 2020,Volvo,XC40 T5 AWD,Sport utility vehicle: Small,2000.0,PG,10.7,7.7,9.4,0
 2020,Volvo,XC60 T5 AWD,Sport utility vehicle: Small,2000.0,PG,11.2,8.3,9.9,0
 2020,Volvo,XC60 T6 AWD,Sport utility vehicle: Small,2000.0,PG,11.7,8.6,10.3,0
 2020,Volvo,XC90 T5 AWD,Sport utility vehicle: Standard,2000.0,PG,11.2,8.3,9.9,0
-2020,Volvo,XC90 T6 AWD,Sport utility vehicle: Standard,2000.0,PG,12.2,8.7,10.7,0
+2020,Volvo,XC90 T6 AWD,Sport utility vehicle: Standard,2000.0,PG,12.2,8.7,10.7,92750
 2021,Acura,ILX,Compact,2400.0,PG,9.9,7.0,8.6,0
 2021,Acura,NSX,Two-seater,3500.0,PG,11.1,10.8,11.0,0
 2021,Acura,RDX SH-AWD,Sport utility vehicle: Small,2000.0,PG,11.0,8.6,9.9,0
@@ -3133,7 +3133,7 @@ Year,Make,Model,Vehicle class,Engine Capacity (cm3),Fuel type,City (F) (L/100 km
 2021,Aston Martin,DBX V8,Sport utility vehicle: Standard,4000.0,PG,17.1,12.8,15.2,0
 2021,Aston Martin,Vantage V8,Two-seater,4000.0,PG,13.1,9.6,11.5,0
 2021,Aston Martin,Vantage V8,Two-seater,4000.0,PG,16.7,11.2,14.2,0
-2021,Audi,A4 Sedan 40 TFSI quattro,Compact,2000.0,PG,9.3,7.0,8.3,0
+2021,Audi,A4 Sedan 40 TFSI quattro,Compact,2000.0,PG,9.3,7.0,8.3,45000
 2021,Audi,A4 Sedan 45 TFSI quattro,Compact,2000.0,PG,9.8,7.6,8.8,0
 2021,Audi,A4 allroad 45 TFSI quattro,Station wagon: Small,2000.0,PG,9.8,7.9,8.9,0
 2021,Audi,A5 Cabriolet 45 TFSI quattro,Subcompact,2000.0,PG,10.4,7.5,9.1,0
@@ -3385,9 +3385,9 @@ Year,Make,Model,Vehicle class,Engine Capacity (cm3),Fuel type,City (F) (L/100 km
 2021,Dodge,Durango AWD SRT,Sport utility vehicle: Standard,6400.0,PG,18.3,12.2,15.6,0
 2021,Dodge,Durango AWD SRT Hellcat,Sport utility vehicle: Standard,6200.0,PG,20.5,13.8,17.4,0
 2021,FIAT,500X AWD,Sport utility vehicle: Small,1300.0,G,10.0,7.9,9.1,0
-2021,Ford,Bronco 4WD,Sport utility vehicle: Small,2300.0,G,11.7,10.7,11.2,0
-2021,Ford,Bronco 4WD,Sport utility vehicle: Small,2300.0,G,11.6,10.9,11.3,0
-2021,Ford,Bronco 4WD,Sport utility vehicle: Small,2700.0,G,12.8,11.6,12.2,0
+2021,Ford,Bronco 4WD,Sport utility vehicle: Small,2300.0,G,11.7,10.7,11.2,35000
+2021,Ford,Bronco 4WD,Sport utility vehicle: Small,2300.0,G,11.6,10.9,11.3,35000
+2021,Ford,Bronco 4WD,Sport utility vehicle: Small,2700.0,G,12.8,11.6,12.2,35000
 2021,Ford,Bronco Badlands 4WD,Sport utility vehicle: Small,2300.0,G,13.5,13.7,13.6,0
 2021,Ford,Bronco Badlands 4WD,Sport utility vehicle: Small,2300.0,G,14.7,13.3,14.1,0
 2021,Ford,Bronco Badlands 4WD,Sport utility vehicle: Small,2700.0,G,13.7,13.1,13.4,0
@@ -3425,7 +3425,7 @@ Year,Make,Model,Vehicle class,Engine Capacity (cm3),Fuel type,City (F) (L/100 km
 2021,Ford,F-150 FFV (Without Stop-Start),Pickup truck: Standard,5000.0,ET,19.8,13.7,17.1,0
 2021,Ford,F-150 4X4,Pickup truck: Standard,2700.0,G,12.8,10.0,11.5,0
 2021,Ford,F-150 4X4 (Without Stop-Start),Pickup truck: Standard,2700.0,G,13.5,10.0,11.9,0
-2021,Ford,F-150 4X4,Pickup truck: Standard,3000.0,D,11.9,9.1,10.7,0
+2021,Ford,F-150 4X4,Pickup truck: Standard,3000.0,D,11.9,9.1,10.7,45000
 2021,Ford,F-150 FFV 4X4,Pickup truck: Standard,3300.0,G,12.5,10.7,11.7,0
 2021,Ford,F-150 FFV 4X4,Pickup truck: Standard,3300.0,ET,17.2,13.1,15.4,0
 2021,Ford,F-150 4X4,Pickup truck: Standard,3500.0,G,13.5,10.2,12.0,0
@@ -3622,7 +3622,7 @@ Year,Make,Model,Vehicle class,Engine Capacity (cm3),Fuel type,City (F) (L/100 km
 2021,Jeep,Cherokee 4X4 Active Drive Lock,Sport utility vehicle: Small,3200.0,G,12.9,9.7,11.5,0
 2021,Jeep,Compass,Sport utility vehicle: Small,2400.0,G,10.6,7.6,9.3,0
 2021,Jeep,Compass 4X4,Sport utility vehicle: Small,2400.0,G,10.8,7.8,9.5,0
-2021,Jeep,Gladiator 4X4 EcoDiesel,Pickup truck: Standard,3000.0,D,10.8,8.5,9.8,0
+2021,Jeep,Gladiator 4X4 EcoDiesel,Pickup truck: Standard,3000.0,D,10.8,8.5,9.8,55000
 2021,Jeep,Gladiator 4X4 Rubicon EcoDiesel,Pickup truck: Standard,3000.0,D,11.0,8.7,10.0,0
 2021,Jeep,Gladiator 4X4,Pickup truck: Standard,3600.0,G,13.7,10.7,12.3,0
 2021,Jeep,Gladiator 4X4,Pickup truck: Standard,3600.0,G,14.3,10.4,12.6,0
@@ -3692,7 +3692,7 @@ Year,Make,Model,Vehicle class,Engine Capacity (cm3),Fuel type,City (F) (L/100 km
 2021,Land Rover,Discovery P360,Sport utility vehicle: Standard,3000.0,PG,12.8,9.8,11.4,0
 2021,Land Rover,Discovery Sport P250,Sport utility vehicle: Small,2000.0,PG,12.7,10.0,11.5,0
 2021,Land Rover,Range Rover P360/P400,Sport utility vehicle: Standard,3000.0,PG,13.3,10.2,11.9,0
-2021,Land Rover,Range Rover Td6 Diesel,Sport utility vehicle: Standard,3000.0,D,10.6,8.2,9.5,0
+2021,Land Rover,Range Rover Td6 Diesel,Sport utility vehicle: Standard,3000.0,D,10.6,8.2,9.5,80000
 2021,Land Rover,Range Rover P525 Supercharged,Sport utility vehicle: Standard,5000.0,PG,14.4,11.3,13.0,0
 2021,Land Rover,Range Rover P525 Supercharged LWB,Sport utility vehicle: Standard,5000.0,PG,14.4,11.3,13.0,0
 2021,Land Rover,Range Rover SVAutobiography,Sport utility vehicle: Standard,5000.0,PG,17.1,12.6,15.1,0
@@ -4076,7 +4076,7 @@ Year,Make,Model,Vehicle class,Engine Capacity (cm3),Fuel type,City (F) (L/100 km
 2021,Volvo,S90 T6 AWD,Mid-size,2000.0,PG,11.3,7.5,9.6,0
 2021,Volvo,V60 T5,Station wagon: Small,2000.0,PG,10.0,6.8,8.6,0
 2021,Volvo,V60 T6 AWD,Station wagon: Small,2000.0,PG,11.3,7.5,9.6,0
-2021,Volvo,V60 CC T5 AWD,Station wagon: Small,2000.0,PG,10.8,7.7,9.4,41000
+2021,Volvo,V60 CC T5 AWD,Station wagon: Small,2000.0,PG,10.8,7.7,9.4,0
 2021,Volvo,XC40 T4 AWD,Sport utility vehicle: Small,2000.0,G,10.7,7.6,9.3,0
 2021,Volvo,XC40 T5 AWD,Sport utility vehicle: Small,2000.0,PG,10.7,7.7,9.4,0
 2021,Volvo,XC60 T5 AWD,Sport utility vehicle: Small,2000.0,PG,11.1,8.3,9.9,0
@@ -4133,7 +4133,7 @@ Year,Make,Model,Vehicle class,Engine Capacity (cm3),Fuel type,City (F) (L/100 km
 2022,Audi,RS 6 Avant quattro,Station wagon: Mid-size,4000.0,PG,16.1,10.7,13.7,0
 2022,Audi,RS 7 Sportback quattro,Mid-size,4000.0,PG,16.0,10.5,13.5,0
 2022,Audi,RS Q8 quattro,Sport utility vehicle: Standard,4000.0,PG,18.0,12.3,15.4,0
-2022,Audi,S3 Sedan quattro,Subcompact,2000.0,PG,10.0,7.2,8.8,0
+2022,Audi,S3 Sedan quattro,Subcompact,2000.0,PG,10.0,7.2,8.8,50000
 2022,Audi,S4 Sedan quattro,Compact,3000.0,PG,11.1,8.0,9.7,0
 2022,Audi,S5 Cabriolet quattro,Subcompact,3000.0,PG,11.3,8.4,10.0,0
 2022,Audi,S5 Coupe quattro,Subcompact,3000.0,PG,11.1,8.0,9.7,0
@@ -4322,7 +4322,7 @@ Year,Make,Model,Vehicle class,Engine Capacity (cm3),Fuel type,City (F) (L/100 km
 2022,Chevrolet,Tahoe,Sport utility vehicle: Standard,3000.0,D,11.0,8.4,9.8,0
 2022,Chevrolet,Tahoe,Sport utility vehicle: Standard,5300.0,G,15.8,11.8,14.0,0
 2022,Chevrolet,Tahoe (No Stop-Start),Sport utility vehicle: Standard,5300.0,G,16.0,11.9,14.1,0
-2022,Chevrolet,Tahoe 4WD,Sport utility vehicle: Standard,3000.0,D,11.7,9.0,10.5,0
+2022,Chevrolet,Tahoe 4WD,Sport utility vehicle: Standard,3000.0,D,11.7,9.0,10.5,65000
 2022,Chevrolet,Tahoe 4WD,Sport utility vehicle: Standard,5300.0,G,15.8,11.8,14.0,0
 2022,Chevrolet,Tahoe 4WD (No Stop-Start),Sport utility vehicle: Standard,5300.0,G,17.0,12.7,15.1,0
 2022,Chevrolet,Tahoe 4WD,Sport utility vehicle: Standard,6200.0,PG,16.3,12.7,14.7,0
@@ -4449,10 +4449,10 @@ Year,Make,Model,Vehicle class,Engine Capacity (cm3),Fuel type,City (F) (L/100 km
 2022,Ford,Transit Connect Van FFV,Special purpose vehicle,2000.0,G,9.8,8.9,9.4,0
 2022,Ford,Transit Connect Van FFV,Special purpose vehicle,2000.0,ET,13.3,11.9,12.7,0
 2022,Ford,Transit Connect Van,Special purpose vehicle,2500.0,G,12.0,8.9,10.6,0
-2022,Ford,Transit Connect Wagon LWB,Special purpose vehicle,2000.0,G,10.0,8.3,9.2,0
+2022,Ford,Transit Connect Wagon LWB,Special purpose vehicle,2000.0,G,10.0,8.3,9.2,25000
 2022,Ford,Transit Connect Wagon LWB FFV,Special purpose vehicle,2000.0,G,10.0,8.3,9.2,0
 2022,Ford,Transit Connect Wagon LWB FFV,Special purpose vehicle,2000.0,ET,14.7,11.3,13.2,0
-2022,Ford,Transit Connect Wagon LWB,Special purpose vehicle,2500.0,G,12.1,9.0,10.6,0
+2022,Ford,Transit Connect Wagon LWB,Special purpose vehicle,2500.0,G,12.1,9.0,10.6,25000
 2022,Genesis,G70 AWD,Compact,2000.0,PG,11.4,8.2,10.0,0
 2022,Genesis,G70 AWD,Compact,3300.0,PG,13.5,9.1,11.5,0
 2022,Genesis,G80 AWD,Full-size,2500.0,PG,10.8,7.9,9.5,0
@@ -4600,7 +4600,7 @@ Year,Make,Model,Vehicle class,Engine Capacity (cm3),Fuel type,City (F) (L/100 km
 2022,Jeep,Compass,Sport utility vehicle: Small,2400.0,G,10.6,7.6,9.3,0
 2022,Jeep,Compass 4X4,Sport utility vehicle: Small,2400.0,G,10.8,7.8,9.5,0
 2022,Jeep,Gladiator 4X4 EcoDiesel,Pickup truck: Standard,3000.0,D,10.8,8.5,9.8,0
-2022,Jeep,Gladiator 4X4 Rubicon EcoDiesel,Pickup truck: Standard,3000.0,D,11.0,8.7,10.0,0
+2022,Jeep,Gladiator 4X4 Rubicon EcoDiesel,Pickup truck: Standard,3000.0,D,11.0,8.7,10.0,26990
 2022,Jeep,Gladiator 4X4,Pickup truck: Standard,3600.0,G,13.7,10.7,12.3,0
 2022,Jeep,Gladiator 4X4,Pickup truck: Standard,3600.0,G,14.3,10.4,12.6,0
 2022,Jeep,Grand Cherokee 4X4,Sport utility vehicle: Standard,3600.0,G,12.3,9.2,10.9,0
@@ -4610,7 +4610,7 @@ Year,Make,Model,Vehicle class,Engine Capacity (cm3),Fuel type,City (F) (L/100 km
 2022,Jeep,Grand Cherokee WK 4X4,Sport utility vehicle: Standard,3600.0,G,12.7,9.6,11.3,0
 2022,Jeep,Grand Wagoneer 4X4,Sport utility vehicle: Standard,3000.0,PG,16.3,11.8,14.3,0
 2022,Jeep,Grand Wagoneer 4X4,Sport utility vehicle: Standard,6400.0,PG,18.6,12.8,16.0,0
-2022,Jeep,Renegade,Sport utility vehicle: Small,1300.0,G,9.8,7.4,8.7,26990
+2022,Jeep,Renegade,Sport utility vehicle: Small,1300.0,G,9.8,7.4,8.7,0
 2022,Jeep,Renegade 4X4,Sport utility vehicle: Small,1300.0,G,10.1,8.1,9.2,0
 2022,Jeep,Renegade 4X4 Trailhawk,Sport utility vehicle: Small,1300.0,G,10.8,8.7,9.9,0
 2022,Jeep,Wagoneer 4X4,Sport utility vehicle: Standard,5700.0,G,15.6,11.7,13.8,0
@@ -4619,7 +4619,7 @@ Year,Make,Model,Vehicle class,Engine Capacity (cm3),Fuel type,City (F) (L/100 km
 2022,Jeep,Wrangler JL 4X4 eTorque,Sport utility vehicle: Small,3600.0,G,12.0,9.8,11.0,0
 2022,Jeep,Wrangler JL 4X4,Sport utility vehicle: Small,3600.0,G,13.7,9.6,11.8,0
 2022,Jeep,Wrangler JL Unlimited 4X4,Sport utility vehicle: Small,2000.0,G,11.5,9.9,10.8,0
-2022,Jeep,Wrangler JL Unlimited 4X4 EcoDiesel,Sport utility vehicle: Small,3000.0,D,10.6,8.1,9.5,0
+2022,Jeep,Wrangler JL Unlimited 4X4 EcoDiesel,Sport utility vehicle: Small,3000.0,D,10.6,8.1,9.5,60000
 2022,Jeep,Wrangler JL Unlimited 4X4 Rubicon EcoDiesel,Sport utility vehicle: Small,3000.0,D,11.2,9.0,10.2,0
 2022,Jeep,Wrangler JL Unlimited 4X4,Sport utility vehicle: Small,3600.0,G,12.9,10.2,11.7,0
 2022,Jeep,Wrangler JL Unlimited 4X4 eTorque,Sport utility vehicle: Small,3600.0,G,12.3,9.9,11.2,0
@@ -4757,7 +4757,7 @@ Year,Make,Model,Vehicle class,Engine Capacity (cm3),Fuel type,City (F) (L/100 km
 2022,Mazda,Mazda3 5-Door Turbo 4WD,Mid-size,2500.0,G,10.1,7.5,8.9,0
 2022,Mazda,MX-5,Two-seater,2000.0,PG,9.0,6.6,7.9,0
 2022,Mazda,MX-5 (SIL),Two-seater,2000.0,PG,9.0,7.0,8.1,0
-2022,Mercedes-Benz,A 220 4MATIC Sedan,Subcompact,2000.0,PG,9.5,6.8,8.3,0
+2022,Mercedes-Benz,A 220 4MATIC Sedan,Subcompact,2000.0,PG,9.5,6.8,8.3,40000
 2022,Mercedes-Benz,A 250 4MATIC Hatch,Station wagon: Small,2000.0,PG,10.0,7.0,8.7,0
 2022,Mercedes-Benz,AMG A 35 4MATIC Sedan,Subcompact,2000.0,PG,10.8,7.9,9.5,0
 2022,Mercedes-Benz,AMG A 35 4MATIC Hatch,Station wagon: Small,2000.0,PG,10.8,7.8,9.4,0
@@ -5051,11 +5051,11 @@ Year,Make,Model,Vehicle class,Engine Capacity (cm3),Fuel type,City (F) (L/100 km
 2022,Volvo,S60 B5 AWD,Compact,2000.0,PG,9.4,6.9,8.3,0
 2022,Volvo,S90 B6 AWD,Mid-size,2000.0,PG,10.4,7.5,9.1,0
 2022,Volvo,V60 T6 AWD,Station wagon: Small,2000.0,PG,11.3,7.5,9.6,0
-2022,Volvo,V60 CC T5 AWD,Station wagon: Small,2000.0,PG,10.9,7.7,9.5,42000
+2022,Volvo,V60 CC T5 AWD,Station wagon: Small,2000.0,PG,10.9,7.7,9.5,0
 2022,Volvo,V90 CC B6 AWD,Station wagon: Mid-size,2000.0,PG,10.6,8.1,9.5,0
 2022,Volvo,XC40 T4 AWD,Sport utility vehicle: Small,2000.0,G,10.7,7.6,9.3,0
 2022,Volvo,XC40 T5 AWD,Sport utility vehicle: Small,2000.0,PG,10.7,7.7,9.4,0
 2022,Volvo,XC60 B5 AWD,Sport utility vehicle: Small,2000.0,PG,10.5,8.1,9.4,0
-2022,Volvo,XC60 B6 AWD,Sport utility vehicle: Small,2000.0,PG,11.0,8.7,9.9,0
+2022,Volvo,XC60 B6 AWD,Sport utility vehicle: Small,2000.0,PG,11.0,8.7,9.9,57900
 2022,Volvo,XC90 T5 AWD,Sport utility vehicle: Standard,2000.0,PG,11.5,8.4,10.1,0
 2022,Volvo,XC90 T6 AWD,Sport utility vehicle: Standard,2000.0,PG,12.4,8.9,10.8,0
