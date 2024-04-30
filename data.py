@@ -207,3 +207,11 @@ pt_2019.to_csv('./modificated-data/PT-2019.csv', index=False)
 pt_2020.to_csv('./modificated-data/PT-2020.csv', index=False)
 pt_2021.to_csv('./modificated-data/PT-2021.csv', index=False)
 pt_2022.to_csv('./modificated-data/PT-2022.csv', index=False)
+
+
+
+teste = pd.concat([pt_2018,pt_2019,pt_2020,pt_2021,pt_2022], ignore_index=True)
+teste.reset_index(drop=True, inplace=True)
+
+
+teste.to_csv('./modificated-data/PT-all.csv', index=False)
