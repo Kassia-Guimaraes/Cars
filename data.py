@@ -186,9 +186,9 @@ to_rename = {'Ve':'Version','Mk':'Make','Cn':'Model','Mt':'Test weight (kg)','Ew
 
 
 fuels_name = ['electric','diesel','diesel/electric','DIESEL','DIESEL/ELECTRIC','PETROL/ELECTRIC',
-              'petrol','Electric','PETROL','ELECTRIC','Diesel','Petrol']
+              'petrol','Electric','PETROL','ELECTRIC','Diesel','Petrol','petrol/electric']
 
-fuels_rename = ['E','D','H','D','H','H','G','E','G','E','D','G']
+fuels_rename = ['E','D','H','D','H','H','G','E','G','E','D','G','H']
 
 
 for df in [pt_2018, pt_2019, pt_2020, pt_2021, pt_2022]:
@@ -202,16 +202,8 @@ for df in [pt_2018, pt_2019, pt_2020, pt_2021, pt_2022]:
         df.drop(df[df['Fuel type'] == i].index, inplace=True)
 
 
-pt_2018.to_csv('./modificated-data/PT-2018.csv', index=False)
-pt_2019.to_csv('./modificated-data/PT-2019.csv', index=False)
-pt_2020.to_csv('./modificated-data/PT-2020.csv', index=False)
-pt_2021.to_csv('./modificated-data/PT-2021.csv', index=False)
-pt_2022.to_csv('./modificated-data/PT-2022.csv', index=False)
+concatned = pd.concat([pt_2018,pt_2019,pt_2020,pt_2021,pt_2022], ignore_index=True)
+concatned.reset_index(drop=True, inplace=True)
 
 
-
-teste = pd.concat([pt_2018,pt_2019,pt_2020,pt_2021,pt_2022], ignore_index=True)
-teste.reset_index(drop=True, inplace=True)
-
-
-teste.to_csv('./modificated-data/PT-all.csv', index=False)
+concatned.to_csv('./modificated-data/PT-all.csv', index=False)
