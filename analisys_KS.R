@@ -1,4 +1,5 @@
 library(readr)
+library(ggplot2)
 
 ### Importando dados
 PT_all <- read_csv("modificated-data/PT-all.csv")
@@ -67,7 +68,7 @@ for (df_name in PT_data){
   name_max <- names(table(df$Make))[table(df$Make) == max_brand]
   name_min <- names(table(df$Make))[table(df$Make) == min_brand]
   
-  cat(df_name,'\nMAX:', name_max,max_brand,'\nMIN: ',name_min,min_brand,'\n\n\n')
+  cat(df_name,'\nMAX:', name_max,max_brand,'\nMIN: ',name_min,min_brand,'\n\n')
 }
 
 for (df_name in PT_data){
@@ -98,6 +99,7 @@ PT_2019_without_E <- PT_2019[PT_2019$"Fuel type" != "E",]
 PT_2020_without_E <- PT_2020[PT_2020$"Fuel type" != "E",]
 PT_2021_without_E <- PT_2021[PT_2021$"Fuel type" != "E",]
 PT_2022_without_E <- PT_2022[PT_2022$"Fuel type" != "E",]
+PT_all_without_E <- PT_all[PT_all$`Fuel type` != 'E',]
 
 less_polution_2018 <- PT_2018_without_E[which.min(PT_2018_without_E$'Test Emission CO2 (g/km)'),]
 less_polution_2019 <- PT_2019_without_E[which.min(PT_2019_without_E$'Test Emission CO2 (g/km)'),]
@@ -111,21 +113,43 @@ less_polution <- rbind(less_polution_2018, less_polution_2019, less_polution_202
 
 ### Gráficos
 
-#Combustíveis por carro
-par(mfrow = c(2, 3))
-for (df_name in PT_data){
+
+# Lista para guardar os dataframes
+lista_dfs <- list()
+
+for (df_name in PT_data) {
   get_df <- get(df_name)
   
   fuels_type <- names(table(get_df$"Fuel type"))
-  cores <- c("blue", "red", "green", "orange")
+  cores <- c(rgb(245,140,76,maxColorValue = 255), #diesel 
+             rgb(120,200,250, maxColorValue = 255), #eletrico
+             rgb(245,191,76,maxColorValue = 255), #gasolina
+             rgb(12,124,250,maxColorValue = 255)) #hibrido
+  
   
   df <- as.data.frame(table(get_df$`Fuel type`))
   
   df_cores <- data.frame(Fuel_type = fuels_type, Cor = cores)
   df <- merge(df, df_cores, by.x = "Var1", by.y = "Fuel_type", all.x = TRUE)
   
-  barplot(df$Freq, names.arg = df$Var1, beside = TRUE,
-          main=c('Combustíveis em',df_name), xlab = 'Fuel type', ylab = 'Frequency', col = df$Cor)
+  # Adiciona uma coluna com o ano de acontecimento
+  df$Ano <- as.numeric(substring(df_name, 4, 7))  # Extrai o ano do nome do dataframe
+  
+  # Adiciona o dataframe à lista
+  lista_dfs[[df_name]] <- df
 }
 
+# Concatena os dataframes da lista
+df_concatenado <- do.call(rbind, lista_dfs)
+
+ggplot(df_concatenado, aes(x = factor(Ano), y = Freq, fill = Var1)) +
+  geom_bar(stat = "identity", position = "dodge") +
+  labs(title = "Frequência de Combustíveis por Ano",
+       x = "Ano", y = "Frequency") +
+  scale_fill_manual(values = df_concatenado$Cor, name = "Fuel type") +
+  theme_minimal() +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1))
+
+
+#boxplot(PT_all_without_E$`Fuel type` ~ teste$`Test Emission CO2 (g/km)`)
 
