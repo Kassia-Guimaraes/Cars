@@ -97,6 +97,8 @@ hybrids = hybrids.rename(columns={'Combined Le/100 km':'Combined (E) (Le/100 km)
 
 hybrids = hybrids.sort_values(by='Year')
 
+hybrids['Combined (E) (L/100 km)'] = hybrids['Combined (E) (L/100 km)'].fillna(0) #os hibridos que utilizam parte 100% eletrica
+
 hybrids.to_csv('./modificated-data/consumption-hybrids.csv', index=False)
 
 
@@ -118,9 +120,6 @@ fossil_fuels = fossil_fuels.rename(columns={'Model year':'Year',
 fossil_fuels['Fuel type'] = fossil_fuels['Fuel type'].replace(['X','Z','E'],['G','PG','ET']) #trocar a sigla dos combustíveis
 
 fossil_fuels.to_csv('./modificated-data/consumption-fossilfuels.csv', index=False)
-
-
-
 
 ### prices 
 
@@ -179,9 +178,9 @@ pt_2022 = pd.read_csv('./initial-data/PT-2022.csv', sep=',')
 
 to_drop = ['Country','VFN','Mp','Mh','Man','MMS','Tan','Va','Ct','Cr','r', 'm (kg)','Enedc (g/km)','At1 (mm)',
            'At2 (mm)','Fm','z (Wh/km)','Electric range (km)','IT','Ernedc (g/km)','Erwltp (g/km)','De','Vf',
-           'Date of registration','Fuel consumption ','Status','T']
+           'Date of registration','Fuel consumption ','Status','T','Ve']
 
-to_rename = {'Ve':'Version','Mk':'Make','Cn':'Model','Mt':'Test weight (kg)','Ewltp (g/km)':'Test Emission CO2 (g/km)',
+to_rename = {'Mk':'Make','Cn':'Model','Mt':'Test weight (kg)','Ewltp (g/km)':'Test Emission CO2 (g/km)',
              'W (mm)':'Whell Base (mm)','ec (cm3)':'Engine Capacity (cm3)','ep (KW)':'Engine Power (kW)','year':'Year','Ft':'Fuel type'}
 
 
@@ -202,8 +201,67 @@ for df in [pt_2018, pt_2019, pt_2020, pt_2021, pt_2022]:
         df.drop(df[df['Fuel type'] == i].index, inplace=True)
 
 
-concatned = pd.concat([pt_2018,pt_2019,pt_2020,pt_2021,pt_2022], ignore_index=True)
-concatned.reset_index(drop=True, inplace=True)
+    df.loc[df['Fuel type'] == 'E', 'Test Emission CO2 (g/km)'] = df.loc[df['Fuel type'] == 'E',
+                                                                         'Test Emission CO2 (g/km)'].fillna(0) #colocando em 0 emissão eletrico
+    
+    df.loc[df['Fuel type'] == 'E', 'Engine Capacity (cm3)'] = df.loc[df['Fuel type'] == 'E',
+                                                                     'Engine Capacity (cm3)'].fillna(0) #colocando em 0 as cilindradas do eletrico
 
 
-concatned.to_csv('./modificated-data/PT-all.csv', index=False)
+    
+
+concated = pd.concat([pt_2018,pt_2019,pt_2020,pt_2021,pt_2022], ignore_index=True)
+concated.reset_index(drop=True, inplace=True)
+
+
+for column in ['Test Emission CO2 (g/km)','Engine Capacity (cm3)']:
+
+    for brand in concated['Make'].drop_duplicates().to_list():
+
+        rule = ((concated['Make']==brand) & (concated['Fuel type']!='E'))
+        array_ozone = concated[rule][column].dropna().to_list()
+
+        
+        if array_ozone:
+            mean_ozone = round(np.mean(array_ozone),0)
+            concated.loc[rule,column] = concated.loc[rule,column].fillna(mean_ozone)
+
+        else:
+            concated.loc[rule,column] = concated.loc[rule,column].fillna(0) #quando não são encontradas emissões
+
+
+for colum_name in ["Test weight (kg)",'Engine Power (kW)']:
+    model_NaN = (concated.groupby('Model')[
+        colum_name].apply(lambda x: x.isna().sum())).index.values #modelos que possuem valor nan
+
+    for model in model_NaN:
+        model_df = concated[concated['Model'] == model]
+
+        teste_weight = model_df[colum_name].values
+        teste_weight = teste_weight[~np.isnan(teste_weight)]
+
+        if len(teste_weight) == 0:  # verificar se não existe valor sobre aquele modelo
+            make = model_df['Make'].unique()[0]
+            make_df = concated[concated['Make'] == make]
+            teste_weight = make_df[colum_name].values
+            teste_weight = teste_weight[~np.isnan(teste_weight)]
+            if len(teste_weight) == 0:
+                teste_weight = concated[colum_name].values
+                teste_weight = teste_weight[~np.isnan(teste_weight)]
+                teste_weight_mean = np.mean(teste_weight)
+                concated.loc[concated["Model"] == model, colum_name] = concated.loc[concated["Model"] ==
+                                                                                    model, colum_name].fillna(teste_weight_mean)
+            else:
+                teste_weight_mean = np.mean(teste_weight)
+                concated.loc[concated["Model"] == model, colum_name] = concated.loc[concated["Model"] ==
+                                                                                    model, colum_name].fillna(teste_weight_mean)
+
+        else:
+            teste_weight_mean = np.mean(teste_weight)
+            concated.loc[concated["Model"] == model, colum_name] = concated.loc[concated["Model"] ==
+                                                                                model, colum_name].fillna(teste_weight_mean)
+
+print(concated.isna().sum())
+
+
+concated.to_csv('./modificated-data/PT-all.csv', index=False)
