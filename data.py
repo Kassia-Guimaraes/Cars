@@ -210,7 +210,7 @@ for df in [pt_2018, pt_2019, pt_2020, pt_2021, pt_2022]:
 
     
 
-concated = pd.concat([pt_2018,pt_2019,pt_2020,pt_2021,pt_2022], ignore_index=True)
+concated = pd.concat([pt_2018,pt_2019,pt_2020,pt_2021,pt_2022], ignore_index=True) #PT_all
 concated.reset_index(drop=True, inplace=True)
 
 
@@ -260,6 +260,25 @@ for colum_name in ["Test weight (kg)",'Engine Power (kW)']:
             teste_weight_mean = np.mean(teste_weight)
             concated.loc[concated["Model"] == model, colum_name] = concated.loc[concated["Model"] ==
                                                                                 model, colum_name].fillna(teste_weight_mean)
+
+
+
+# Dado que Wheel Base esta vazio para os Carros POLESTAR, completar com o valor encontrado na net correspondente.
+concated.loc[(concated['Make'] == 'POLESTAR') & (concated['Wheel Base (mm)'].isna()), 'Wheel Base (mm)'] = 2735
+
+# Conferir para ver se os valores NaN foram corretamente substituidos
+polestar_cars = concated[concated['Make'] == 'POLESTAR']
+#print(polestar_cars[['Make', 'Wheel Base (mm)']])
+
+# Fazer o mesmo procedimento para estes modelos dos carros da Toyota que estão com valores Nan.
+concated.loc[(concated['Make'] == 'TOYOTA') & (concated['Wheel Base (mm)'].isna()), 'Wheel Base (mm)'] = 2510
+toyota_cars = concated[concated['Make'] == 'TOYOTA']
+
+# Conferir para ver se os valores NaN foram corretamente substitu�dos
+yaris_grmn_cars = toyota_cars[toyota_cars['Model'] == 'TOYOTA YARIS GRMN']
+#print(yaris_grmn_cars[['Make', 'Wheel Base (mm)', 'Model']])
+
+
 
 print(concated.isna().sum())
 
