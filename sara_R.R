@@ -70,4 +70,11 @@ less_polution_2021 = PT_2021_without_E[which.min(PT_2021_without_E$'Test Emissio
 less_polution_2022 = PT_2022_without_E[which.min(PT_2022_without_E$'Test Emission CO2 (g/km)'),]
 less_polution <- rbind(less_polution_2018, less_polution_2019, less_polution_2020, less_polution_2021, less_polution_2022)
 
+############################################################
+#Marcas que emitem mais CO2 (HIBRIDOS, GASOLEO E GASOLINA)
+tripod = PT_all[PT_all$Make == 'TRIPOD',]
+tripod2 = PT_all[PT_all$Make == 'RENAULT TECH',]
+PT_all_without_E = PT_all[PT_all$"Fuel type" != "E",]
+make_mean_CO2 = tapply(PT_all_without_E$"Test Emission CO2 (g/km)", PT_all_without_E$Make, mean)
 
+make_mean_CO2
