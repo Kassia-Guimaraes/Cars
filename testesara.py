@@ -1,43 +1,38 @@
 import pandas as pd
 import numpy as np
 
-concated = price_hybrids = pd.read_csv(
-    './modificated-data/PT-all.csv', sep=',')
+concated = pd.read_csv('./modificated-data/PT-all.csv', sep=',')
 
-print(concated.isna().sum())
+for colum_name in ["Test weight (kg)"]:
+    model_NaN = (concated.groupby('Model')[
+        colum_name].apply(lambda x: x.isna().sum())).index.values
+    print(len(model_NaN))
 
-# print(concated[concated['Test weight (kg)'].isna(
-# )]['Model'].value_counts())
+    for model in model_NaN:
+        model_df = concated[concated['Model'] == model]
 
-model_NaN = (concated.groupby('Model')[
-    'Test weight (kg)'].apply(lambda x: x.isna().sum())).index.values
-print(len(model_NaN))
-
-for model in model_NaN:
-    model_df = concated[concated['Model'] == model]
-
-    teste_weight = model_df['Test weight (kg)'].values
-    teste_weight = teste_weight[~np.isnan(teste_weight)]
-
-    if len(teste_weight) == 0:  # verificar se não existe valor do peso sobre aquele modelo
-        make = model_df['Make'].unique()[0]
-        make_df = concated[concated['Make'] == make]
-        teste_weight = make_df['Test weight (kg)'].values
+        teste_weight = model_df[colum_name].values
         teste_weight = teste_weight[~np.isnan(teste_weight)]
-        if len(teste_weight) == 0:
-            teste_weight = concated['Test weight (kg)'].values
+
+        if len(teste_weight) == 0:  # verificar se não existe valor do peso sobre aquele modelo
+            make = model_df['Make'].unique()[0]
+            make_df = concated[concated['Make'] == make]
+            teste_weight = make_df[colum_name].values
             teste_weight = teste_weight[~np.isnan(teste_weight)]
-            teste_weight_mean = np.mean(teste_weight)
-            concated.loc[concated["Model"] == model, 'Test weight (kg)'] = concated.loc[concated["Model"] ==
-                                                                                        model, 'Test weight (kg)'].fillna(teste_weight_mean)
+            if len(teste_weight) == 0:
+                teste_weight = concated[colum_name].values
+                teste_weight = teste_weight[~np.isnan(teste_weight)]
+                teste_weight_mean = np.mean(teste_weight)
+                concated.loc[concated["Model"] == model, colum_name] = concated.loc[concated["Model"] ==
+                                                                                    model, colum_name].fillna(teste_weight_mean)
+            else:
+                teste_weight_mean = np.mean(teste_weight)
+                concated.loc[concated["Model"] == model, colum_name] = concated.loc[concated["Model"] ==
+                                                                                    model, colum_name].fillna(teste_weight_mean)
+
         else:
             teste_weight_mean = np.mean(teste_weight)
-            concated.loc[concated["Model"] == model, 'Test weight (kg)'] = concated.loc[concated["Model"] ==
-                                                                                        model, 'Test weight (kg)'].fillna(teste_weight_mean)
-
-    else:
-        teste_weight_mean = np.mean(teste_weight)
-        concated.loc[concated["Model"] == model, 'Test weight (kg)'] = concated.loc[concated["Model"] ==
-                                                                                    model, 'Test weight (kg)'].fillna(teste_weight_mean)
+            concated.loc[concated["Model"] == model, colum_name] = concated.loc[concated["Model"] ==
+                                                                                model, colum_name].fillna(teste_weight_mean)
 
 print(concated.isna().sum())
