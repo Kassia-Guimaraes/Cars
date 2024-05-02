@@ -206,7 +206,7 @@ to_drop = ['Country', 'VFN', 'Mp', 'Mh', 'Man', 'MMS', 'Tan', 'Va', 'Ct', 'Cr', 
            'Date of registration', 'Fuel consumption ', 'Status', 'T', 'Ve']
 
 to_rename = {'Mk': 'Make', 'Cn': 'Model', 'Mt': 'Test weight (kg)', 'Ewltp (g/km)': 'Test Emission CO2 (g/km)',
-             'W (mm)': 'Whell Base (mm)', 'ec (cm3)': 'Engine Capacity (cm3)', 'ep (KW)': 'Engine Power (kW)', 'year': 'Year', 'Ft': 'Fuel type'}
+             'W (mm)': 'Wheel Base (mm)', 'ec (cm3)': 'Engine Capacity (cm3)', 'ep (KW)': 'Engine Power (kW)', 'year': 'Year', 'Ft': 'Fuel type'}
 
 
 fuels_name = ['electric', 'diesel', 'diesel/electric', 'DIESEL', 'DIESEL/ELECTRIC', 'PETROL/ELECTRIC',
@@ -236,6 +236,8 @@ for df in [pt_2018, pt_2019, pt_2020, pt_2021, pt_2022]:
     df.loc[df['Fuel type'] == 'E', 'Engine Capacity (cm3)'] = df.loc[df['Fuel type'] == 'E',
                                                                      # colocando em 0 as cilindradas do eletrico
                                                                      'Engine Capacity (cm3)'].fillna(0)
+    
+    df['Make'] = df['Make'].str.upper()
 
 
 concated = pd.concat([pt_2018, pt_2019, pt_2020, pt_2021,
@@ -243,6 +245,9 @@ concated = pd.concat([pt_2018, pt_2019, pt_2020, pt_2021,
 concated.reset_index(drop=True, inplace=True)
 
 
+
+
+### Filtrando NAN
 for column in ['Test Emission CO2 (g/km)', 'Engine Capacity (cm3)']:
 
     for brand in concated['Make'].drop_duplicates().to_list():
@@ -252,12 +257,13 @@ for column in ['Test Emission CO2 (g/km)', 'Engine Capacity (cm3)']:
 
         if array_ozone:
             mean_ozone = round(np.mean(array_ozone), 0)
-            concated.loc[rule, column] = concated.loc[rule,
-                                                      column].fillna(mean_ozone)
+            concated.loc[rule, column] = concated.loc[rule,column].fillna(mean_ozone)
 
         else:
-            concated.loc[rule, column] = concated.loc[rule, column].fillna(
-                0)  # quando não são encontradas emissões
+            array_ozone_all = concated[concated['Fuel type']!='E'][column].dropna().to_list()
+            mean_ozone_all = round(np.mean(array_ozone_all))
+            concated.loc[rule, column] = concated.loc[rule, column].fillna(mean_ozone_all)  # quando não são encontradas emissões
+
 
 
 for colum_name in ["Test weight (kg)", 'Engine Power (kW)']:
@@ -276,6 +282,7 @@ for colum_name in ["Test weight (kg)", 'Engine Power (kW)']:
             make_df = concated[concated['Make'] == make]
             teste_weight = make_df[colum_name].values
             teste_weight = teste_weight[~np.isnan(teste_weight)]
+
             if len(teste_weight) == 0:  # verificar se não existe valor sobre aquela marca
                 teste_weight = concated[colum_name].values
                 teste_weight = teste_weight[~np.isnan(teste_weight)]
