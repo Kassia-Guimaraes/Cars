@@ -1,55 +1,43 @@
 import pandas as pd
+import numpy as np
 
-eletrics = pd.read_csv(
-    './modificated-data/consumption-eletrics.csv', sep=',')
-fossil_fuels = pd.read_csv(
-    './modificated-data/consumption-fossilfuels.csv', sep=',')
-hybrids = pd.read_csv(
-    './modificated-data/consumption-hybrids.csv', sep=',')
-price_eletrics = pd.read_csv(
-    './initial-data/cars-price/price-eletrics.csv', sep=',')
-price_fossil_fuel = pd.read_csv(
-    './initial-data/cars-price/price-fuelfossil.csv', sep=',')
-price_hybrids = pd.read_csv(
-    './initial-data/cars-price/price-hybrids.csv', sep=',')
+concated = price_hybrids = pd.read_csv(
+    './modificated-data/PT-all.csv', sep=',')
 
-consumptions = [eletrics, fossil_fuels, hybrids]
-price_fuels = [price_eletrics, price_fossil_fuel, price_hybrids]
+print(concated.isna().sum())
 
-for comsumption, price_fuel in zip(consumptions, price_fuels):
+# print(concated[concated['Test weight (kg)'].isna(
+# )]['Model'].value_counts())
 
-    if comsumption.equals(consumptions[1]):
-        comsumption['Price (euros)'] = [0] * len(comsumption)
+model_NaN = (concated.groupby('Model')[
+    'Test weight (kg)'].apply(lambda x: x.isna().sum())).index.values
+print(len(model_NaN))
 
-        years = price_fuel['Model.year'].values
-        models = price_fuel['Model'].values
-        prices = price_fuel['Price (euros)'].values
-        fuels = price_fuel['Fuel type'].values
+for model in model_NaN:
+    model_df = concated[concated['Model'] == model]
 
-        for year, model, price, fuel in zip(years, models, prices, fuels):
-            condition = (comsumption['Year'] == year) & (
-                comsumption['Model'] == model) & (comsumption['Fuel type'] == fuel)
-            comsumption.loc[condition, 'Price (euros)'] = price
+    teste_weight = model_df['Test weight (kg)'].values
+    teste_weight = teste_weight[~np.isnan(teste_weight)]
 
-        comsumption.to_csv(
-            './modificated-data/consumption-fossilfuels.csv', index=False)
+    if len(teste_weight) == 0:  # verificar se não existe valor do peso sobre aquele modelo
+        make = model_df['Make'].unique()[0]
+        make_df = concated[concated['Make'] == make]
+        teste_weight = make_df['Test weight (kg)'].values
+        teste_weight = teste_weight[~np.isnan(teste_weight)]
+        if len(teste_weight) == 0:
+            teste_weight = concated['Test weight (kg)'].values
+            teste_weight = teste_weight[~np.isnan(teste_weight)]
+            teste_weight_mean = np.mean(teste_weight)
+            concated.loc[concated["Model"] == model, 'Test weight (kg)'] = concated.loc[concated["Model"] ==
+                                                                                        model, 'Test weight (kg)'].fillna(teste_weight_mean)
+        else:
+            teste_weight_mean = np.mean(teste_weight)
+            concated.loc[concated["Model"] == model, 'Test weight (kg)'] = concated.loc[concated["Model"] ==
+                                                                                        model, 'Test weight (kg)'].fillna(teste_weight_mean)
 
     else:
-        comsumption['Price (euros)'] = [0] * len(comsumption)
+        teste_weight_mean = np.mean(teste_weight)
+        concated.loc[concated["Model"] == model, 'Test weight (kg)'] = concated.loc[concated["Model"] ==
+                                                                                    model, 'Test weight (kg)'].fillna(teste_weight_mean)
 
-        years = price_fuel['Model.year'].values
-        models = price_fuel['Model'].values
-        prices = price_fuel['Price (euros)'].values
-
-        for year, model, price in zip(years, models, prices):
-            condition = (comsumption['Year'] == year) & (
-                comsumption['Model'] == model)
-            comsumption.loc[condition, 'Price (euros)'] = price
-
-        if comsumption.equals(consumptions[0]):
-            comsumption.to_csv(
-                './modificated-data/consumption-eletrics.csv', index=False)
-
-        elif comsumption.equals(consumptions[2]):
-            comsumption.to_csv(
-                './modificated-data/consumption-hybrids.csv', index=False)
+print(concated.isna().sum())
