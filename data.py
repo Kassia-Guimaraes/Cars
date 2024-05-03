@@ -247,7 +247,7 @@ for df in [pt_2018, pt_2019, pt_2020, pt_2021, pt_2022]:
                                                                      # colocando em 0 as cilindradas do eletrico
                                                                      'Engine Capacity (cm3)'].fillna(0)
     
-    df['Make'] = df['Make'].str.upper()
+    df['Make'] = df['Make'].str.title()
 
 
 concated = pd.concat([pt_2018, pt_2019, pt_2020, pt_2021,
