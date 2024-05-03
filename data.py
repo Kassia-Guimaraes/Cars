@@ -247,7 +247,7 @@ for df in [pt_2018, pt_2019, pt_2020, pt_2021, pt_2022]:
                                                                      # colocando em 0 as cilindradas do eletrico
                                                                      'Engine Capacity (cm3)'].fillna(0)
     
-    df['Make'] = df['Make'].str.title()
+    #df['Make'] = df['Make'].str.title()
 
 
 concated = pd.concat([pt_2018, pt_2019, pt_2020, pt_2021,
@@ -327,6 +327,9 @@ toyota_cars = concated[concated['Make'] == 'TOYOTA']
 yaris_grmn_cars = toyota_cars[toyota_cars['Model'] == 'TOYOTA YARIS GRMN']
 # print(yaris_grmn_cars[['Make', 'Wheel Base (mm)', 'Model']])
 
+
+for column in ['Make', 'Model']:
+    concated[column] = concated[column].str.title()
 
 print(concated.isna().sum())
 
