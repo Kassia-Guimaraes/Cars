@@ -27,7 +27,7 @@ PT_2022 <- PT_all[regra2022,]
 #Principais Estatísticas
 summary(PT_2020)
 
-round(sd(PT_2020$"Test weight (kg)", na.rm = TRUE),2)
+round(sd(PT_2020$"Test Weight (kg)", na.rm = TRUE),2)
 round(sd(PT_2020$"Test Emission CO2 (g/km)", na.rm = TRUE),2)
 round(sd(PT_2020$"Whell Base (mm)", na.rm = TRUE),2)
 round(sd(PT_2020$"Engine Capacity (cm3)", na.rm = TRUE),2)
@@ -35,7 +35,7 @@ round(sd(PT_2020$"Engine Power (kW)", na.rm = TRUE),2)
 
 summary(PT_2021)
 
-round(sd(PT_2021$"Test weight (kg)", na.rm = TRUE),2)
+round(sd(PT_2021$"Test Weight (kg)", na.rm = TRUE),2)
 round(sd(PT_2021$"Test Emission CO2 (g/km)", na.rm = TRUE),2)
 round(sd(PT_2021$"Whell Base (mm)", na.rm = TRUE),2)
 round(sd(PT_2021$"Engine Capacity (cm3)", na.rm = TRUE),2)
@@ -45,9 +45,9 @@ round(sd(PT_2021$"Engine Power (kW)", na.rm = TRUE),2)
 table(PT_2020$Make)
 table(PT_2021$Make)
 
-table(PT_2020$"Fuel type")
-table(PT_2021$"Fuel type")
-table(PT_all$"Fuel type")
+table(PT_2020$"Fuel Type")
+table(PT_2021$"Fuel Type")
+table(PT_all$"Fuel Type")
 
 #Carros que emitem mais CO2 por ano
 more_polution_2018 <- PT_2018[which.max(PT_2018$'Test Emission CO2 (g/km)'),]
@@ -58,11 +58,11 @@ more_polution_2022 <- PT_2022[which.max(PT_2022$'Test Emission CO2 (g/km)'),]
 more_polution <- rbind(more_polution_2018, more_polution_2019, more_polution_2020, more_polution_2021, more_polution_2022)
 
 #Carros que emitem menos CO2 por ano
-PT_2018_without_E <- PT_2018[PT_2018$"Fuel type" != "E",]
-PT_2019_without_E <- PT_2019[PT_2019$"Fuel type" != "E",]
-PT_2020_without_E <- PT_2020[PT_2020$"Fuel type" != "E",]
-PT_2021_without_E <- PT_2021[PT_2021$"Fuel type" != "E",]
-PT_2022_without_E <- PT_2022[PT_2022$"Fuel type" != "E",]
+PT_2018_without_E <- PT_2018[PT_2018$"Fuel Type" != "E",]
+PT_2019_without_E <- PT_2019[PT_2019$"Fuel Type" != "E",]
+PT_2020_without_E <- PT_2020[PT_2020$"Fuel Type" != "E",]
+PT_2021_without_E <- PT_2021[PT_2021$"Fuel Type" != "E",]
+PT_2022_without_E <- PT_2022[PT_2022$"Fuel Type" != "E",]
 
 less_polution_2018 <- PT_2018_without_E[which.min(PT_2018_without_E$'Test Emission CO2 (g/km)'),]
 less_polution_2019 <- PT_2019_without_E[which.min(PT_2019_without_E$'Test Emission CO2 (g/km)'),]
@@ -74,7 +74,7 @@ less_polution <- rbind(less_polution_2018, less_polution_2019, less_polution_202
 ############################################################
 #Marcas que emitem mais CO2 (HIBRIDOS, GASOLEO E GASOLINA)
 
-PT_all_without_E <- PT_all[PT_all$"Fuel type" != "E",]
+PT_all_without_E <- PT_all[PT_all$"Fuel Type" != "E",]
 make_mean_CO2 <- tapply(PT_all_without_E$"Test Emission CO2 (g/km)", PT_all_without_E$Make, mean)
 
 make_mean_CO2 <- sort(make_mean_CO2, decreasing = TRUE)
@@ -94,11 +94,12 @@ ggplot(make_more_polution, aes(x = Make, y = mean_CO2, fill = Is_Max)) +
   scale_fill_manual(values = c("Max" = color1, "Not Max" = color2)) +
   labs(title = "10 Marcas com maior Média de Emissão de CO2",
        x = "Marcas",
-       y = "Média de CO2 (g/km)")
+       y = "Média de CO2 (g/km)") +
+  guides(fill=FALSE)
        
 #Marcas que emitem menos CO2 (HIBRIDOS, GASOLEO E GASOLINA)
 
-PT_all_without_E <- PT_all[PT_all$"Fuel type" != "E",]
+PT_all_without_E <- PT_all[PT_all$"Fuel Type" != "E",]
 make_mean_CO2 <- tapply(PT_all_without_E$"Test Emission CO2 (g/km)", PT_all_without_E$Make, mean)
 
 make_mean_CO2 <- sort(make_mean_CO2, decreasing = FALSE)
@@ -116,8 +117,9 @@ make_less_polution$Color <- ifelse(make_less_polution$Is_Min == "Min", color1, c
 ggplot(make_less_polution, aes(x = Make, y = mean_CO2, fill = Is_Min)) +
   geom_bar(stat = "identity", width = 0.5) +
   scale_fill_manual(values = c("Min" = color1, "Not Min" = color2)) +
-  labs(title = "10 Marcas com maior Média de Emissão de CO2",
+  labs(title = "10 Marcas com menor Média de Emissão de CO2",
        x = "Marcas",
-       y = "Média de CO2 (g/km)")
+       y = "Média de CO2 (g/km)") +
+  guides(fill=FALSE)
 
 
