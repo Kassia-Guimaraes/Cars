@@ -1,4 +1,4 @@
-Year,Make,Model,Vehicle class,Engine Capacity (cm3),Fuel type,City (F) (L/100 km),Highway (F) (L/100 km),Combined (F) (L/100 km),Price (euros)
+Year,Make,Model,Vehicle class,Engine Capacity (cm3),Fuel Type,City (F) (L/100 km),Highway (F) (L/100 km),Combined (F) (L/100 km),Price (euros)
 2018,Acura,ILX,Compact,2400.0,PG,9.4,6.8,8.2,0
 2018,Acura,MDX SH-AWD,Sport utility vehicle: Small,3500.0,PG,12.6,9.0,11.0,0
 2018,Acura,MDX SH-AWD Elite,Sport utility vehicle: Small,3500.0,PG,12.2,9.0,10.7,0

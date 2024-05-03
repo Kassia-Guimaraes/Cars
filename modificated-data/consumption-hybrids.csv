@@ -1,4 +1,4 @@
-Year,Make,Model,Vehicle class,Motor (kW),Engine Capacity (cm3),Fuel type 1,Combined (E) (Le/100 km),Combined (E) (kWh/100 km),Combined (E) (L/100 km),Range 1 (km),Recharge time (h),Fuel type 2,City (F) (L/100 km),Highway (F) (L/100 km),Combined (F) (L/100 km),Range 2 (km),Price (euros)
+Year,Make,Model,Vehicle class,Motor (kW),Engine Capacity (cm3),Fuel Type 1,Combined (E) (Le/100 km),Combined (E) (kWh/100 km),Combined (E) (L/100 km),Range 1 (km),Recharge time (h),Fuel Type 2,City (F) (L/100 km),Highway (F) (L/100 km),Combined (F) (L/100 km),Range 2 (km),Price (euros)
 2018,Mitsubishi,Outlander PHEV AWD,Sport utility vehicle: Small,60,2000.0,E/G*,3.2,27.7,0.0,35,3.5,G,9.4,9.0,9.2,463,0
 2018,Karma,Revero,Subcompact,300,2000.0,E,3.9,34.7,0,60,3.75,PG,11.8,11.2,11.5,328,0
 2018,Volvo,XC90 T8 AWD,Sport utility vehicle: Standard,65,2000.0,E/PG*,3.9,34.4,0.0,27,3.0,PG,9.6,8.6,9.2,547,0
