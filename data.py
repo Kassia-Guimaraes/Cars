@@ -47,11 +47,13 @@ eletrics = eletrics.rename(columns={'Model year': 'Year',
 eletrics = eletrics.drop(['_id', 'CO2 emissions (g/km)',
                          'CO2 rating', 'Smog rating', 'Transmission'], axis=1)
 
+eletrics = eletrics.rename(columns={'Fuel type':'Fuel Type'})
+
 eletrics = eletrics[(eletrics['Year'] >= 2018) &
                     # deixar apenas nos anos 2018 - 2022
                     (eletrics['Year'] <= 2022)]
 
-eletrics['Fuel type'] = eletrics['Fuel type'].replace(
+eletrics['Fuel Type'] = eletrics['Fuel Type'].replace(
     ['B'], ['E'])  # trocar b por e = eletric
 
 eletrics.to_csv('./modificated-data/consumption-eletrics.csv', index=False)
@@ -60,7 +62,10 @@ eletrics.to_csv('./modificated-data/consumption-eletrics.csv', index=False)
 # consumptions hybrids
 hybrids = pd.read_csv('./initial-data/consumption-hydrids.csv', sep=',')
 
-hybrids['Fuel type 1'] = hybrids['Fuel type 1'].replace(
+hybrids = hybrids.rename(columns={'Fuel type 1':'Fuel Type 1', 'Fuel type 2':'Fuel Type 2'})
+
+
+hybrids['Fuel Type 1'] = hybrids['Fuel Type 1'].replace(
     # renomeado linhas com siglas
     ['B/Z', 'B/Z*', 'B/X*', 'B/X', 'B'], ['E/PG', 'E/PG*', 'E/G*', 'E/G', 'E'])
 
@@ -95,11 +100,11 @@ hybrids = hybrids.rename(columns={'Model year': 'Year'})
 # deixar apenas nos anos 2018 - 2022
 hybrids = hybrids[(hybrids['Year'] >= 2018) & (hybrids['Year'] <= 2022)]
 
-hybrids['Fuel type 2'] = hybrids['Fuel type 2'].replace(
+hybrids['Fuel Type 2'] = hybrids['Fuel Type 2'].replace(
     ['X', 'Z'], ['G', 'PG'])  # trocar b por e = eletric
 
-hybrids = hybrids[['Year', 'Make', 'Model', 'Vehicle class', 'Motor (kW)', 'Engine size (L)', 'Fuel type 1', 'Combined Le/100 km', 'Combined kWh/100 km',
-                   'Combined L/100 km', 'Range 1 (km)', 'Recharge time (h)', 'Fuel type 2', 'City (L/100 km)', 'Highway (L/100 km)', 'Combined (L/100 km)', 'Range 2 (km)']]
+hybrids = hybrids[['Year', 'Make', 'Model', 'Vehicle class', 'Motor (kW)', 'Engine size (L)', 'Fuel Type 1', 'Combined Le/100 km', 'Combined kWh/100 km',
+                   'Combined L/100 km', 'Range 1 (km)', 'Recharge time (h)', 'Fuel Type 2', 'City (L/100 km)', 'Highway (L/100 km)', 'Combined (L/100 km)', 'Range 2 (km)']]
 
 hybrids['Engine size (L)'] = hybrids['Engine size (L)']*1000
 
@@ -134,9 +139,10 @@ fossil_fuels = fossil_fuels.rename(columns={'Model year': 'Year',
                                             'City L/100 km': 'City (F) (L/100 km)',
                                             'Highway L/100 km': 'Highway (F) (L/100 km)',
                                             'Combined L/100 km': 'Combined (F) (L/100 km)',
-                                            'Engine size L': 'Engine Capacity (cm3)'})
+                                            'Engine size L': 'Engine Capacity (cm3)',
+                                            'Fuel type':'Fuel Type'})
 
-fossil_fuels['Fuel type'] = fossil_fuels['Fuel type'].replace(
+fossil_fuels['Fuel Type'] = fossil_fuels['Fuel Type'].replace(
     ['X', 'Z', 'E'], ['G', 'PG', 'ET'])  # trocar a sigla dos combustíveis
 
 fossil_fuels.to_csv(
@@ -151,6 +157,10 @@ price_fossil_fuel = pd.read_csv(
 price_hybrids = pd.read_csv(
     './initial-data/cars-price/price-hybrids.csv', sep=',')
 
+price_fossil_fuel = price_fossil_fuel.rename(columns={'Fuel type':'Fuel Type'})
+price_eletrics = price_eletrics.rename(columns={'Fuel type':'Fuel Type'})
+price_hybrids = price_hybrids.rename(columns={'Fuel type':'Fuel Type'})
+
 
 consumptions = [eletrics, fossil_fuels, hybrids]
 price_fuels = [price_eletrics, price_fossil_fuel, price_hybrids]
@@ -163,11 +173,11 @@ for comsumption, price_fuel in zip(consumptions, price_fuels):
         years = price_fuel['Model.year'].values
         models = price_fuel['Model'].values
         prices = price_fuel['Price (euros)'].values
-        fuels = price_fuel['Fuel type'].values
+        fuels = price_fuel['Fuel Type'].values
 
         for year, model, price, fuel in zip(years, models, prices, fuels):
             condition = (comsumption['Year'] == year) & (
-                comsumption['Model'] == model) & (comsumption['Fuel type'] == fuel)
+                comsumption['Model'] == model) & (comsumption['Fuel Type'] == fuel)
             comsumption.loc[condition, 'Price (euros)'] = price
 
         comsumption.to_csv(
@@ -205,8 +215,8 @@ to_drop = ['Country', 'VFN', 'Mp', 'Mh', 'Man', 'MMS', 'Tan', 'Va', 'Ct', 'Cr', 
            'At2 (mm)', 'Fm', 'z (Wh/km)', 'Electric range (km)', 'IT', 'Ernedc (g/km)', 'Erwltp (g/km)', 'De', 'Vf',
            'Date of registration', 'Fuel consumption ', 'Status', 'T', 'Ve']
 
-to_rename = {'Mk': 'Make', 'Cn': 'Model', 'Mt': 'Test weight (kg)', 'Ewltp (g/km)': 'Test Emission CO2 (g/km)',
-             'W (mm)': 'Whell Base (mm)', 'ec (cm3)': 'Engine Capacity (cm3)', 'ep (KW)': 'Engine Power (kW)', 'year': 'Year', 'Ft': 'Fuel type'}
+to_rename = {'Mk': 'Make', 'Cn': 'Model', 'Mt': 'Test Weight (kg)', 'Ewltp (g/km)': 'Test Emission CO2 (g/km)',
+             'W (mm)': 'Wheel Base (mm)', 'ec (cm3)': 'Engine Capacity (cm3)', 'ep (KW)': 'Engine Power (kW)', 'year': 'Year', 'Ft': 'Fuel Type'}
 
 
 fuels_name = ['electric', 'diesel', 'diesel/electric', 'DIESEL', 'DIESEL/ELECTRIC', 'PETROL/ELECTRIC',
@@ -220,22 +230,24 @@ for df in [pt_2018, pt_2019, pt_2020, pt_2021, pt_2022]:
 
     df.drop(to_drop, axis=1, inplace=True)  # excluindo colunas
     df.rename(columns=to_rename, inplace=True)  # renomeando as colunas
-    df['Fuel type'] = df['Fuel type'].replace(
+    df['Fuel Type'] = df['Fuel Type'].replace(
         fuels_name, fuels_rename)  # trocando os nomes dos combustíveis
     # excluindo os nan da coluna dos combustíveis
-    df.dropna(subset=['Fuel type'], inplace=True)
+    df.dropna(subset=['Fuel Type'], inplace=True)
 
     # retirando alguns tipos de combustíveis que não vamos utlizar
     for i in ['lpg', 'ng', 'LPG', 'NG', 'HYDROGEN']:
-        df.drop(df[df['Fuel type'] == i].index, inplace=True)
+        df.drop(df[df['Fuel Type'] == i].index, inplace=True)
 
-    df.loc[df['Fuel type'] == 'E', 'Test Emission CO2 (g/km)'] = df.loc[df['Fuel type'] == 'E',
+    df.loc[df['Fuel Type'] == 'E', 'Test Emission CO2 (g/km)'] = df.loc[df['Fuel Type'] == 'E',
                                                                         # colocando em 0 emissão eletrico
                                                                         'Test Emission CO2 (g/km)'].fillna(0)
 
-    df.loc[df['Fuel type'] == 'E', 'Engine Capacity (cm3)'] = df.loc[df['Fuel type'] == 'E',
+    df.loc[df['Fuel Type'] == 'E', 'Engine Capacity (cm3)'] = df.loc[df['Fuel Type'] == 'E',
                                                                      # colocando em 0 as cilindradas do eletrico
                                                                      'Engine Capacity (cm3)'].fillna(0)
+    
+    #df['Make'] = df['Make'].str.title()
 
 
 concated = pd.concat([pt_2018, pt_2019, pt_2020, pt_2021,
@@ -243,24 +255,28 @@ concated = pd.concat([pt_2018, pt_2019, pt_2020, pt_2021,
 concated.reset_index(drop=True, inplace=True)
 
 
+
+
+### Filtrando NAN
 for column in ['Test Emission CO2 (g/km)', 'Engine Capacity (cm3)']:
 
     for brand in concated['Make'].drop_duplicates().to_list():
 
-        rule = ((concated['Make'] == brand) & (concated['Fuel type'] != 'E'))
+        rule = ((concated['Make'] == brand) & (concated['Fuel Type'] != 'E'))
         array_ozone = concated[rule][column].dropna().to_list()
 
         if array_ozone:
             mean_ozone = round(np.mean(array_ozone), 0)
-            concated.loc[rule, column] = concated.loc[rule,
-                                                      column].fillna(mean_ozone)
+            concated.loc[rule, column] = concated.loc[rule,column].fillna(mean_ozone)
 
         else:
-            concated.loc[rule, column] = concated.loc[rule, column].fillna(
-                0)  # quando não são encontradas emissões
+            array_ozone_all = concated[concated['Fuel Type']!='E'][column].dropna().to_list()
+            mean_ozone_all = round(np.mean(array_ozone_all))
+            concated.loc[rule, column] = concated.loc[rule, column].fillna(mean_ozone_all)  # quando não são encontradas emissões
 
 
-for colum_name in ["Test weight (kg)", 'Engine Power (kW)']:
+
+for colum_name in ["Test Weight (kg)", 'Engine Power (kW)']:
     model_NaN = (concated.groupby('Model')[
         # modelos que possuem valor nan
         colum_name].apply(lambda x: x.isna().sum())).index.values
@@ -276,6 +292,7 @@ for colum_name in ["Test weight (kg)", 'Engine Power (kW)']:
             make_df = concated[concated['Make'] == make]
             teste_weight = make_df[colum_name].values
             teste_weight = teste_weight[~np.isnan(teste_weight)]
+
             if len(teste_weight) == 0:  # verificar se não existe valor sobre aquela marca
                 teste_weight = concated[colum_name].values
                 teste_weight = teste_weight[~np.isnan(teste_weight)]
@@ -310,6 +327,9 @@ toyota_cars = concated[concated['Make'] == 'TOYOTA']
 yaris_grmn_cars = toyota_cars[toyota_cars['Model'] == 'TOYOTA YARIS GRMN']
 # print(yaris_grmn_cars[['Make', 'Wheel Base (mm)', 'Model']])
 
+
+for column in ['Make', 'Model']:
+    concated[column] = concated[column].str.title()
 
 print(concated.isna().sum())
 

@@ -1,4 +1,4 @@
-Year,Make,Model,Vehicle class,Engine Power (kW),Fuel type,City (E) (kWh/100 km),Highway (E) (kWh/100 km),Combined (E) (kWh/100 km),City (E) (Le/100 km),Highway (E) (Le/100 km),Combined (E) (Le/100 km),Range (km),Recharge time (h),Price (euros)
+Year,Make,Model,Vehicle class,Engine Power (kW),Fuel Type,City (E) (kWh/100 km),Highway (E) (kWh/100 km),Combined (E) (kWh/100 km),City (E) (Le/100 km),Highway (E) (Le/100 km),Combined (E) (Le/100 km),Range (km),Recharge time (h),Price (euros)
 2018,BMW,i3,Subcompact,125,E,16.2,19.7,17.8,1.8,2.2,2.0,183,5.0,0
 2018,BMW,i3s,Subcompact,135,E,17.1,21.1,18.9,1.9,2.4,2.1,172,5.0,0
 2018,Chevrolet,Bolt EV,Station wagon: Small,150,E,16.4,19.0,17.6,1.8,2.1,2.0,383,9.3,0
