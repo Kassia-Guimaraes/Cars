@@ -1,5 +1,9 @@
 library(readr)
 library(ggplot2)
+library(tidyverse)
+library(hrbrthemes)
+library(viridis)
+library(dplyr)
 
 #Importar dados
 PT_all <- read_csv("modificated-data/PT-all.csv")
@@ -95,7 +99,8 @@ ggplot(make_more_polution, aes(x = Make, y = mean_CO2, fill = Is_Max)) +
   labs(title = "10 Marcas com maior Média de Emissão de CO2",
        x = "Marcas",
        y = "Média de CO2 (g/km)") +
-  guides(fill=FALSE)
+  guides(fill=FALSE) +
+  theme(plot.title = element_text(hjust = 0.5, face = "bold", size = 16, lineheight = 1.2, margin = margin(b = 20)))
        
 #Marcas que emitem menos CO2 (HIBRIDOS, GASOLEO E GASOLINA)
 
@@ -120,6 +125,31 @@ ggplot(make_less_polution, aes(x = Make, y = mean_CO2, fill = Is_Min)) +
   labs(title = "10 Marcas com menor Média de Emissão de CO2",
        x = "Marcas",
        y = "Média de CO2 (g/km)") +
-  guides(fill=FALSE)
+  guides(fill=FALSE) +
+  theme(plot.title = element_text(hjust = 0.5, face = "bold", size = 16, lineheight = 1.2, margin = margin(b = 20)))
+
+#Boxplot com variavel categórica (fuel type) e variaveis quantitativa (emissão de CO2)
+
+PT_all_without_E$`Fuel Type` = with(PT_all_without_E, reorder(`Fuel Type`, `Test Emission CO2 (g/km)`, median))
+
+color1 <- rgb(245,140,76,maxColorValue = 255)
+color2 <- rgb(245,191,76,maxColorValue = 255)
+color3 <- rgb(12,124,250,maxColorValue = 255)
+
+ggplot(PT_all_without_E, aes(x =`Fuel Type`, y =`Test Emission CO2 (g/km)`)) +
+  geom_boxplot(aes(fill =`Fuel Type`)) +
+  geom_jitter(aes(color =`Fuel Type`), size = 0.3, alpha = 0.9) +
+  scale_fill_viridis(discrete = TRUE, alpha = 0.6) +
+  scale_color_manual(values = c("G" = color2, "D" = color1, "H" = color3)) + # Definir as cores para cada tipo de combustível
+  scale_x_discrete(labels = c("G" = "Gasolina", "D" = "Diesel", "H" = "Híbrido")) + # Alterar o nome das categorias
+  labs(x = "Tipo de Combustível", y = "Emissões de CO2 (g/km)") +
+  theme_ipsum() +
+  theme(
+    legend.position = "none",
+    plot.title = element_text(size = 11, face = "bold", hjust = 0.5)
+  ) +
+  ggtitle("Emissões de CO2 (g/km) por tipo de Combustível")
+
+
 
 
