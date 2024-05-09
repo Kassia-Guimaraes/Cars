@@ -1,13 +1,12 @@
 Year,Make,Model,Vehicle class,Engine Power (kW),Fuel Type,City (E) (kWh/100 km),Highway (E) (kWh/100 km),Combined (E) (kWh/100 km),City (E) (Le/100 km),Highway (E) (Le/100 km),Combined (E) (Le/100 km),Range (km),Recharge time (h),Price (euros)
-2018,BMW,i3,Subcompact,125,E,16.2,19.7,17.8,1.8,2.2,2.0,183,5.0,0
-2018,BMW,i3s,Subcompact,135,E,17.1,21.1,18.9,1.9,2.4,2.1,172,5.0,0
-2018,Chevrolet,Bolt EV,Station wagon: Small,150,E,16.4,19.0,17.6,1.8,2.1,2.0,383,9.3,0
+2018,Bmw,i3,Subcompact,125,E,16.2,19.7,17.8,1.8,2.2,2.0,183,5.0,0
+2018,Bmw,i3s,Subcompact,135,E,17.1,21.1,18.9,1.9,2.4,2.1,172,5.0,0
 2018,Ford,Focus Electric,Compact,107,E,17.7,21.8,19.6,2.0,2.5,2.2,185,5.5,29000
 2018,Hyundai,IONIQ Electric,Mid-size,88,E,13.7,17.4,15.5,1.6,1.9,1.7,200,4.0,40950
 2018,Kia,Soul EV,Station wagon: Small,81,E,16.8,22.4,19.3,1.9,2.5,2.2,179,5.0,0
 2018,Nissan,LEAF,Mid-size,110,E,16.9,21.1,18.8,1.9,2.4,2.1,242,8.0,30000
-2018,smart,fortwo electric drive cabriolet,Two-seater,60,E,18.7,23.1,20.7,2.1,2.6,2.3,92,3.0,0
-2018,smart,fortwo electric drive coupe,Two-seater,60,E,16.9,22.3,19.3,1.9,2.5,2.2,93,3.0,0
+2018,Smart,fortwo electric drive cabriolet,Two-seater,60,E,18.7,23.1,20.7,2.1,2.6,2.3,92,3.0,0
+2018,Smart,fortwo electric drive coupe,Two-seater,60,E,16.9,22.3,19.3,1.9,2.5,2.2,93,3.0,0
 2018,Tesla,Model 3 Mid Range,Mid-size,202,E,16.4,17.9,17.1,1.8,2.0,1.9,418,10.0,0
 2018,Tesla,Model 3 Long Range,Mid-size,202,E,15.3,17.0,16.1,1.7,1.9,1.8,499,10.0,0
 2018,Tesla,Model 3 Long Range AWD,Mid-size,335,E,17.4,18.7,18.0,2.0,2.1,2.0,499,10.0,0
@@ -21,9 +20,8 @@ Year,Make,Model,Vehicle class,Engine Power (kW),Fuel Type,City (E) (kWh/100 km),
 2018,Tesla,Model X P100D,Sport utility vehicle: Standard,568,E,25.4,23.6,24.6,2.8,2.7,2.8,465,12.0,0
 2018,Volkswagen,e-Golf,Compact,100,E,16.8,18.6,17.4,1.9,2.1,2.0,201,5.3,0
 2019,Audi,e-tron 55 quattro,Sport utility vehicle: Standard,300,E,28.0,28.5,28.3,3.2,3.2,3.2,329,10.0,80000
-2019,BMW,i3 (120 Ah),Subcompact,125,E,16.8,20.6,18.5,1.9,2.3,2.1,246,7.0,0
-2019,BMW,i3s (120 Ah),Subcompact,135,E,16.8,20.6,18.5,1.9,2.3,2.1,246,7.0,0
-2019,Chevrolet,Bolt EV,Station wagon: Small,150,E,16.4,19.0,17.6,1.8,2.1,2.0,383,9.3,0
+2019,Bmw,i3 (120 Ah),Subcompact,125,E,16.8,20.6,18.5,1.9,2.3,2.1,246,7.0,0
+2019,Bmw,i3s (120 Ah),Subcompact,135,E,16.8,20.6,18.5,1.9,2.3,2.1,246,7.0,0
 2019,Hyundai,IONIQ Electric,Mid-size,88,E,13.7,17.4,15.5,1.6,1.9,1.7,200,4.0,0
 2019,Hyundai,Kona Electric,Sport utility vehicle: Small,150,E,16.2,19.3,17.4,1.8,2.2,2.0,415,9.0,37000
 2019,Jaguar,I-PACE,Sport utility vehicle: Small,294,E,26.2,29.1,27.5,2.9,3.3,3.1,377,13.0,0
@@ -32,8 +30,6 @@ Year,Make,Model,Vehicle class,Engine Power (kW),Fuel Type,City (E) (kWh/100 km),
 2019,Nissan,LEAF (40 kWh),Mid-size,110,E,16.8,21.0,18.7,1.9,2.4,2.1,243,8.0,0
 2019,Nissan,LEAF S PLUS,Mid-size,160,E,17.8,21.5,19.5,2.0,2.4,2.2,363,11.0,0
 2019,Nissan,LEAF SV/SL PLUS,Mid-size,160,E,18.3,22.1,20.0,2.1,2.5,2.2,349,11.0,0
-2019,smart EQ,fortwo cabriolet,Two-seater,60,E,18.7,23.1,20.7,2.1,2.6,2.3,92,3.0,0
-2019,smart EQ,fortwo coupe,Two-seater,60,E,16.9,22.3,19.3,1.9,2.5,2.2,93,3.0,0
 2019,Tesla,Model 3 Standard Range,Mid-size,211,E,14.8,16.5,15.6,1.7,1.9,1.7,151,3.7,69000
 2019,Tesla,Model 3 Standard Range Plus,Mid-size,211,E,14.9,16.8,15.8,1.7,1.9,1.8,386,8.5,0
 2019,Tesla,Model 3 Mid Range,Mid-size,211,E,16.4,17.9,17.1,1.8,2.0,1.9,425,10.0,0
@@ -56,16 +52,15 @@ Year,Make,Model,Vehicle class,Engine Power (kW),Fuel Type,City (E) (kWh/100 km),
 2019,Tesla,"Model X Performance (22"" Wheels)",Sport utility vehicle: Standard,580,E,26.2,27.1,26.6,2.9,3.0,3.0,435,12.0,0
 2019,Volkswagen,e-Golf,Compact,100,E,16.8,18.6,17.4,1.9,2.1,2.0,201,5.3,0
 2020,Audi,e-tron Sportback 55 quattro,Sport utility vehicle: Standard,300,E,27.6,26.9,27.3,3.1,3.0,3.1,351,10.0,0
-2020,BMW,i3 (120 Ah),Subcompact,125,E,16.8,20.6,18.5,1.9,2.3,2.1,246,7.0,0
-2020,BMW,i3s (120 Ah),Subcompact,135,E,16.8,20.6,18.5,1.9,2.3,2.1,246,7.0,0
-2020,Chevrolet,Bolt EV,Station wagon: Small,150,E,16.5,19.5,17.8,1.9,2.2,2.0,417,10.0,0
+2020,Bmw,i3 (120 Ah),Subcompact,125,E,16.8,20.6,18.5,1.9,2.3,2.1,246,7.0,0
+2020,Bmw,i3s (120 Ah),Subcompact,135,E,16.8,20.6,18.5,1.9,2.3,2.1,246,7.0,0
 2020,Hyundai,IONIQ Electric,Mid-size,100,E,14.5,17.4,15.8,1.6,1.9,1.8,274,5.8,0
 2020,Hyundai,Kona Electric,Sport utility vehicle: Small,150,E,16.2,19.3,17.4,1.8,2.2,2.0,415,9.0,0
 2020,Jaguar,I-PACE,Sport utility vehicle: Small,294,E,26.2,29.1,27.5,2.9,3.3,3.1,377,13.0,96579
 2020,Kia,Niro EV,Station wagon: Small,150,E,17.0,20.6,18.6,1.9,2.3,2.1,385,9.5,0
 2020,Kia,Soul EV (120 Ah),Station wagon: Small,150,E,15.5,20.5,18.0,1.8,2.3,2.0,248,6.0,0
 2020,Kia,Soul EV (180 Ah),Station wagon: Small,150,E,16.8,21.1,18.6,1.9,2.4,2.1,383,9.5,38990
-2020,MINI,Cooper SE 3 Door,Subcompact,135,E,18.2,20.9,19.4,2.0,2.3,2.2,177,4.0,0
+2020,Mini,Cooper SE 3 Door,Subcompact,135,E,18.2,20.9,19.4,2.0,2.3,2.2,177,4.0,0
 2020,Nissan,LEAF (40 kWh),Mid-size,110,E,17.0,21.2,18.9,1.9,2.4,2.1,240,8.0,0
 2020,Nissan,LEAF S PLUS,Mid-size,160,E,17.8,21.5,19.5,2.0,2.4,2.2,363,11.0,0
 2020,Nissan,LEAF SV/SL PLUS,Mid-size,160,E,18.3,22.1,20.0,2.1,2.5,2.2,349,11.0,0
@@ -97,9 +92,8 @@ Year,Make,Model,Vehicle class,Engine Power (kW),Fuel Type,City (E) (kWh/100 km),
 2020,Volkswagen,e-Golf,Compact,100,E,17.4,19.9,18.6,1.9,2.3,2.1,198,5.3,35000
 2021,Audi,e-tron 55 quattro,Sport utility vehicle: Standard,300,E,26.9,27.0,27.0,3.0,3.0,3.0,357,10.0,0
 2021,Audi,e-tron Sportback 55 quattro,Sport utility vehicle: Standard,300,E,27.6,27.0,27.3,3.1,3.0,3.1,351,10.0,0
-2021,BMW,i3 (120 Ah),Subcompact,125,E,16.8,20.6,18.5,1.9,2.3,2.1,246,7.0,0
-2021,BMW,i3s (120 Ah),Subcompact,135,E,16.8,20.6,18.5,1.9,2.3,2.1,246,7.0,0
-2021,Chevrolet,Bolt EV,Station wagon: Small,150,E,16.5,19.5,17.8,1.9,2.2,2.0,417,10.0,0
+2021,Bmw,i3 (120 Ah),Subcompact,125,E,16.8,20.6,18.5,1.9,2.3,2.1,246,7.0,0
+2021,Bmw,i3s (120 Ah),Subcompact,135,E,16.8,20.6,18.5,1.9,2.3,2.1,246,7.0,0
 2021,Ford,Mustang Mach-E Standard Range,Station wagon: Small,198,E,19.9,22.4,21.0,2.2,2.5,2.4,370,8.8,42000
 2021,Ford,Mustang Mach-E Standard Range AWD,Station wagon: Small,198,E,21.0,24.5,22.6,2.4,2.7,2.5,340,8.5,0
 2021,Ford,"Mustang Mach-E Extended Range (19"" Wheels)",Station wagon: Small,216,E,20.2,23.2,21.5,2.3,2.6,2.4,483,10.9,0
@@ -111,7 +105,7 @@ Year,Make,Model,Vehicle class,Engine Power (kW),Fuel Type,City (E) (kWh/100 km),
 2021,Kia,Niro EV,Station wagon: Small,150,E,17.0,20.6,18.6,1.9,2.3,2.1,385,9.5,41990
 2021,Kia,Soul EV (120 Ah),Station wagon: Small,150,E,15.6,20.4,17.8,1.8,2.3,2.0,248,6.0,0
 2021,Kia,Soul EV (180 Ah),Station wagon: Small,150,E,16.9,21.0,18.7,1.9,2.4,2.1,383,9.5,0
-2021,MINI,Cooper SE 3 Door,Subcompact,135,E,18.2,20.9,19.4,2.0,2.3,2.2,177,4.0,0
+2021,Mini,Cooper SE 3 Door,Subcompact,135,E,18.2,20.9,19.4,2.0,2.3,2.2,177,4.0,0
 2021,Nissan,LEAF (40 kWh),Mid-size,110,E,17.0,21.2,18.9,1.9,2.4,2.1,240,8.0,0
 2021,Nissan,LEAF S PLUS,Mid-size,160,E,17.8,21.5,19.5,2.0,2.4,2.2,363,11.0,0
 2021,Nissan,LEAF SV/SL PLUS,Mid-size,160,E,18.3,22.1,20.0,2.1,2.5,2.2,349,11.0,0
@@ -152,15 +146,13 @@ Year,Make,Model,Vehicle class,Engine Power (kW),Fuel Type,City (E) (kWh/100 km),
 2022,Audi,RS e-tron GT,Compact,475,E,26.4,25.5,26.0,3.0,2.9,2.9,373,10.5,0
 2022,Audi,Q4 50 e-tron quattro,Sport utility vehicle: Small,220,E,21.0,23.6,22.1,2.4,2.6,2.5,388,9.0,0
 2022,Audi,Q4 50 e-tron Sportback quattro,Sport utility vehicle: Small,220,E,21.0,23.6,22.1,2.4,2.6,2.5,388,9.0,0
-2022,BMW,"i4 eDrive40 (18"" Wheels)",Subcompact,250,E,19.1,19.3,19.2,2.1,2.2,2.2,484,10.0,0
-2022,BMW,"i4 eDrive40 (19"" Wheels)",Subcompact,250,E,20.9,21.3,21.1,2.4,2.4,2.4,454,10.0,0
-2022,BMW,"i4 M50 xDrive (19"" Wheels)",Subcompact,400,E,22.3,21.4,21.9,2.5,2.4,2.5,435,10.0,0
-2022,BMW,"i4 M50 xDrive (20"" Wheels)",Subcompact,400,E,26.4,26.1,26.3,3.0,2.9,3.0,365,10.0,0
-2022,BMW,"iX xDrive50 (20"" Wheels)",Sport utility vehicle: Standard,400,E,24.3,24.2,24.2,2.7,2.7,2.7,521,12.0,0
-2022,BMW,"iX xDrive50 (21"" Wheels)",Sport utility vehicle: Standard,400,E,25.4,25.1,25.3,2.9,2.8,2.8,491,12.0,0
-2022,BMW,"iX xDrive50 (22"" Wheels)",Sport utility vehicle: Standard,400,E,24.3,24.5,24.4,2.7,2.8,2.7,507,12.0,0
-2022,Chevrolet,Bolt EUV,Station wagon: Small,150,E,16.8,20.1,18.3,1.9,2.3,2.1,397,7.5,0
-2022,Chevrolet,Bolt EV,Station wagon: Small,150,E,16.0,19.2,17.5,1.8,2.2,2.0,417,7.5,0
+2022,Bmw,"i4 eDrive40 (18"" Wheels)",Subcompact,250,E,19.1,19.3,19.2,2.1,2.2,2.2,484,10.0,0
+2022,Bmw,"i4 eDrive40 (19"" Wheels)",Subcompact,250,E,20.9,21.3,21.1,2.4,2.4,2.4,454,10.0,0
+2022,Bmw,"i4 M50 xDrive (19"" Wheels)",Subcompact,400,E,22.3,21.4,21.9,2.5,2.4,2.5,435,10.0,0
+2022,Bmw,"i4 M50 xDrive (20"" Wheels)",Subcompact,400,E,26.4,26.1,26.3,3.0,2.9,3.0,365,10.0,0
+2022,Bmw,"iX xDrive50 (20"" Wheels)",Sport utility vehicle: Standard,400,E,24.3,24.2,24.2,2.7,2.7,2.7,521,12.0,0
+2022,Bmw,"iX xDrive50 (21"" Wheels)",Sport utility vehicle: Standard,400,E,25.4,25.1,25.3,2.9,2.8,2.8,491,12.0,0
+2022,Bmw,"iX xDrive50 (22"" Wheels)",Sport utility vehicle: Standard,400,E,24.3,24.5,24.4,2.7,2.8,2.7,507,12.0,0
 2022,Ford,F-150 Lightning Standard Range,Pickup truck: Standard,318,E,27.5,34.5,30.6,3.1,3.9,3.4,370,11.8,0
 2022,Ford,F-150 Lightning Extended Range,Pickup truck: Standard,420,E,26.9,33.3,29.8,3.0,3.7,3.3,515,10.1,65000
 2022,Ford,F-150 Lightning Platinum,Pickup truck: Standard,420,E,28.7,35.0,31.5,3.2,3.9,3.5,483,9.3,0
@@ -182,16 +174,10 @@ Year,Make,Model,Vehicle class,Engine Power (kW),Fuel Type,City (E) (kWh/100 km),
 2022,Kia,Niro EV,Station wagon: Small,150,E,17.0,20.6,18.6,1.9,2.3,2.1,385,9.5,0
 2022,Kia,Soul EV (120 Ah),Station wagon: Small,150,E,15.6,20.4,17.8,1.8,2.3,2.0,248,6.0,0
 2022,Kia,Soul EV (180 Ah),Station wagon: Small,150,E,16.9,21.0,18.7,1.9,2.4,2.1,383,9.5,0
-2022,Lucid,"Air Dream P AWD (19"" Wheels)",Full-size,829,E,18.0,18.3,18.1,2.0,2.1,2.0,758,13.0,0
-2022,Lucid,"Air Dream P AWD (21"" Wheels)",Full-size,829,E,19.0,18.8,18.9,2.1,2.1,2.1,726,13.0,0
-2022,Lucid,"Air Dream R AWD (19"" Wheels)",Full-size,696,E,16.7,16.7,16.7,1.9,1.9,1.9,837,13.0,0
-2022,Lucid,"Air Dream R AWD (21"" Wheels)",Full-size,696,E,18.2,18.0,18.1,2.0,2.0,2.0,774,13.0,0
-2022,Lucid,"Air Grand Touring AWD (19"" Wheels)",Full-size,611,E,16.1,15.8,16.0,1.8,1.8,1.8,830,13.0,0
-2022,Lucid,"Air Grand Touring AWD (21"" Wheels)",Full-size,611,E,17.4,17.1,17.3,2.0,1.9,1.9,755,13.0,0
 2022,Mazda,MX-30,Mid-size,107,E,21.4,24.6,22.8,2.4,2.8,2.6,161,5.3,0
 2022,Mercedes-Benz,EQB 350 4MATIC SUV,Sport utility vehicle: Small,215,E,21.1,22.4,21.7,2.4,2.5,2.5,365,7.5,55000
 2022,Mercedes-Benz,EQS 580 4MATIC Sedan,Full-size,385,E,23.0,21.1,22.4,2.6,2.4,2.5,547,11.25,0
-2022,MINI,Cooper SE 3 Door,Subcompact,135,E,17.6,20.9,19.1,2.0,2.3,2.1,183,4.0,39900
+2022,Mini,Cooper SE 3 Door,Subcompact,135,E,17.6,20.9,19.1,2.0,2.3,2.1,183,4.0,39900
 2022,Nissan,LEAF (40 kWh),Mid-size,110,E,17.0,21.2,18.9,1.9,2.4,2.1,240,8.0,0
 2022,Nissan,LEAF S PLUS,Mid-size,160,E,17.8,21.5,19.5,2.0,2.4,2.2,363,11.0,0
 2022,Nissan,LEAF SV/SL PLUS,Mid-size,160,E,18.3,22.1,20.0,2.1,2.5,2.2,349,11.0,0
@@ -207,8 +193,6 @@ Year,Make,Model,Vehicle class,Engine Power (kW),Fuel Type,City (E) (kWh/100 km),
 2022,Porsche,Taycan Turbo Cross Turismo,Mid-size,460,E,29.1,29.2,29.1,3.3,3.3,3.3,328,10.5,0
 2022,Porsche,Taycan Turbo S,Compact,460,E,30.2,29.5,29.9,3.4,3.3,3.4,323,10.5,0
 2022,Porsche,Taycan Turbo S Cross Turismo,Mid-size,460,E,28.5,28.7,28.6,3.2,3.2,3.2,325,10.5,0
-2022,Rivian,R1S,Sport utility vehicle: Standard,650,E,28.7,32.1,30.2,3.2,3.6,3.4,509,13.0,0
-2022,Rivian,R1T,Pickup truck: Standard,650,E,28.2,31.9,29.9,3.2,3.6,3.4,505,13.0,0
 2022,Tesla,Model 3 Standard Range,Mid-size,191,E,17.8,19.5,18.6,2.0,2.2,2.1,146,3.7,0
 2022,Tesla,Model 3 RWD,Mid-size,192,E,15.2,16.6,15.8,1.7,1.9,1.8,438,8.5,0
 2022,Tesla,Model 3 Long Range AWD,Mid-size,293,E,15.6,16.6,16.0,1.8,1.9,1.8,576,10.0,0

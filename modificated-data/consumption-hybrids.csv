@@ -1,126 +1,110 @@
 Year,Make,Model,Vehicle class,Motor (kW),Engine Capacity (cm3),Fuel Type 1,Combined (E) (Le/100 km),Combined (E) (kWh/100 km),Combined (E) (L/100 km),Range 1 (km),Recharge time (h),Fuel Type 2,City (F) (L/100 km),Highway (F) (L/100 km),Combined (F) (L/100 km),Range 2 (km),Price (euros)
 2018,Mitsubishi,Outlander PHEV AWD,Sport utility vehicle: Small,60,2000.0,E/G*,3.2,27.7,0.0,35,3.5,G,9.4,9.0,9.2,463,0
-2018,Karma,Revero,Subcompact,300,2000.0,E,3.9,34.7,0,60,3.75,PG,11.8,11.2,11.5,328,0
 2018,Volvo,XC90 T8 AWD,Sport utility vehicle: Standard,65,2000.0,E/PG*,3.9,34.4,0.0,27,3.0,PG,9.6,8.6,9.2,547,0
 2018,Audi,A3 e-tron,Compact,80,1400.0,E/PG*,2.8,25.2,0.0,26,2.0,PG,6.8,6.0,6.5,623,50000
-2018,Chrysler,Pacifica Hybrid,Minivan,89,3600.0,E/G*,2.8,24.9,0.0,53,2.0,G,7.3,7.2,7.3,858,0
-2018,BMW,530e,Compact,83,2000.0,E/PG*,3.3,28.5,0.0,26,2.0,PG,8.6,7.7,8.2,560,0
-2018,BMW,330e,Compact,65,2000.0,E/PG*,3.3,29.5,0.0,23,2.0,PG,8.5,6.9,7.8,533,0
+2018,Bmw,530e,Compact,83,2000.0,E/PG*,3.3,28.5,0.0,26,2.0,PG,8.6,7.7,8.2,560,0
+2018,Bmw,330e,Compact,65,2000.0,E/PG*,3.3,29.5,0.0,23,2.0,PG,8.5,6.9,7.8,533,0
 2018,Mercedes-Benz,GLC 350e 4MATIC,Sport utility vehicle: Small,85,2000.0,E/PG*,4.2,36.5,0.0,21,1.9,PG,9.8,8.6,9.3,541,0
 2018,Ford,Fusion Energi,Mid-size,35,2000.0,E/G*,2.4,21.5,0.0,35,2.5,G,5.5,5.7,5.6,947,25000
 2018,Volvo,S90 T8 AWD,Mid-size,65,2000.0,E/PG*,3.2,27.7,0.0,34,3.0,PG,8.9,7.1,8.1,621,0
 2018,Volvo,XC60 T8 AWD,Sport utility vehicle: Small,65,2000.0,E/PG*,4.0,34.9,0.0,27,3.0,PG,10.1,8.5,9.4,534,0
-2018,BMW,X5 xDrive40e,Sport utility vehicle: Standard,83,2000.0,E/PG*,4.2,36.9,0.0,23,3.0,PG,10.2,9.5,9.9,842,0
+2018,Bmw,X5 xDrive40e,Sport utility vehicle: Standard,83,2000.0,E/PG*,4.2,36.9,0.0,23,3.0,PG,10.2,9.5,9.9,842,0
 2018,Kia,Optima Plug-in Hybrid,Mid-size,50,2000.0,E/G*,2.3,20.3,0.0,47,2.7,G,6.2,5.5,5.9,935,0
-2018,Chevrolet,Volt,Compact,111,1500.0,E,2.2,19.9,0,85,4.5,G,5.5,5.6,5.6,591,0
 2018,Porsche,Cayenne S E-Hybrid,Sport utility vehicle: Standard,71,3000.0,E,5.1,44.2,0,23,3.0,PG,11.3,9.8,10.6,768,0
-2018,BMW,530e xDrive,Compact,83,2000.0,E/PG*,3.5,30.2,0.0,24,2.0,PG,8.8,7.7,8.3,554,0
-2018,Cadillac,CT6 Plug-in Hybrid,Mid-size,178,2000.0,E/PG*,3.8,33.7,0.0,50,4.5,PG,10.2,8.1,9.2,642,0
-2018,BMW,i3 REx,Subcompact,125,600.0,E,2.2,19.1,0,156,5.0,PG,6.6,7.1,6.8,129,0
-2018,MINI,Cooper SE Countryman ALL4,Mid-size,65,1500.0,E/PG*,3.6,31.4,0.0,19,3.0,PG,8.4,8.8,8.6,420,0
+2018,Bmw,530e xDrive,Compact,83,2000.0,E/PG*,3.5,30.2,0.0,24,2.0,PG,8.8,7.7,8.3,554,0
+2018,Bmw,i3 REx,Subcompact,125,600.0,E,2.2,19.1,0,156,5.0,PG,6.6,7.1,6.8,129,0
+2018,Mini,Cooper SE Countryman ALL4,Mid-size,65,1500.0,E/PG*,3.6,31.4,0.0,19,3.0,PG,8.4,8.8,8.6,420,0
 2018,Hyundai,IONIQ Electric Plus,Mid-size,45,1600.0,E/G*,2.0,17.7,0.0,47,2.3,G,4.4,4.6,4.5,961,44900
-2018,BMW,740e xDrive,Full-size,83,2000.0,E/PG*,3.6,32.1,0.0,23,3.0,PG,9.5,8.0,8.8,525,0
+2018,Bmw,740e xDrive,Full-size,83,2000.0,E/PG*,3.6,32.1,0.0,23,3.0,PG,9.5,8.0,8.8,525,0
 2018,Toyota,Prius Prime,Mid-size,71,1800.0,E/G*,1.8,15.8,0.0,40,2.0,G,4.3,4.4,4.3,995,0
 2018,Honda,Clarity Plug-in Hybrid,Mid-size,135,1500.0,E/G*,2.1,19.0,0.0,77,2.5,G,5.3,5.9,5.6,475,0
 2018,Mercedes-Benz,GLE 550e 4MATIC,Sport utility vehicle: Standard,85,3000.0,E/PG,5.5,42.6,0.8,19,1.9,PG,11.8,10.3,11.1,719,90000
-2018,BMW,i3s REx,Subcompact,135,600.0,E,2.2,19.1,0,156,5.0,PG,6.6,7.1,6.8,129,0
+2018,Bmw,i3s REx,Subcompact,135,600.0,E,2.2,19.1,0,156,5.0,PG,6.6,7.1,6.8,129,0
 2019,Toyota,Prius Prime,Mid-size,71,1800.0,E/G*,1.8,15.8,0.0,40,2.0,G,4.3,4.4,4.3,995,0
-2019,Karma,Revero,Subcompact,300,2000.0,E,3.9,34.7,0,60,3.75,PG,11.8,11.2,11.5,328,0
-2019,BMW,530e,Compact,83,2000.0,E/PG*,3.3,28.5,0.0,26,2.0,PG,8.6,7.7,8.2,560,45000
-2019,BMW,740e xDrive,Full-size,83,2000.0,E/PG*,3.6,32.1,0.0,23,3.0,PG,9.5,8.0,8.8,525,0
+2019,Bmw,530e,Compact,83,2000.0,E/PG*,3.3,28.5,0.0,26,2.0,PG,8.6,7.7,8.2,560,45000
+2019,Bmw,740e xDrive,Full-size,83,2000.0,E/PG*,3.6,32.1,0.0,23,3.0,PG,9.5,8.0,8.8,525,0
 2019,Porsche,Panamera 4 E-Hybrid,Full-size,70,2900.0,E,4.6,40.3,0,23,3.0,PG,11.1,9.7,10.5,768,0
-2019,MINI,Cooper SE Countryman ALL4,Mid-size,65,1500.0,E/PG*,3.6,31.4,0.0,19,3.0,PG,8.4,8.8,8.6,420,0
+2019,Mini,Cooper SE Countryman ALL4,Mid-size,65,1500.0,E/PG*,3.6,31.4,0.0,19,3.0,PG,8.4,8.8,8.6,420,0
 2019,Mercedes-Benz,GLC 350e 4MATIC,Sport utility vehicle: Small,85,2000.0,E/PG*,4.2,36.5,0.0,21,1.9,PG,9.8,8.6,9.3,541,60000
 2019,Hyundai,IONIQ Electric Plus,Mid-size,45,1600.0,E/G*,2.0,17.7,0.0,47,2.3,G,4.4,4.6,4.5,961,0
 2019,Volvo,XC90 T8 AWD,Sport utility vehicle: Standard,65,2000.0,E/PG*,3.9,34.3,0.0,27,3.0,PG,9.8,8.7,9.3,756,0
-2019,Chrysler,Pacifica Hybrid,Minivan,89,3600.0,E/G*,2.9,25.8,0.0,51,2.0,G,8.0,7.9,8.0,784,0
 2019,Hyundai,Sonata Plug-in Hybrid,Mid-size,50,2000.0,E/G*,2.4,20.9,0.0,45,2.7,G,6.3,5.6,6.0,925,0
-2019,BMW,i3s REx (120 Ah),Subcompact,135,600.0,E,2.4,19.9,0,203,7.0,PG,7.8,7.5,7.7,116,0
-2019,Chevrolet,Volt,Compact,111,1500.0,E,2.2,19.5,0,85,4.5,G,5.5,5.6,5.6,591,0
+2019,Bmw,i3s REx (120 Ah),Subcompact,135,600.0,E,2.4,19.9,0,203,7.0,PG,7.8,7.5,7.7,116,0
 2019,Volvo,XC60 T8 AWD,Sport utility vehicle: Small,65,2000.0,E/PG*,3.8,34.0,0.0,27,3.0,PG,9.5,8.5,9.0,779,0
-2019,BMW,i8 Roadster,Two-seater,105,1500.0,E/PG*,3.4,30.6,0.0,29,3.0,PG,9.2,8.0,8.7,488,0
+2019,Bmw,i8 Roadster,Two-seater,105,1500.0,E/PG*,3.4,30.6,0.0,29,3.0,PG,9.2,8.0,8.7,488,0
 2019,Porsche,Panamera Turbo S E-Hybrid,Full-size,70,4000.0,E,4.9,41.0,0,23,3.0,PG,12.3,10.6,11.5,695,0
 2019,Mitsubishi,Outlander PHEV AWD,Sport utility vehicle: Small,60,2000.0,E/G*,3.2,27.7,0.0,35,3.5,G,9.4,9.0,9.2,463,0
-2019,BMW,i8 Coupe,Subcompact,105,1500.0,E/PG*,3.4,30.6,0.0,29,3.0,PG,9.2,8.0,8.7,488,0
+2019,Bmw,i8 Coupe,Subcompact,105,1500.0,E/PG*,3.4,30.6,0.0,29,3.0,PG,9.2,8.0,8.7,488,0
 2019,Ford,Fusion Energi,Mid-size,35,2000.0,E/G*,2.3,20.5,0.0,42,2.6,G,5.5,5.8,5.6,940,27000
 2019,Kia,Optima Plug-in Hybrid,Mid-size,50,2000.0,E/G*,2.3,20.3,0.0,47,2.7,G,6.2,5.5,5.9,937,0
 2019,Honda,Clarity Plug-in Hybrid,Mid-size,135,1500.0,E/G*,2.1,19.0,0.0,77,2.5,G,5.3,5.9,5.6,475,0
-2019,BMW,530e xDrive,Compact,83,2000.0,E/PG*,3.5,30.2,0.0,24,2.0,PG,8.8,7.7,8.3,554,0
+2019,Bmw,530e xDrive,Compact,83,2000.0,E/PG*,3.5,30.2,0.0,24,2.0,PG,8.8,7.7,8.3,554,0
 2019,Volvo,S90 T8 AWD,Mid-size,65,2000.0,E/PG*,3.2,27.7,0.0,34,3.0,PG,8.9,7.1,8.1,753,0
 2019,Kia,Niro Plug-in Hybrid,Station wagon: Small,45,1600.0,E/G*,2.2,19.7,0.0,42,2.25,G,4.9,5.3,5.1,853,0
 2019,Porsche,Cayenne E-Hybrid,Sport utility vehicle: Standard,99,3000.0,E,5.1,44.8,0,21,3.0,PG,11.8,10.5,11.2,669,0
-2019,BMW,i3 REx (120 Ah),Subcompact,125,600.0,E,2.4,19.9,0,203,7.0,PG,7.8,7.5,7.7,116,0
+2019,Bmw,i3 REx (120 Ah),Subcompact,125,600.0,E,2.4,19.9,0,203,7.0,PG,7.8,7.5,7.7,116,0
 2020,Volvo,XC90 T8 AWD,Sport utility vehicle: Standard,65,2000.0,E/PG*,4.0,36.1,0.0,29,3.0,PG,9.1,8.4,8.8,813,0
-2020,BMW,X3 xDrive30e,Sport utility vehicle: Small,80,2000.0,E/PG*,3.9,35.0,0.0,29,3.0,PG,11.0,8.6,9.9,512,65000
-2020,BMW,745Le xDrive,Full-size,83,3000.0,E/PG*,4.2,37.7,0.0,26,3.0,PG,12.2,9.1,10.8,435,0
+2020,Bmw,X3 xDrive30e,Sport utility vehicle: Small,80,2000.0,E/PG*,3.9,35.0,0.0,29,3.0,PG,11.0,8.6,9.9,512,65000
+2020,Bmw,745Le xDrive,Full-size,83,3000.0,E/PG*,4.2,37.7,0.0,26,3.0,PG,12.2,9.1,10.8,435,0
 2020,Volvo,S60 T8 AWD,Compact,65,2000.0,E/PG*,3.2,29.0,0.0,35,3.0,PG,8.4,7.0,7.8,781,0
 2020,Volvo,V60 T8 AWD,Station wagon: Small,65,2000.0,E/PG*,3.2,29.0,0.0,35,3.0,PG,8.4,7.0,7.8,781,0
-2020,BMW,530e,Compact,83,2000.0,E/PG*,3.4,29.1,0.0,34,3.0,PG,9.5,7.7,8.7,533,0
-2020,BMW,i8 Roadster,Two-seater,105,1500.0,E/PG*,3.4,30.6,0.0,29,3.0,PG,9.2,8.0,8.7,488,0
+2020,Bmw,530e,Compact,83,2000.0,E/PG*,3.4,29.1,0.0,34,3.0,PG,9.5,7.7,8.7,533,0
+2020,Bmw,i8 Roadster,Two-seater,105,1500.0,E/PG*,3.4,30.6,0.0,29,3.0,PG,9.2,8.0,8.7,488,0
 2020,Mercedes-Benz,GLC 350e 4MATIC,Sport utility vehicle: Small,90,2000.0,E/PG*,3.4,30.8,0.0,35,1.3,PG,10.2,8.4,9.4,538,0
 2020,Mercedes-Benz,S 560e,Full-size,90,3000.0,E/PG*,3.7,32.7,0.0,31,1.3,PG,11.4,9.0,10.3,785,120000
 2020,Volvo,S90 T8 AWD,Mid-size,65,2000.0,E/PG,3.7,31.4,0.2,34,3.0,PG,8.3,7.5,7.9,761,83500
-2020,MINI,Cooper SE Countryman ALL4,Mid-size,65,1500.0,E/PG*,3.2,28.6,0.0,29,3.0,PG,8.1,7.9,8.0,451,0
-2020,BMW,i8 Coupe,Subcompact,105,1500.0,E/PG*,3.4,30.6,0.0,29,3.0,PG,9.2,8.0,8.7,488,0
+2020,Mini,Cooper SE Countryman ALL4,Mid-size,65,1500.0,E/PG*,3.2,28.6,0.0,29,3.0,PG,8.1,7.9,8.0,451,0
+2020,Bmw,i8 Coupe,Subcompact,105,1500.0,E/PG*,3.4,30.6,0.0,29,3.0,PG,9.2,8.0,8.7,488,0
 2020,Audi,Q5 TFSIe,Sport utility vehicle: Small,105,2000.0,E/PG*,3.6,32.2,0.0,32,2.4,PG,9.5,8.1,8.9,615,55000
 2020,Porsche,Panamera 4 E-Hybrid,Full-size,70,2900.0,E,4.6,40.3,0,23,3.0,PG,11.1,9.7,10.5,768,0
 2020,Ford,Escape Plug-in Hybrid,Sport utility vehicle: Small,62,2500.0,E/G*,2.3,20.5,0.0,60,3.3,G,5.4,6.2,5.8,790,0
 2020,Kia,Optima Plug-in Hybrid,Mid-size,50,2000.0,E/G*,2.3,20.7,0.0,45,2.7,G,6.0,5.3,5.7,962,0
-2020,BMW,i3s REx (120 Ah),Subcompact,135,600.0,E,2.4,19.9,0,203,7.0,PG,7.8,7.5,7.7,116,0
-2020,BMW,i3 REx (120 Ah),Subcompact,125,600.0,E,2.4,19.9,0,203,7.0,PG,7.8,7.5,7.7,116,0
+2020,Bmw,i3s REx (120 Ah),Subcompact,135,600.0,E,2.4,19.9,0,203,7.0,PG,7.8,7.5,7.7,116,0
+2020,Bmw,i3 REx (120 Ah),Subcompact,125,600.0,E,2.4,19.9,0,203,7.0,PG,7.8,7.5,7.7,116,0
 2020,Mitsubishi,Outlander PHEV AWD,Sport utility vehicle: Small,60,2000.0,E/G*,3.2,27.7,0.0,35,3.5,G,9.4,9.0,9.2,463,0
 2020,Kia,Niro Plug-in Hybrid,Station wagon: Small,45,1600.0,E/G*,2.2,19.7,0.0,42,2.25,G,4.9,5.3,5.1,853,0
 2020,Subaru,Crosstrek Hybrid AWD,Sport utility vehicle: Small,100,2000.0,E/G*,2.6,23.5,0.0,27,2.0,G,6.6,6.8,6.7,747,0
 2020,Ford,Fusion Energi,Mid-size,35,2000.0,E/G*,2.3,20.5,0.0,42,2.6,G,5.5,5.8,5.6,940,0
 2020,Honda,Clarity Plug-in Hybrid,Mid-size,135,1500.0,E/G*,2.1,19.0,0.0,77,2.5,G,5.3,5.9,5.6,475,0
 2020,Porsche,Panamera Turbo S E-Hybrid,Full-size,70,4000.0,E,4.9,41.0,0,23,3.0,PG,12.3,10.6,11.5,695,0
-2020,Chrysler,Pacifica Hybrid,Minivan,89,3600.0,E/G*,2.9,25.8,0.0,51,2.0,G,8.0,7.9,8.0,784,0
 2020,Volvo,XC60 T8 AWD,Sport utility vehicle: Small,65,2000.0,E/PG*,4.2,38.2,0.0,27,3.0,PG,9.5,8.7,9.1,781,0
-2020,BMW,530e xDrive,Compact,83,2000.0,E/PG*,3.6,32.2,0.0,31,3.0,PG,10.3,8.1,9.3,500,0
-2020,Lincoln,Aviator Grand Touring,Sport utility vehicle: Standard,62,3000.0,E/G*,4.2,37.5,0.0,34,3.5,G,10.9,9.6,10.3,713,0
+2020,Bmw,530e xDrive,Compact,83,2000.0,E/PG*,3.6,32.2,0.0,31,3.0,PG,10.3,8.1,9.3,500,0
 2020,Hyundai,IONIQ Electric Plus,Mid-size,45,1600.0,E/G*,2.0,17.7,0.0,47,2.3,G,4.4,4.6,4.5,961,0
 2020,Bentley,Bentayga Hybrid,Sport utility vehicle: Standard,100,3000.0,E/PG,5.2,44.2,0.3,29,3.0,PG,13.6,11.3,12.6,602,0
 2020,Toyota,Prius Prime,Mid-size,71,1800.0,E/G*,1.8,15.8,0.0,40,2.0,G,4.3,4.4,4.3,995,0
 2021,Porsche,Cayenne E-Hybrid,Sport utility vehicle: Standard,99,3000.0,E/PG*,5.1,44.9,0.0,27,3.0,PG,11.8,10.6,11.3,666,0
 2021,Porsche,Panamera Turbo S E-Hybrid,Full-size,70,4000.0,E/PG*,4.9,43.8,0.0,27,3.0,PG,13.2,10.8,12.1,665,0
-2021,BMW,530e xDrive,Mid-size,83,2000.0,E/PG*,3.8,32.9,0.0,31,3.0,PG,10.5,8.4,9.5,486,0
-2021,BMW,530e,Mid-size,83,2000.0,E/PG,3.7,30.3,0.2,34,3.0,PG,9.6,8.0,8.9,520,0
+2021,Bmw,530e xDrive,Mid-size,83,2000.0,E/PG*,3.8,32.9,0.0,31,3.0,PG,10.5,8.4,9.5,486,0
+2021,Bmw,530e,Mid-size,83,2000.0,E/PG,3.7,30.3,0.2,34,3.0,PG,9.6,8.0,8.9,520,0
 2021,Bentley,Bentayga Hybrid,Sport utility vehicle: Standard,100,3000.0,E/PG*,5.1,45.5,0.0,29,3.0,PG,13.9,11.2,12.7,599,0
 2021,Volvo,S90 T8 AWD,Mid-size,65,2000.0,E/PG,3.7,31.4,0.2,34,3.0,PG,8.3,7.5,7.9,761,0
 2021,Volvo,XC60 T8 AWD,Sport utility vehicle: Small,65,2000.0,E/PG*,4.0,36.1,0.0,31,3.0,PG,9.8,8.7,9.3,769,0
-2021,Karma,"Revero GT (22"" Wheels)",Subcompact,400,1500.0,E,3.8,33.7,0,87,6.25,PG,10.7,11.0,10.8,360,0
 2021,Jeep,Wrangler 4xe,Sport utility vehicle: Small,100,2000.0,E/G*,4.8,42.2,0.0,35,2.4,G,11.6,11.9,11.7,557,0
-2021,BMW,X5 xDrive45e,Sport utility vehicle: Standard,83,3000.0,E/PG,4.7,38.8,0.3,50,5.0,PG,12.2,10.6,11.5,600,0
+2021,Bmw,X5 xDrive45e,Sport utility vehicle: Standard,83,3000.0,E/PG,4.7,38.8,0.3,50,5.0,PG,12.2,10.6,11.5,600,0
 2021,Audi,Q5 55 TFSI e quattro,Sport utility vehicle: Small,105,2000.0,E/PG,4.7,27.5,1.5,31,2.4,PG,9.3,8.2,8.8,608,65000
 2021,Porsche,Panamera 4 E-Hybrid,Full-size,70,2900.0,E/PG*,4.5,39.6,0.0,31,3.0,PG,11.4,10.0,10.8,745,0
 2021,Audi,A8 L Sedan 60 TFSI e quattro,Full-size,100,3000.0,E/PG*,4.4,39.2,0.0,29,2.4,PG,11.3,9.1,10.3,639,130000
-2021,BMW,X3 xDrive30e,Sport utility vehicle: Small,80,2000.0,E/PG*,3.9,34.9,0.0,29,3.0,PG,11.0,8.6,9.9,512,0
-2021,BMW,745Le xDrive,Full-size,83,3000.0,E/PG*,4.2,37.4,0.0,27,3.0,PG,12.2,9.1,10.8,435,0
-2021,Lincoln,Aviator Grand Touring,Sport utility vehicle: Standard,62,3000.0,E/G*,4.2,37.3,0.0,34,3.5,G,10.9,9.6,10.3,713,0
+2021,Bmw,X3 xDrive30e,Sport utility vehicle: Small,80,2000.0,E/PG*,3.9,34.9,0.0,29,3.0,PG,11.0,8.6,9.9,512,0
+2021,Bmw,745Le xDrive,Full-size,83,3000.0,E/PG*,4.2,37.4,0.0,27,3.0,PG,12.2,9.1,10.8,435,0
 2021,Polestar,1,Minicompact,170,2000.0,E/PG*,3.9,35.4,0.0,84,9.0,PG,10.5,7.6,9.2,671,0
 2021,Volvo,XC90 T8 AWD,Sport utility vehicle: Standard,65,2000.0,E/PG*,4.0,36.1,0.0,29,3.0,PG,9.1,8.4,8.8,813,0
-2021,Karma,"GS-6 (22"" Wheels)",Subcompact,400,1500.0,E,3.8,33.7,0,87,6.25,PG,10.7,11.0,10.8,360,0
-2021,Karma,"Revero GT (21"" Wheels)",Subcompact,400,1500.0,E,3.4,29.9,0,98,6.25,PG,8.8,9.5,9.1,428,0
 2021,Porsche,Cayenne Turbo S E-Hybrid,Sport utility vehicle: Standard,99,4000.0,E/PG*,5.6,51.2,0.0,24,3.0,PG,13.8,12.1,13.0,578,0
-2021,BMW,330e xDrive,Compact,83,2000.0,E/PG*,3.5,31.5,0.0,32,3.0,PG,10.7,7.9,9.4,436,0
-2021,Lincoln,Corsair Grand Touring,Sport utility vehicle: Small,62,2500.0,E/G*,3.0,26.9,0.0,45,3.4,G,6.9,7.3,7.1,644,0
+2021,Bmw,330e xDrive,Compact,83,2000.0,E/PG*,3.5,31.5,0.0,32,3.0,PG,10.7,7.9,9.4,436,0
 2021,Subaru,Crosstrek Hybrid AWD,Sport utility vehicle: Small,100,2000.0,E/G*,2.6,23.5,0.0,27,2.0,G,6.6,6.8,6.7,747,0
-2021,BMW,330e,Compact,83,2000.0,E/PG*,3.1,27.8,0.0,37,3.0,PG,9.4,7.2,8.4,486,52000
+2021,Bmw,330e,Compact,83,2000.0,E/PG*,3.1,27.8,0.0,37,3.0,PG,9.4,7.2,8.4,486,52000
 2021,Toyota,RAV4 Prime,Sport utility vehicle: Small,134,2500.0,E/G*,2.5,22.3,0.0,68,4.5,G,5.7,6.4,6.0,911,0
 2021,Mitsubishi,Outlander PHEV AWD,Sport utility vehicle: Small,70,2400.0,E/G*,3.2,28.2,0.0,39,4.0,G,9.2,9.0,9.1,470,0
-2021,BMW,i3s REx (120 Ah),Subcompact,135,600.0,E,2.4,19.9,0,203,7.0,PG,7.8,7.5,7.7,116,0
-2021,BMW,i3 REx (120 Ah),Subcompact,125,600.0,E,2.4,19.9,0,203,7.0,PG,7.8,7.5,7.7,116,0
-2021,Chrysler,Pacifica Hybrid,Minivan,89,3600.0,E/G*,2.9,25.8,0.0,51,2.0,G,8.0,7.9,8.0,784,0
+2021,Bmw,i3s REx (120 Ah),Subcompact,135,600.0,E,2.4,19.9,0,203,7.0,PG,7.8,7.5,7.7,116,0
+2021,Bmw,i3 REx (120 Ah),Subcompact,125,600.0,E,2.4,19.9,0,203,7.0,PG,7.8,7.5,7.7,116,0
 2021,Ford,Escape Plug-in Hybrid,Sport utility vehicle: Small,62,2500.0,E/G*,2.2,20.2,0.0,60,3.3,G,5.5,6.2,5.8,784,0
 2021,Volvo,V60 T8 AWD,Station wagon: Small,65,2000.0,E/PG*,3.2,29.0,0.0,35,3.0,PG,8.4,7.0,7.8,781,0
-2021,MINI,Cooper SE Countryman ALL4,Mid-size,65,1500.0,E/PG*,3.2,28.4,0.0,29,3.0,PG,8.1,7.9,8.0,451,0
+2021,Mini,Cooper SE Countryman ALL4,Mid-size,65,1500.0,E/PG*,3.2,28.4,0.0,29,3.0,PG,8.1,7.9,8.0,451,0
 2021,Volvo,S60 T8 AWD,Compact,65,2000.0,E/PG*,3.2,29.0,0.0,35,3.0,PG,8.4,7.0,7.8,781,0
 2021,Toyota,Prius Prime,Mid-size,71,1800.0,E/G*,1.8,15.8,0.0,40,2.0,G,4.3,4.4,4.3,995,0
 2021,Hyundai,IONIQ Plug-in Hybrid,Mid-size,45,1600.0,E/G*,2.0,17.4,0.0,47,2.3,G,4.5,4.6,4.5,954,0
 2021,Honda,Clarity Plug-in Hybrid,Mid-size,135,1500.0,E/G*,2.1,19.0,0.0,77,2.5,G,5.3,5.9,5.6,475,0
 2021,Audi,A7 Sportback 55 TFSI e quattro,Mid-size,105,2000.0,E/PG,3.5,28.7,0.2,39,2.4,PG,8.9,7.0,8.1,668,0
 2021,Kia,Niro Plug-in Hybrid,Station wagon: Small,45,1600.0,E/G*,2.2,19.7,0.0,42,2.25,G,4.9,5.3,5.1,853,0
-2021,Karma,"GS-6 (21"" Wheels)",Subcompact,400,1500.0,E,3.4,29.9,0,98,6.25,PG,8.8,9.5,9.1,428,0
 2022,Ford,Escape Plug-in Hybrid,Sport utility vehicle: Small,62,2500.0,E/G*,2.2,20.2,0.0,60,3.3,G,5.5,6.2,5.8,784,0
 2022,Jeep,Wrangler 4xe,Sport utility vehicle: Small,100,2000.0,E/G*,4.8,42.2,0.0,35,2.4,G,11.6,11.9,11.7,557,0
 2022,Porsche,Cayenne E-Hybrid,Sport utility vehicle: Standard,99,3000.0,E/PG*,5.1,44.9,0.0,27,3.0,PG,11.8,10.6,11.3,666,0
@@ -132,33 +116,30 @@ Year,Make,Model,Vehicle class,Motor (kW),Engine Capacity (cm3),Fuel Type 1,Combi
 2022,Subaru,Crosstrek Hybrid AWD,Sport utility vehicle: Small,100,2000.0,E/G*,2.6,23.5,0.0,27,2.0,G,6.6,6.8,6.7,747,0
 2022,Lexus,NX 450h+ AWD,Sport utility vehicle: Small,134,2500.0,E/PG*,2.8,24.7,0.0,61,4.5,PG,6.2,7.0,6.6,835,0
 2022,Porsche,Panamera 4 E-Hybrid,Full-size,70,2900.0,E/PG*,4.5,39.6,0.0,31,3.0,PG,11.4,10.0,10.8,745,0
-2022,BMW,X5 xDrive45e,Sport utility vehicle: Standard,83,3000.0,E/PG*,4.5,39.2,0.0,50,5.0,PG,12.2,10.6,11.5,602,0
+2022,Bmw,X5 xDrive45e,Sport utility vehicle: Standard,83,3000.0,E/PG*,4.5,39.2,0.0,50,5.0,PG,12.2,10.6,11.5,602,0
 2022,Porsche,Panamera Turbo S E-Hybrid,Full-size,70,4000.0,E/PG*,4.9,43.8,0.0,27,3.0,PG,13.2,10.8,12.1,665,0
-2022,Chrysler,Pacifica Hybrid,Minivan,89,3600.0,E/G*,2.9,25.8,0.0,51,2.0,G,8.0,7.9,8.0,784,0
 2022,Volvo,V60 T8 AWD Recharge Extended Range,Station wagon: Small,107,2000.0,E/PG*,3.0,27.2,0.0,64,5.0,PG,8.0,7.2,7.6,792,0
 2022,Kia,Sorento Plug-in Hybrid,Sport utility vehicle: Small,67,1600.0,E/G*,3.0,26.4,0.0,51,3.4,G,6.7,7.1,6.9,681,0
-2022,BMW,330e xDrive,Compact,83,2000.0,E/PG*,3.5,31.3,0.0,32,3.0,PG,10.7,7.9,9.4,436,0
+2022,Bmw,330e xDrive,Compact,83,2000.0,E/PG*,3.5,31.3,0.0,32,3.0,PG,10.7,7.9,9.4,436,0
 2022,Volvo,XC60 T8 AWD Recharge Extended Range,Sport utility vehicle: Small,107,2000.0,E/PG*,3.5,31.2,0.0,58,5.0,PG,8.5,8.5,8.5,838,80000
-2022,BMW,530e xDrive,Mid-size,83,2000.0,E/PG*,3.8,32.9,0.0,31,3.0,PG,10.5,8.4,9.5,486,0
+2022,Bmw,530e xDrive,Mid-size,83,2000.0,E/PG*,3.8,32.9,0.0,31,3.0,PG,10.5,8.4,9.5,486,0
 2022,Volvo,XC90 T8 AWD Recharge Extended Range,Sport utility vehicle: Standard,107,2000.0,E/PG*,3.4,30.6,0.0,58,5.0,PG,9.2,8.6,8.9,798,0
 2022,Volvo,S90 T8 AWD Recharge Extended Range,Mid-size,107,2000.0,E/PG*,3.4,30.0,0.0,61,5.0,PG,8.5,7.6,8.1,748,0
 2022,Porsche,Cayenne Turbo S E-Hybrid,Sport utility vehicle: Standard,99,4000.0,E/PG*,5.6,51.2,0.0,24,3.0,PG,13.8,12.1,13.0,578,0
 2022,Audi,A7 Sportback 55 TFSI e quattro,Mid-size,105,2000.0,E/PG*,3.4,29.9,0.0,42,3.0,PG,9.5,7.5,8.6,623,75000
 2022,Audi,Q5 55 TFSI e quattro,Sport utility vehicle: Small,105,2000.0,E/PG*,3.9,34.7,0.0,37,3.0,PG,9.4,8.8,9.1,594,0
 2022,Volvo,V60 T8 AWD Recharge,Station wagon: Small,65,2000.0,E/PG*,3.2,29.0,0.0,35,3.0,PG,8.4,7.0,7.8,781,0
-2022,BMW,X3 xDrive30e,Sport utility vehicle: Small,80,2000.0,E/PG*,3.9,34.9,0.0,29,3.0,PG,11.0,8.6,9.9,512,0
+2022,Bmw,X3 xDrive30e,Sport utility vehicle: Small,80,2000.0,E/PG*,3.9,34.9,0.0,29,3.0,PG,11.0,8.6,9.9,512,0
 2022,Volvo,S60 T8 AWD Recharge,Compact,65,2000.0,E/PG*,3.2,29.0,0.0,35,3.0,PG,8.4,7.0,7.8,781,0
 2022,Volvo,XC60 T8 AWD Recharge,Sport utility vehicle: Small,65,2000.0,E/PG*,3.9,35.1,0.0,31,3.0,PG,9.7,8.7,9.3,769,0
-2022,MINI,Cooper SE Countryman ALL4,Mid-size,65,1500.0,E/PG*,3.2,28.4,0.0,29,3.0,PG,8.1,7.9,8.0,451,0
+2022,Mini,Cooper SE Countryman ALL4,Mid-size,65,1500.0,E/PG*,3.2,28.4,0.0,29,3.0,PG,8.1,7.9,8.0,451,0
 2022,Mitsubishi,Outlander PHEV AWD,Sport utility vehicle: Small,70,2400.0,E/G*,3.2,28.2,0.0,39,4.0,G,9.2,9.0,9.1,470,0
-2022,BMW,330e Sedan,Compact,83,2000.0,E/PG*,3.1,27.8,0.0,37,3.0,PG,9.4,7.2,8.4,486,0
+2022,Bmw,330e Sedan,Compact,83,2000.0,E/PG*,3.1,27.8,0.0,37,3.0,PG,9.4,7.2,8.4,486,0
 2022,Volvo,XC90 T8 AWD Recharge,Sport utility vehicle: Standard,65,2000.0,E/PG*,4.0,36.1,0.0,29,3.0,PG,9.1,8.4,8.8,813,0
 2022,Jeep,Grand Cherokee 4xe,Sport utility vehicle: Standard,100,2000.0,E/G*,4.2,36.0,0.0,42,3.4,G,10.3,9.7,10.0,719,65000
 2022,Hyundai,Santa Fe Plug-in Hybrid,Sport utility vehicle: Small,67,1600.0,E/G*,3.1,27.5,0.0,50,3.4,G,7.1,7.3,7.2,655,0
-2022,Lincoln,Corsair Grand Touring,Sport utility vehicle: Small,62,2500.0,E/G*,3.1,27.3,0.0,45,3.4,G,6.9,7.3,7.0,645,0
 2022,Volvo,S60 T8 AWD Recharge Extended Range,Compact,107,2000.0,E/PG*,3.0,27.2,0.0,64,5.0,PG,8.0,7.2,7.6,792,0
-2022,Lincoln,Aviator Grand Touring,Sport utility vehicle: Standard,62,3000.0,E/G*,4.2,37.3,0.0,34,3.5,G,10.9,9.6,10.3,713,0
 2022,Volvo,S90 T8 AWD Recharge,Mid-size,65,2000.0,E/PG*,3.5,31.8,0.0,34,3.0,PG,8.3,7.5,7.9,761,0
-2022,BMW,745Le xDrive,Full-size,83,3000.0,E/PG*,4.2,37.4,0.0,27,3.0,PG,12.2,9.1,10.8,435,90000
+2022,Bmw,745Le xDrive,Full-size,83,3000.0,E/PG*,4.2,37.4,0.0,27,3.0,PG,12.2,9.1,10.8,435,90000
 2022,Hyundai,Tucson Plug-in Hybrid,Sport utility vehicle: Small,67,1600.0,E/G*,2.9,25.9,0.0,53,1.7,G,6.8,6.6,6.7,626,0
 2022,Toyota,Prius Prime,Mid-size,71,1800.0,E/G*,1.8,15.8,0.0,40,2.0,G,4.3,4.4,4.3,995,0

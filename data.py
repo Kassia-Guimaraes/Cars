@@ -56,7 +56,14 @@ eletrics = eletrics[(eletrics['Year'] >= 2018) &
 eletrics['Fuel Type'] = eletrics['Fuel Type'].replace(
     ['B'], ['E'])  # trocar b por e = eletric
 
+
+eletrics = eletrics.drop(eletrics[eletrics['Make'].isin(['Chevrolet','smart EQ','Lucid','Rivian'])].index, axis=0)
+
+eletrics['Make'] = eletrics['Make'].str.title()
+
 eletrics.to_csv('./modificated-data/consumption-eletrics.csv', index=False)
+
+
 
 
 # consumptions hybrids
@@ -122,6 +129,11 @@ hybrids = hybrids.sort_values(by='Year')
 # os hibridos que utilizam parte 100% eletrica
 hybrids['Combined (E) (L/100 km)'] = hybrids['Combined (E) (L/100 km)'].fillna(0)
 
+
+hybrids = hybrids.drop(hybrids[hybrids['Make'].isin(['Karma','Chrysler','Cadillac','Chevrolet','Lincoln'])].index, axis=0)
+
+hybrids['Make'] = hybrids['Make'].str.title()
+
 hybrids.to_csv('./modificated-data/consumption-hybrids.csv', index=False)
 
 
@@ -145,8 +157,18 @@ fossil_fuels = fossil_fuels.rename(columns={'Model year': 'Year',
 fossil_fuels['Fuel Type'] = fossil_fuels['Fuel Type'].replace(
     ['X', 'Z', 'E'], ['G', 'PG', 'ET'])  # trocar a sigla dos combustíveis
 
-fossil_fuels.to_csv(
-    './modificated-data/consumption-fossilfuels.csv', index=False)
+
+#fossil_fuels = fossil_fuels.drop(['Acura','Buick','Cadillac','Chevrolet','Chrysler','Dodge',
+#                                  'Genesis','GMC','Infiniti','Lincoln','Ram'], axis=0, inplace=True)
+
+fossil_fuels = fossil_fuels.drop(fossil_fuels[fossil_fuels['Make'].isin(['Acura','Buick','Cadillac','Chevrolet','Chrysler','Dodge',
+                                  'Genesis','GMC','Infiniti','Lincoln','Ram'])].index, axis=0)
+
+fossil_fuels['Make'] = fossil_fuels['Make'].str.title()
+
+fossil_fuels.to_csv('./modificated-data/consumption-fossilfuels.csv', index=False)
+
+
 
 # prices
 
