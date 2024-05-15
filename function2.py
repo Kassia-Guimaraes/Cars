@@ -1,5 +1,6 @@
 import pandas as pd
 import matplotlib.pyplot as plt
+import numpy as np
 
 
 def compare_fuels(fuel1, fuel2):
@@ -113,6 +114,19 @@ def fuels(price_car, fuel_type, car):
     return total_price_car
 
 
+def find_intersections(x, y1, y2):
+    intersections = []
+    for i in range(len(x) - 1):
+        if (y1[i] - y2[i]) * (y1[i+1] - y2[i+1]) < 0:
+            # Encontrar a interseção por interpolação linear
+            inter_x = x[i] + (x[i+1] - x[i]) * (y2[i] - y1[i]) / \
+                ((y1[i+1] - y1[i]) - (y2[i+1] - y2[i]))
+            inter_y = y1[i] + (inter_x - x[i]) * \
+                (y1[i+1] - y1[i]) / (x[i+1] - x[i])
+            intersections.append((inter_x, inter_y))
+    return intersections
+
+
 # Leitura dos dados
 consumption_fossilfuel = pd.read_csv(
     './modificated-data/consumption-fossilfuels.csv', sep=',')
@@ -197,18 +211,57 @@ for i in range(51):
     number = i
     months.append(number)
 
+if (fuel_type_car1 == "G") or (fuel_type_car1 == "PG"):
+    color_car1 = (245/255, 191/255, 76/255)
+elif fuel_type_car1 == "D":
+    color_car1 = (245/255, 140/255, 76/255)
+elif fuel_type_car1 == "H":
+    color_car1 = (12/255, 124/255, 250/255)
+elif fuel_type_car1 == "E":
+    color_car1 = (120/255, 200/255, 250/255)
+
+if (fuel_type_car2 == "G") or (fuel_type_car2 == "PG"):
+    color_car2 = (245/255, 191/255, 76/255)
+elif fuel_type_car2 == "D":
+    color_car2 = (245/255, 140/255, 76/255)
+elif fuel_type_car2 == "H":
+    color_car2 = (12/255, 124/255, 250/255)
+elif fuel_type_car2 == "E":
+    color_car2 = (120/255, 200/255, 250/255)
+
 print(total_price_car1, total_price_car2, months)
 
 # Criar gráfico de linhas com evolução dos custos para o utilizador
-plt.plot(months, total_price_car1, color="blue",
+plt.plot(months, total_price_car1, color=color_car1,
          label=f"{fuel_type_car1}:{make_car1}({model_car1})")
-plt.plot(months, total_price_car2, color="orange",
+plt.plot(months, total_price_car2, color=color_car2,
          label=f"{fuel_type_car2}:{make_car2}({model_car2})")
 
-plt.title('Evolução dos Custos para o Utilizador')
-plt.ylabel('Custos (euros)')
+plt.title('Evolução dos Custos para o Utilizador',
+          fontdict={'fontsize': 20, 'fontweight': 'bold'})
+plt.ylabel('Custos em euros (Preço Inicial + Preço Combustíveis)')
+plt.xlabel('Anos')
 plt.ticklabel_format(axis='y', style='plain')
-plt.xticks(rotation=45, fontsize=8, color='black')
-plt.legend(title='Meses')
+plt.xticks(fontsize=8, color='black')
+plt.legend(title='Carros')
+
+
+# Converter os meses para índices numéricos para cálculo
+intersections = find_intersections(months, total_price_car1, total_price_car2)
+
+# Anotar interseções no gráfico
+for inter_x, inter_y in intersections:
+    month_index = int(round(inter_x))
+    if month_index < len(months):
+        month_label = months[month_index]
+        plt.annotate(f'Abate após {month_label} anos',
+                     (inter_x, inter_y),
+                     textcoords="offset points",
+                     xytext=(0, 10),
+                     ha='center',
+                     fontsize=10,
+                     fontweight='bold',
+                     color='#43CD80')
+        plt.scatter(inter_x, inter_y, color='#43CD80')
 
 plt.show()
