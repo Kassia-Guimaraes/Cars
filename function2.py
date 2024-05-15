@@ -50,7 +50,6 @@ def fuels(price_car, fuel_type, car):
         # Soma dos preço dos combustivel de ano em ano
         month_consumption = 10*consumption*price_gasoline
         year_price_comsumption = month_consumption*12
-        print(year_price_comsumption)
         for i in range(50):
             price_car = price_car + year_price_comsumption
             total_price_car.append(price_car)
@@ -61,7 +60,6 @@ def fuels(price_car, fuel_type, car):
         consumption = float(car["Combined (F) (L/100 km)"])
         month_consumption = 10*consumption*price_diesel
         year_price_comsumption = month_consumption*12
-        print(year_price_comsumption)
         for i in range(50):
             price_car = price_car + (year_price_comsumption*price_diesel)
             total_price_car.append(price_car)
@@ -84,7 +82,6 @@ def fuels(price_car, fuel_type, car):
         month_consumption_fossilfuel = 10*consumption_fossilfuel*price_gasoline
         year_price_comsumption = (
             month_consumption_eletrics + month_consumption_fossilfuel)*12
-        print(year_price_comsumption)
         for i in range(50):
             price_car = price_car + year_price_comsumption
             total_price_car.append(price_car)
@@ -95,7 +92,6 @@ def fuels(price_car, fuel_type, car):
         consumption = float(car["Combined (E) (kWh/100 km)"])
         month_consumption = 10*consumption*price_eletrics
         year_price_comsumption = month_consumption*12
-        print(year_price_comsumption)
         for i in range(50):
             price_car = price_car + year_price_comsumption
             total_price_car.append(price_car)
@@ -106,7 +102,6 @@ def fuels(price_car, fuel_type, car):
         consumption = float(car["Combined (F) (L/100 km)"])
         month_consumption = 10*consumption*price_gasoline
         year_price_comsumption = month_consumption*12
-        print(year_price_comsumption)
         for i in range(50):
             price_car = price_car + year_price_comsumption
             total_price_car.append(price_car)
@@ -181,7 +176,6 @@ options_mapping = {
 option_sum = str(option1 * option2)
 fuel1, fuel2 = options_mapping[option_sum]
 car1, car2 = compare_fuels(fuel1, fuel2)
-print(car1, car2)
 
 price_car1 = car1.loc["Price (euros)"]
 price_car2 = car2.loc["Price (euros)"]
@@ -229,7 +223,6 @@ elif fuel_type_car2 == "H":
 elif fuel_type_car2 == "E":
     color_car2 = (120/255, 200/255, 250/255)
 
-print(total_price_car1, total_price_car2, months)
 
 # Criar gráfico de linhas com evolução dos custos para o utilizador
 plt.plot(months, total_price_car1, color=color_car1,
