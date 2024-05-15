@@ -119,13 +119,10 @@ less_polution <- rbind(less_polution_2018, less_polution_2019, less_polution_202
 
 
 
-
-###### Gráficos ######
-
-
 ############################################
-#### Freguência de combustíveis por ano ####
+#### Frequência de combustíveis por ano ####
 
+PT_data <- c('PT_2018','PT_2019','PT_2020','PT_2021','PT_2022')
 lista_dfs <- list() #lista para guardar dataframes
 
 for (df_name in PT_data) {
@@ -138,9 +135,6 @@ for (df_name in PT_data) {
              rgb(12,124,250,maxColorValue = 255)) #hibrido
   
   df <- as.data.frame(table(get_df$`Fuel Type`))
-  
-  df_cores <- data.frame(Fuel_type = fuels_type, Cor = cores)
-  df <- merge(df, df_cores, by.x = "Var1", by.y = "Fuel_type", all.x = TRUE)
   
   # Adiciona uma coluna com o ano de acontecimento
   df$Ano <- as.numeric(substring(df_name, 4, 7))  # Extrai o ano do nome do dataframe
@@ -155,11 +149,19 @@ df_concatenado <- do.call(rbind, lista_dfs); df_concatenado
 
 ggplot(df_concatenado, aes(x = factor(Ano), y = Freq, fill = Var1)) +
   geom_bar(stat = "identity", position = "dodge") +
-  labs(title = "Frequência de Combustíveis por Ano",
-       x = "Ano", y = "Frequência") +
-  scale_fill_manual(values = df_concatenado$Cor, name = "Combustível")
-  
-  
+  labs(title = "Frequência de Carros pelo Combustível por Ano",
+       x = "Ano", y = "Frequência de Carros em Circulação") +
+  theme_ipsum() +
+  theme(
+    legend.position = "right",
+    plot.title = element_text(size = 14, face = "bold", hjust = 0.5),
+    axis.title.x = element_text(size = 12, hjust = 0.5),
+    axis.title.y = element_text(size = 12, hjust = 0.5),
+    legend.title = element_text(size = 11, face = "bold")
+  ) +
+  scale_fill_manual(values = c(D=cores[1], E=cores[2], G=cores[3], H=cores[4]),
+                    labels = c(D='Diesel', E='Elétrico', G='Gasolina', H='Híbrido'),
+                    name = "Combustível")
 
 
 
@@ -174,24 +176,50 @@ cor(gas$`Engine Capacity (cm3)`,gas$`Test Emission CO2 (g/km)`)
 cor(diesel$`Engine Capacity (cm3)`,diesel$`Test Emission CO2 (g/km)`)
 cor(hybrids$`Engine Capacity (cm3)`,hybrids$`Test Emission CO2 (g/km)`)
 
-ggplot(gas, aes(x=`Engine Capacity (cm3)`,
-                              y=`Test Emission CO2 (g/km)`))+
-  geom_point(color=cores[3])+
-  geom_smooth(method=lm, se=FALSE)
-
-
-ggplot(diesel, aes(x=`Engine Capacity (cm3)`,
+gasoline_co2 <- ggplot(gas, aes(x=`Engine Capacity (cm3)`,
                 y=`Test Emission CO2 (g/km)`))+
+  geom_point(color=cores[3]) +
+  geom_smooth(method=lm, se=FALSE) +
+  labs(title = 'Cilindradas de Carros a Gasolina vs Emissão CO2',
+       x = 'Cilindradas', y = 'Emissão de CO2') +
+  theme_ipsum() +
+  theme(
+    plot.title = element_text(size = 14, face = "bold", hjust = 0.5),
+    axis.title.x = element_text(size = 12, hjust = 0.5),
+    axis.title.y = element_text(size = 12, hjust = 0.5)
+  )
+  
+
+
+diesel_co2 <- ggplot(diesel, aes(x=`Engine Capacity (cm3)`,
+                   y=`Test Emission CO2 (g/km)`))+
   geom_point(color=cores[1])+
-  geom_smooth(method=lm, se=FALSE)
+  geom_smooth(method=lm, se=FALSE)+
+  labs(title = 'Cilindradas de Carros a Diesel vs Emissão CO2',
+       x = 'Cilindradas', y = 'Emissão de CO2') +
+  theme_ipsum() +
+  theme(
+    plot.title = element_text(size = 14, face = "bold", hjust = 0.5),
+    axis.title.x = element_text(size = 12, hjust = 0.5),
+    axis.title.y = element_text(size = 12, hjust = 0.5)
+  )
 
 
-ggplot(hybrids, aes(x=`Engine Capacity (cm3)`,
-                y=`Test Emission CO2 (g/km)`))+
+hybrid_co2 <- ggplot(hybrids, aes(x=`Engine Capacity (cm3)`,
+                    y=`Test Emission CO2 (g/km)`))+
   geom_point(color=cores[4])+
-  geom_smooth(method=lm, se=FALSE)
+  geom_smooth(method=lm, se=FALSE)+
+  labs(title = 'Cilindradas de Carros Híbridos vs Emissão CO2',
+       x = 'Cilindradas', y = 'Emissão de CO2') +
+  theme_ipsum() +
+  theme(
+    plot.title = element_text(size = 14, face = "bold", hjust = 0.5),
+    axis.title.x = element_text(size = 12, hjust = 0.5),
+    axis.title.y = element_text(size = 12, hjust = 0.5)
+  )
 
-par(mfrow=c(1,1))
+library(patchwork)
+gasoline_co2 / diesel_co2 / hybrid_co2
 
 
 
@@ -211,8 +239,8 @@ df <- mutate(df, Freq = Freq/100); df #dividindo por 100 para conseguir fazer a 
 
 
 eletric_CO2 <- data.frame(Freq = numeric(nrow(dados)+nrow(df)), 
-                             Var1 = numeric(nrow(dados)+nrow(df)),
-                             Ano = numeric(nrow(dados)+nrow(df)),
+                          Var1 = numeric(nrow(dados)+nrow(df)),
+                          Ano = numeric(nrow(dados)+nrow(df)),
                           Cor = numeric(nrow(dados)+nrow(df))); eletric_CO2
 
 eletric_CO2$Freq <- c((df$Freq),round(dados$media_CO2, 2)); eletric_CO2
@@ -223,13 +251,90 @@ eletric_CO2$Cor <- c(rep(rgb(120,200,250, maxColorValue = 255),5),
 
 
 
-ggplot(eletric_CO2, aes(x = factor(Ano), y = Freq, group=Var1, label=Freq, fill=Var1)) +
+ggplot(eletric_CO2, aes(x = factor(Ano), y = Freq, group=Var1, label=Freq)) +
   geom_line(aes(color=Var1)) +
   geom_point(aes(color=Var1)) +
-  labs(title = "Frequência de Carros Elétricos por Ano",
+  labs(title = "Frequência de Carros Elétricos vs Média Emissão CO2 por Ano",
        x = "Ano", 
        y = "Carros em circulação")+
-  geom_text(nudge_y = 10)
+  theme_ipsum() +
+  theme(
+    legend.position = "right",
+    plot.title = element_text(size = 14, face = "bold", hjust = 0.5),
+    axis.title.x = element_text(size = 12, hjust = 0.5),
+    axis.title.y = element_text(size = 12, hjust = 0.5),
+    legend.title = element_text(size = 11, face = "bold")
+  ) +
+  geom_text(nudge_y = 8) + 
+  guides(color = guide_legend(title = "Dados"))
+
+
+
+
+###################################################################
+######### Frequencia carros vs Emissão CO2 #######################
+
+lista_dfs <- list() #lista para guardar dataframes
+PT_year <- c(2018,2019,2020,2021,2022)
+PT_data <- c('PT_2018','PT_2019','PT_2020','PT_2021','PT_2022')
+
+cores <- c(rgb(245,140,76,maxColorValue = 255), #diesel 
+           rgb(120,200,250, maxColorValue = 255), #eletrico
+           rgb(245,191,76,maxColorValue = 255), #gasolina
+           rgb(12,124,250,maxColorValue = 255)) #hibrido
+
+
+for (df_name in PT_data) {
+  get_df <- get(df_name) #puxa o dataframe
+  
+  fuels_type <- names(table(get_df$"Fuel Type")); #pega os tipos de combustíveis
+  
+  dados_ano <- as.data.frame(table(get_df$`Fuel Type`)); #pega a quantidade de carros com aquele combustível no ano
+  
+  # Adiciona uma coluna com o ano de acontecimento
+  dados_ano$Ano <- as.numeric(substring(df_name, 4, 7))  # Extrai o ano do nome do dataframe
+  
+  # Adiciona o dataframe à lista
+  lista_dfs[[df_name]] <- dados_ano
+}
+
+
+# Concatena os dataframes da lista
+df1 <- do.call(rbind, lista_dfs) #junta todas as linhas feitas pelo 'for'
+
+year_mean_CO2 <- tapply(PT_all$`Test Emission CO2 (g/km)`, 
+                        PT_all$Year, mean) #faz a média da emissão co2 por ano
+years <- names(year_mean_CO2)
+df2 <- data.frame(Ano = years,Media_CO2 = year_mean_CO2) #cria um dataframe com as colunas ano e media_co2
+
+
+df_completo <- merge(df1, df2, by = "Ano", fill = NA); head(df_completo) #junta os dataframes por coluna agrupando por ano
+
+ggplot(df_completo) +
+  geom_bar(aes(x = Ano, y = Freq/1000, fill = Var1),
+           stat = 'identity', position = 'dodge') +
+  geom_line(aes(x = Ano, y = Media_CO2, colour = 'Média Emissão de CO2'),  # Change color to cyan
+            stat = "identity", size = 0.5) +
+  geom_point(aes(x = Ano, y = Media_CO2), color='red',size=2) +
+  geom_text(aes(x = Ano, y = Media_CO2, label = round(Media_CO2,2)),
+            nudge_y = 5) +
+  labs(title = 'Frequência de Carros por Combustível vs Emissão de CO2 por Ano',
+       x = 'Ano', y = 'Frequência de Carros em Circulação a Cada Mil Carros') +
+  theme_ipsum() +
+  theme(
+    legend.position = "right",
+    plot.title = element_text(size = 14, face = "bold", hjust = 0.5),
+    axis.title.x = element_text(size = 12, hjust = 0.5),
+    axis.title.y = element_text(size = 12, hjust = 0.5),
+    legend.title = element_text(size = 11, face = "bold")
+  ) +
+  scale_fill_manual(values = c(D=cores[1], E=cores[2], G=cores[3], H=cores[4]),
+                    labels = c(D='Diesel', E='Elétrico', G='Gasolina', H='Híbrido'),
+                    name = "Combustível") +
+  guides(color = guide_legend(title = "CO2"))  # Add legend for the line
+
+
+
 
 
 ############################################################
@@ -308,4 +413,12 @@ ggplot(PT_all_without_E, aes(x =`Fuel Type`, y =`Test Emission CO2 (g/km)`)) +
     plot.title = element_text(size = 11, face = "bold", hjust = 0.5)
   ) +
   ggtitle("Emissões de CO2 (g/km) por tipo de Combustível")
+
+
+
+
+
+
+
+
 
