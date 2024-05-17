@@ -9,25 +9,19 @@ library(dplyr)
 PT_all <- read_csv("modificated-data/PT-all.csv")
 
 #Filtrar pelo ano de 2018
-regra2018 <- PT_all$Year == "2018"
-PT_2018 <- PT_all[regra2018,]
+PT_2018 <- PT_all[PT_all$Year == "2018",]
 
 #Filtrar pelo ano de 2019
-regra2019 <- PT_all$Year == "2019"
-PT_2019 <- PT_all[regra2019,]
+PT_2019 <- PT_all[PT_all$Year == "2019",]
 
 #Filtrar pelo ano de 2020
-regra2020 <- PT_all$Year == "2020"
-PT_2020 <- PT_all[regra2020,]
+PT_2020 <- PT_all[PT_all$Year == "2020",]
 
 #Filtrar pelo ano de 2021
-regra2021 <- PT_all$Year == "2021"
-PT_2021 <- PT_all[regra2021,]
+PT_2021 <- PT_all[PT_all$Year == "2021",]
 
 #Filtrar pelo ano de 2022
-regra2022 <- PT_all$Year == "2022"
-PT_2022 <- PT_all[regra2022,]
-
+PT_2022 <- PT_all[PT_all$Year == "2022",]
 
 
 ###### Medidas Estatísticas ######

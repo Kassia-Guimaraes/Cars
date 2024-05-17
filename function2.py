@@ -48,7 +48,7 @@ def fuels(price_car, fuel_type, car):
         consumption = float(car["Combined (F) (L/100 km)"])
         # Considerando que por mês o carro percorre 800km
         # Soma dos preço dos combustivel de ano em ano
-        month_consumption = 10*consumption*price_gasoline
+        month_consumption = 15*consumption*price_gasoline
         year_price_comsumption = month_consumption*12
         for i in range(50):
             price_car = price_car + year_price_comsumption
@@ -58,7 +58,7 @@ def fuels(price_car, fuel_type, car):
         price_diesel = float(
             price_fuels_2023["Diesel (euro/liter)"].values[0])
         consumption = float(car["Combined (F) (L/100 km)"])
-        month_consumption = 10*consumption*price_diesel
+        month_consumption = 15*consumption*price_diesel
         year_price_comsumption = month_consumption*12
         for i in range(50):
             price_car = price_car + (year_price_comsumption*price_diesel)
@@ -78,8 +78,8 @@ def fuels(price_car, fuel_type, car):
             price_gasoline = float(
                 price_fuels_2023["Premium Gasoline (euro/liter)"].values[0])
 
-        month_consumption_eletrics = 10*consumption_eletrics*price_eletrics
-        month_consumption_fossilfuel = 10*consumption_fossilfuel*price_gasoline
+        month_consumption_eletrics = 15*consumption_eletrics*price_eletrics
+        month_consumption_fossilfuel = 15*consumption_fossilfuel*price_gasoline
         year_price_comsumption = (
             month_consumption_eletrics + month_consumption_fossilfuel)*12
         for i in range(50):
@@ -90,7 +90,7 @@ def fuels(price_car, fuel_type, car):
         price_eletrics = float(
             price_fuels_2023["Electricity (euro/kWh)"].values[0])
         consumption = float(car["Combined (E) (kWh/100 km)"])
-        month_consumption = 10*consumption*price_eletrics
+        month_consumption = 15*consumption*price_eletrics
         year_price_comsumption = month_consumption*12
         for i in range(50):
             price_car = price_car + year_price_comsumption
@@ -100,7 +100,7 @@ def fuels(price_car, fuel_type, car):
         price_gasoline = float(
             price_fuels_2023["Premium Gasoline (euro/liter)"].values[0])
         consumption = float(car["Combined (F) (L/100 km)"])
-        month_consumption = 10*consumption*price_gasoline
+        month_consumption = 15*consumption*price_gasoline
         year_price_comsumption = month_consumption*12
         for i in range(50):
             price_car = price_car + year_price_comsumption
@@ -225,6 +225,7 @@ elif fuel_type_car2 == "E":
 
 
 # Criar gráfico de linhas com evolução dos custos para o utilizador
+plt.figure(figsize=(10, 6))
 plt.plot(months, total_price_car1, color=color_car1,
          label=f"{fuel_type_car1}:{make_car1}({model_car1})")
 plt.plot(months, total_price_car2, color=color_car2,
@@ -233,7 +234,7 @@ plt.plot(months, total_price_car2, color=color_car2,
 plt.title('Evolução dos Custos para o Utilizador',
           fontdict={'fontsize': 20, 'fontweight': 'bold'})
 plt.ylabel('Custos em euros (Preço Inicial + Preço Combustíveis)')
-plt.xlabel('Anos')
+plt.xlabel('Tempo de Utilização (Anos)')
 plt.ticklabel_format(axis='y', style='plain')
 plt.xticks(fontsize=8, color='black')
 plt.legend(title='Carros')
