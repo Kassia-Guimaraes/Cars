@@ -41,6 +41,7 @@ def fuels(price_car, fuel_type, car):
     price_fuels = pd.read_csv('./modificated-data/fuels-price.csv', sep=',')
     price_fuels_2023 = price_fuels[price_fuels["Year"] == 2023]
 
+    print(price_car)
     total_price_car = [price_car]
     if fuel_type == 'G':
         price_gasoline = float(
@@ -255,7 +256,7 @@ for inter_x, inter_y in intersections:
                      ha='center',
                      fontsize=10,
                      fontweight='bold',
-                     color='#43CD80')
-        plt.scatter(inter_x, inter_y, color='#43CD80')
+                     color='red')
+        plt.scatter(inter_x, inter_y, color='red')
 
 plt.show()

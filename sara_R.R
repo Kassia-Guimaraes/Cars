@@ -364,9 +364,10 @@ cilind_fossilfuel<-ggplot(fossilfuels, aes(x= `Engine Capacity (cm3)`, y= `Combi
   theme_minimal() +
   theme(
     legend.position = "none",
-    plot.title = element_text(size = 14, face = "bold", hjust = 0.5)) +
-  ggtitle("Cilindradas (cm3) vs Consumo (L/100km), em carros a Combustível Fóssil") +
-  labs(x = "Cilindradas (cm3)", y = "Consumo (L/100km)"); cilind_fossilfuel
+    plot.title = element_text(size = 14, face = "bold", hjust = 0.5),
+    plot.subtitle = element_text(size = 12, hjust = 0.5, margin = margin(t = 2))) +
+  ggtitle("Cilindradas (cm3) vs Consumo (L/100km)") +
+  labs(subtitle = "Combustíveis Fosseis", x = "Cilindradas (cm3)", y = "Consumo (L/100km)"); cilind_fossilfuel
 ggsave("cilind_fossilfuel.jpg", plot = cilind_fossilfuel, width = 10, height = 6, units = "in")
 
 
@@ -380,9 +381,10 @@ cilind_hybrids<-ggplot(hybrids, aes(x= `Engine Capacity (cm3)`, y= `Combined (E)
   theme_minimal() +
   theme(
     legend.position = "none",
-    plot.title = element_text(size = 14, face = "bold", hjust = 0.5)) +
-  ggtitle("Cilindradas (cm3) vs Consumo (Le/100km), em carros Híbridos")+
-  labs(x = "Cilindradas (cm3)", y = "Consumo (Le/100km)"); cilind_hybrids
+    plot.title = element_text(size = 14, face = "bold", hjust = 0.5),
+    plot.subtitle = element_text(size = 12, hjust = 0.5, margin = margin(t = 2))) +
+  ggtitle("Cilindradas (cm3) vs Consumo (Le/100km)")+
+  labs(subtitle = "Híbridos", x = "Cilindradas (cm3)", y = "Consumo (Le/100km)"); cilind_hybrids
 ggsave("cilind_hybrids.jpg", plot = cilind_hybrids, width = 10, height = 6, units = "in")
 
 
@@ -396,9 +398,10 @@ cilind_eletrics<-ggplot(eletrics, aes(x= `Engine Power (kW)`, y= `Combined (E) (
   theme_minimal() +
   theme(
     legend.position = "none",
-    plot.title = element_text(size = 14, face = "bold", hjust = 0.5)) +
-  ggtitle("Potência (kw) vs Consumo (Le/100km), em carros Elétricos") +
-  labs(x = "Potência (kW)", y = "Consumo (Le/100km)"); cilind_eletrics
+    plot.title = element_text(size = 14, face = "bold", hjust = 0.5),
+    plot.subtitle = element_text(size = 12, hjust = 0.5, margin = margin(t = 2))) +
+  ggtitle("Potência (kw) vs Consumo (Le/100km)") +
+  labs(subtitle = "Elétricos", x = "Potência (kW)", y = "Consumo (Le/100km)"); cilind_eletrics
 ggsave("cilind_eletrics.jpg", plot = cilind_eletrics, width = 10, height = 6, units = "in")
 
 
@@ -412,7 +415,10 @@ cilind_eletrics1<-ggplot(eletrics, aes(x= `Engine Power (kW)`, y= `Combined (E) 
   theme_minimal() +
   theme(
     legend.position = "none",
-    plot.title = element_text(size = 14, face = "bold", hjust = 0.5)) +
-  ggtitle("Potência (kw) vs Consumo (kwh/100km), em carros Elétricos") +
-  labs(x = "Potência (kW)", y = "Consumo (kWh/100 km)"); cilind_eletrics1
+    plot.title = element_text(size = 14, face = "bold", hjust = 0.5),
+    plot.subtitle = element_text(size = 12, hjust = 0.5, margin = margin(t = 2))) +
+  ggtitle("Potência (kw) vs Consumo (kwh/100km)") +
+  labs(subtitle = "Elétricos", x = "Potência (kW)", y = "Consumo (kWh/100 km)"); cilind_eletrics1
 ggsave("cilind_eletrics1.jpg", plot = cilind_eletrics1, width = 10, height = 6, units = "in")
+
+grid.arrange(cilind_fossilfuel, cilind_hybrids, cilind_eletrics1, ncol = 3)
