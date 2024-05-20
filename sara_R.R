@@ -191,7 +191,7 @@ gasolina_more<-ggplot(make_more_polution_G, aes(x = make_more_G, y = mean_more_C
        x = "Marcas",
        y = "Média de CO2 (g/km)") +
   theme_minimal() +
-  guides(fill=FALSE) +
+  guides(fill="none") +
   scale_y_continuous(limits = c(0, 500), breaks = seq(0, 500, by = 50)) +
   theme(
     plot.title = element_text(hjust = 0.5, face = "bold", size = 16, lineheight = 1.2),
@@ -309,7 +309,7 @@ hibrido_more<-ggplot(make_more_polution_H, aes(x = make_more_H, y = mean_more_CO
        x = "Marcas",
        y = "Média de CO2 (g/km)") +
   theme_minimal() +
-  guides(fill=FALSE) +
+  guides(fill="none") +
   scale_y_continuous(limits = c(0, 500), breaks = seq(0, 500, by = 50)) +
   theme(
     plot.title = element_text(hjust = 0.5, face = "bold", size = 16, lineheight = 1.2),
