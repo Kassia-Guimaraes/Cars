@@ -1,4 +1,7 @@
 import pandas as pd
+import seaborn as sns
+import matplotlib.pyplot as plt
+
 
 electrics = pd.read_csv('./modificated-data/consumption-eletrics.csv', sep=',')
 fossil_fuel = pd.read_csv('./modificated-data/consumption-fossilfuels.csv', sep=',')
@@ -28,22 +31,17 @@ def nextMessange(index_value, typeMessange):
 def viewDataFrame(df):
     return print(f"{df.to_markdown(index=False)}\n")
 
-def filtersMenu(toFilter, selectedFilters): #return index in filterMenu
-    if selectedFilters == []:
-        for index, value in enumerate(toFilter):
-            print(f"\33[1m{index+1} \033[0;0m{value}")
-        print(f"\33[1m{index+2}\033[0;0m selecionar todos\n{exitMessange(0, "sair")}")
-    else:
-        for index, value in enumerate(toFilter):
-            print(f"\33[1m{index+1} \033[0;0m{value}")
-        print(f"\33[1m{index+2}\033[0;0m selecionar todos\n{nextMessange(index+3, 'next')}{exitMessange(0, "sair")}")
+def filtersMenu(toFilter): #return index in filterMenu
+    for index, value in enumerate(toFilter):
+        print(f"\33[1m{index+1} \033[0;0m{value}")
+    print(f"\33[1m{index+2}\033[0;0m selecionar todos\n{exitMessange(0, "sair")}")
     return index
 
 #dataFrame, elements in dataFrame to filter, information messange
 def getUserFiltersLoop(df, toFilter, messange): #return array with all filters to use
     theSelectedFilters = []
     while True:
-        index = filtersMenu(toFilter, theSelectedFilters)
+        index = filtersMenu(toFilter)
         try:
             print(f"\33[0;0mFiltros selecionados: {theSelectedFilters} \33[0;0m\nSe quiser alterar a seleção apenas selecionar novamente o item") #show what filters was select
             input_value = input(f"\33[0;0mEscolha um número para selecionar \33[95m{messange}\33[0;0m: ")
@@ -105,18 +103,17 @@ def userFilter(toFilter, messange):
         except:
             print(errorCodes('Entrada inválida'))
 
-
 def chooseCars():
     result = pd.DataFrame(dtype='object', columns=['Marca', 'Modelo','Consumo','Circuito','Distância','Combustível','Preço Combustível', 'Gasto'])
     while True:
 
         #distância em Km Universidade Braga - Guimarães
         AE = 29.5 #autoestrada
-        N = 25.1 #nacional
+        N = 24.7 #nacional
 
         until_days = 22 #dias úteis no mês
 
-        #print('\n')
+        print('\n')
         choice_fuel = userFilter(['Gasolina', 'Diesel', 'Híbrido', 'Elétrico'], 'o tipo de combustível')
 
         if (choice_fuel == 'Gasolina'):
@@ -144,7 +141,7 @@ def chooseCars():
                 #Gasolina 95
                 national = (data['City (F) (L/100 km)'].iloc[0]/100) * (2 * N) * gas_price * until_days
                 row_gasoline_n = pd.DataFrame({'Marca':choice_make, 
-                                    'Modelo':element,
+                                    'Modelo':f'{choice_make}:{element}',
                                     'Consumo':f'{data['City (F) (L/100 km)'].iloc[0]} L/100km',
                                     'Circuito':'Nacional',
                                     'Distância':N,
@@ -162,7 +159,7 @@ def chooseCars():
                 
                 hightway = (data['Combined (F) (L/100 km)'].iloc[0]/100) * (2 * AE) * gas_price * until_days
                 row_gasoline_ae = pd.DataFrame({'Marca':choice_make, 
-                                     'Modelo':element,
+                                     'Modelo':f'{choice_make}:{element}',
                                      'Consumo':f'{data['Combined (F) (L/100 km)'].iloc[0]} L/100km',
                                      'Circuito':'Auto-Estrada',
                                      'Distância':AE,
@@ -181,7 +178,7 @@ def chooseCars():
                 #Gasolina 98 
                 national = (data['City (F) (L/100 km)'].iloc[0]/100) * (2 * N) * premium_gas_price * until_days
                 row_pgasoline_n = pd.DataFrame({'Marca':choice_make, 
-                                    'Modelo':element,
+                                    'Modelo':f'{choice_make}:{element}',
                                     'Consumo':f'{data['City (F) (L/100 km)'].iloc[0]} L/100km',
                                     'Circuito':'Nacional',
                                     'Distância':N,
@@ -199,7 +196,7 @@ def chooseCars():
 
                 hightway = (data['Combined (F) (L/100 km)'].iloc[0]/100) * (2 * AE) * premium_gas_price * until_days
                 row_pgasoline_ae = pd.DataFrame({'Marca':choice_make, 
-                                     'Modelo':element,
+                                     'Modelo':f'{choice_make}:{element}',
                                      'Consumo':f'{data['Combined (F) (L/100 km)'].iloc[0]} L/100km',
                                      'Circuito':'Auto-Estrada',
                                      'Distância':AE,
@@ -222,11 +219,11 @@ def chooseCars():
                 #Diesel
                 national = (data['City (F) (L/100 km)'].iloc[0]/100) * (2 * N) * pay * until_days
                 row_n = pd.DataFrame({'Marca':choice_make, 
-                                    'Modelo':element,
+                                    'Modelo':f'{choice_make}:{element}',
                                     'Consumo':f'{data['City (F) (L/100 km)'].iloc[0]} L/100km',
                                     'Circuito':'Nacional',
                                     'Distância':N,
-                                    'Combustível':fuel, 
+                                    'Combustível':choice_fuel, 
                                     'Preço Combustível': pay, 
                                     'Gasto':round(national,2)}, 
                                     index=[0])
@@ -240,7 +237,7 @@ def chooseCars():
                 
                 hightway = (data['Combined (F) (L/100 km)'].iloc[0]/100) * (2 * AE) * pay * until_days
                 row_ae = pd.DataFrame({'Marca':choice_make, 
-                                     'Modelo':element,
+                                     'Modelo':f'{choice_make}:{element}',
                                      'Consumo':f'{data['Combined (F) (L/100 km)'].iloc[0]} L/100km',
                                      'Circuito':'Auto-Estrada',
                                      'Distância':AE,
@@ -256,46 +253,184 @@ def chooseCars():
                     result = pd.concat([result, row_ae], ignore_index=True)
 
             elif (choice_fuel == 'Híbrido'):
-                print()
+                
+                pay_e = electricity_price
+                pay_gas = gas_price 
 
+
+                #Híbrido Nacional, parte elétrica
+                national = (((data['Combined (E) (kWh/100 km)'].iloc[0]/100) * pay_e) + 
+                            ((data['Combined (E) (L/100 km)'].iloc[0]/100) * pay_gas)) * (2 * N) * until_days
+                
+                row_n = pd.DataFrame({'Marca':choice_make, 
+                                    'Modelo':f'{choice_make}:{element}',
+                                    'Consumo':f'{data['Combined (E) (kWh/100 km)'].iloc[0]} kWh/100km + {data['Combined (E) (L/100 km)'].iloc[0]} L/100km',
+                                    'Circuito':'Nacional',
+                                    'Distância':N,
+                                    'Combustível':f'{choice_fuel} parte elétrica', 
+                                    'Preço Combustível': f'{pay_e} kWh + {pay_gas} L', 
+                                    'Gasto':round(national,2)}, 
+                                    index=[0])
+
+                if result.empty:
+                    result = row_n
+
+                elif (not result.empty) and ( not row_n.empty):
+                    result = pd.concat([result, row_n], ignore_index=True)
+
+                
+                #Híbrido Auto-Estrada, parte elétrica
+                hightway = (((data['Combined (E) (kWh/100 km)'].iloc[0]/100) * pay_e) + 
+                            ((data['Combined (E) (L/100 km)'].iloc[0]/100) * pay_gas)) * (2 * AE) * until_days
+                
+                row_n = pd.DataFrame({'Marca':choice_make, 
+                                    'Modelo':f'{choice_make}:{element}',
+                                    'Consumo':f'{data['Combined (E) (kWh/100 km)'].iloc[0]} kWh/100km + {data['Combined (E) (L/100 km)'].iloc[0]/100 * pay_gas} L/100km',
+                                    'Circuito':'Auto-Estrada',
+                                    'Distância':AE,
+                                    'Combustível':f'{choice_fuel} parte elétrica', 
+                                    'Preço Combustível': f'{pay_e} kWh + {pay_gas} L', 
+                                    'Gasto':round(hightway,2)}, 
+                                    index=[0])
+
+                if result.empty:
+                    result = row_n
+
+                elif (not result.empty) and ( not row_n.empty):
+                    result = pd.concat([result, row_n], ignore_index=True)
+
+                
+                #Híbrido Nacional, combustível fóssil
+                national = (data['City (F) (L/100 km)'].iloc[0]/100) * pay_gas * (2 * N) * until_days
+                
+                row_n = pd.DataFrame({'Marca':choice_make, 
+                                    'Modelo':f'{choice_make}:{element}',
+                                    'Consumo':f'{data['City (F) (L/100 km)'].iloc[0]} L/100Km',
+                                    'Circuito':'Nacional',
+                                    'Distância':N,
+                                    'Combustível':f'{choice_fuel} combustível fóssil', 
+                                    'Preço Combustível': f'{pay_gas}', 
+                                    'Gasto':round(national,2)}, 
+                                    index=[0])
+
+                if result.empty:
+                    result = row_n
+
+                elif (not result.empty) and ( not row_n.empty):
+                    result = pd.concat([result, row_n], ignore_index=True)
+
+                
+                #Híbrido Auto-Estrada, combustível fóssil
+                hightway = (data['Combined (F) (L/100 km)'].iloc[0]/100) * pay_gas * (2 * AE) * until_days
+                
+                row_n = pd.DataFrame({'Marca':choice_make, 
+                                    'Modelo':f'{choice_make}:{element}',
+                                    'Consumo':f'{data['Combined (F) (L/100 km)'].iloc[0]} L/100km',
+                                    'Circuito':'Auto-Estrada',
+                                    'Distância':AE,
+                                    'Combustível':f'{choice_fuel} combustível fóssil', 
+                                    'Preço Combustível': f'{pay_gas}', 
+                                    'Gasto':round(hightway,2)}, 
+                                    index=[0])
+
+                if result.empty:
+                    result = row_n
+
+                elif (not result.empty) and ( not row_n.empty):
+                    result = pd.concat([result, row_n], ignore_index=True)
+
+            else: #electrics
+
+                pay = electricity_price
+
+                #Nacional
+                national = (data['City (E) (kWh/100 km)'].iloc[0]/100) * (2 * N) * pay * until_days
+
+                row_n = pd.DataFrame({'Marca':choice_make, 
+                                        'Modelo':f'{choice_make}:{element}',
+                                        'Consumo':f'{data['City (E) (kWh/100 km)'].iloc[0]} kWh/100km',
+                                        'Circuito':'Nacional',
+                                        'Distância':N,
+                                        'Combustível':f'{choice_fuel}', 
+                                        'Preço Combustível': pay, 
+                                        'Gasto':round(national,2)}, 
+                                        index=[0])
+
+                if result.empty:
+                    result = row_n
+
+                elif (not result.empty) and ( not row_n.empty):
+                    result = pd.concat([result, row_n], ignore_index=True)
+
+                #Auto-Estrada
+                hightway = (data['Combined (E) (kWh/100 km)'].iloc[0]/100) * (2 * AE) * pay * until_days
+
+                row_n = pd.DataFrame({'Marca':choice_make, 
+                                        'Modelo':f'{choice_make}:{element}',
+                                        'Consumo':f'{data['Combined (E) (kWh/100 km)'].iloc[0]} kWh/100km',
+                                        'Circuito':'Auto-Estrada',
+                                        'Distância':AE,
+                                        'Combustível':f'{choice_fuel}', 
+                                        'Preço Combustível': pay, 
+                                        'Gasto':round(hightway,2)}, 
+                                        index=[0])
+
+                if result.empty:
+                    result = row_n
+
+                elif (not result.empty) and ( not row_n.empty):
+                    result = pd.concat([result, row_n], ignore_index=True)
 
         print('\n')
         new_fuel = userFilter(['Sim', 'Não'], 'se desejar ver carros')
+        
         if (new_fuel == 'Não'):
-
-            for fuel in result['Combustível'].drop_duplicates().to_list():
-                
-                if (fuel=='Gasolina 95'):
-                    price = gas_price
-                if (fuel=='Gasolina 98'):
-                    price = premium_gas_price
-                if (fuel=='Diesel'):
-                    price = diesel_price
-                
-                print(f'\n\nCarros movidos a {fuel}, {price} euro/litro:')
-
-                for circuito in result[(result['Combustível']==fuel)]['Circuito'].drop_duplicates().to_list():
-                    
-                    if (circuito=='Nacional'): distance = N
-                    else: distance = AE
-
-                    print(f'\n\tCircuto de {circuito} numa distância de {distance} km')
-                    
-                    for model in result[(result['Combustível']==fuel)&(result['Circuito']==circuito)]['Modelo'].drop_duplicates().to_list():
-                        to_print = result[(result['Combustível']==fuel)&(result['Circuito']==circuito)&(result['Modelo']==model)]
-                        print(f'\n\t\t{to_print['Modelo'].iloc[0]}, {to_print['Marca'].iloc[0]}: {to_print['Gasto'].iloc[0]} euro/mês')
-
-
             print(result)
-
             return(result)
         
 
 
 
+df = chooseCars()
 
-        
+# Agrupar os dados pelo modelo e pelo tipo de combustível, somando o gasto
+grouped_data = df[(df['Circuito']=='Nacional')].groupby(['Modelo', 'Combustível'])['Gasto'].sum().reset_index()
 
+# Definir as cores para cada tipo de combustível
+fuel_colors = {
+    'Gasolina 95': "#F5BF4C",
+    'Diesel': "#F58C4C",
+    'Gasolina 98': "#F5D44C",
+    'Híbrido combustível fóssil': "#F5AA4C",
+    'Híbrido parte elétrica': "#0C7CFA",
+    'Elétrico': "#78C8FA"
+}
 
+# Criar o gráfico de barras usando seaborn
+plt.figure(figsize=(14, 8))
+barplot = sns.barplot(data=grouped_data, x='Modelo', y='Gasto', hue='Combustível', palette=fuel_colors)
 
-chooseCars()
+# Adicionar rótulos e título
+plt.xlabel('Modelo do Carro')
+plt.ylabel('Gasto')
+plt.title('Gasto dos Carros por Modelo e Tipo de Combustível')
+plt.legend(title='Tipo de Combustível', bbox_to_anchor=(1.05, 1), loc='upper left')
+plt.xticks(rotation=30)
+
+# Adicionar os valores em cima das barras
+for p in barplot.patches:
+    height = p.get_height()
+    if height > 0:  # Adicione somente se a altura da barra for maior que 0
+        barplot.annotate(format(height, '.1f'),
+                         (p.get_x() + p.get_width() / 2., height),
+                         ha='center', va='center',
+                         xytext=(0, 9),
+                         textcoords='offset points')
+
+# Ajustar os limites do eixo Y para remover o rótulo 0.0
+ymin, ymax = barplot.get_ylim()
+barplot.set_ylim(ymin + 1e-7, ymax)  # Adiciona uma pequena margem ao ymin
+
+# Exibir o gráfico
+plt.tight_layout()
+plt.show()

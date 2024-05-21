@@ -129,7 +129,6 @@ hybrids = hybrids.sort_values(by='Year')
 # os hibridos que utilizam parte 100% eletrica
 hybrids['Combined (E) (L/100 km)'] = hybrids['Combined (E) (L/100 km)'].fillna(0)
 
-
 hybrids = hybrids.drop(hybrids[hybrids['Make'].isin(['Karma','Chrysler','Cadillac','Chevrolet','Lincoln'])].index, axis=0)
 
 hybrids['Make'] = hybrids['Make'].str.title()
@@ -158,13 +157,13 @@ fossil_fuels['Fuel Type'] = fossil_fuels['Fuel Type'].replace(
     ['X', 'Z', 'E'], ['G', 'PG', 'ET'])  # trocar a sigla dos combustíveis
 
 
-#fossil_fuels = fossil_fuels.drop(['Acura','Buick','Cadillac','Chevrolet','Chrysler','Dodge',
-#                                  'Genesis','GMC','Infiniti','Lincoln','Ram'], axis=0, inplace=True)
-
 fossil_fuels = fossil_fuels.drop(fossil_fuels[fossil_fuels['Make'].isin(['Acura','Buick','Cadillac','Chevrolet','Chrysler','Dodge',
                                   'Genesis','GMC','Infiniti','Lincoln','Ram'])].index, axis=0)
 
 fossil_fuels['Make'] = fossil_fuels['Make'].str.title()
+
+fossil_fuels = fossil_fuels[~fossil_fuels['Model'].str.contains('Hybrid', case=False, na=False)]
+print('ok')
 
 fossil_fuels.to_csv('./modificated-data/consumption-fossilfuels.csv', index=False)
 
@@ -355,5 +354,6 @@ for column in ['Make', 'Model']:
 
 print(concated.isna().sum())
 
+concated['Make'] = concated['Make'].replace('Mercedes Amg', 'Mercedes-Amg')
 
 concated.to_csv('./modificated-data/PT-all.csv', index=False)
