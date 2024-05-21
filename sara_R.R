@@ -4,6 +4,7 @@ library(tidyverse)
 library(hrbrthemes)
 library(viridis)
 library(dplyr)
+library(gridExtra)
 
 ################################EMISSÕES CO2####################################
 #Importar dados
@@ -152,18 +153,23 @@ make_less_polution_G$Is_Min <- ifelse(make_less_polution_G$make_G == less_make_G
 color1 <- rgb(12,124,250,maxColorValue = 255)
 color2 <- rgb(120,200,250, maxColorValue = 255)
 make_less_polution_G$Color <- ifelse(make_less_polution_G$Is_Min == "Min", color1, color2)
+make_less_polution_G$make_G <- ifelse(make_less_polution_G$make_G == "Mitsubishi Motors (Thailand)", "Mitsubishi Motors", make_less_polution_G$make_G)
 
-gasolina_less<-grafico2 <- ggplot(make_less_polution_G, aes(x = make_G, y = mean_CO2_G, fill = Is_Min)) +
+gasolina_less <- ggplot(make_less_polution_G, aes(x = make_G, y = mean_CO2_G, fill = Is_Min)) +
   geom_bar(stat = "identity", width = 0.5) +
   scale_fill_manual(values = c("Min" = color1, "Not Min" = color2)) +
-  labs(title = "Marcas com menor Média de Emissão de CO2, em carros a Gasolina",
+  labs(title = "Marcas com menor Média de Emissão de CO2",
+       subtitle = "Gasolina",
        x = "Marcas",
        y = "Média de CO2 (g/km)") +
   theme_minimal() +
   guides(fill=FALSE) +
   scale_y_continuous(limits = c(0, 500), breaks = seq(0, 500, by = 50)) +
-  theme(plot.title = element_text(hjust = 0.5, face = "bold", size = 16, lineheight = 1.2, margin = margin(b = 20)))
-ggsave("gasolina_less.jpg", plot = gasolina_less, width = 14, height = 6, units = "in"); gasolina_less
+  theme(
+    plot.title = element_text(hjust = 0.5, face = "bold", size = 16, lineheight = 1.2),
+    plot.subtitle = element_text(size = 12, hjust = 0.5, margin = margin(t = 2)))
+ggsave("gasolina_less.jpg", plot = gasolina_less, width = 14, height = 6, units = "in"); 
+gasolina_less
 
 make_mean_more_CO2_G <- sort(make_mean_G, decreasing = TRUE)
 make_more_G <- names(make_mean_more_CO2_G)[1:10]
@@ -180,13 +186,16 @@ make_more_polution_G$Color <- ifelse(make_more_polution_G$Is_Max == "Max", color
 gasolina_more<-ggplot(make_more_polution_G, aes(x = make_more_G, y = mean_more_CO2_G, fill = Is_Max)) +
   geom_bar(stat = "identity", width = 0.5) +
   scale_fill_manual(values = c("Max" = color3, "Not Max" = color4)) +
-  labs(title = "Marcas com maior Média de Emissão de CO2, em carros a Gasolina",
+  labs(title = "Marcas com maior Média de Emissão de CO2",
+       subtitle = "Gasolina",
        x = "Marcas",
        y = "Média de CO2 (g/km)") +
   theme_minimal() +
-  guides(fill=FALSE) +
+  guides(fill="none") +
   scale_y_continuous(limits = c(0, 500), breaks = seq(0, 500, by = 50)) +
-  theme(plot.title = element_text(hjust = 0.5, face = "bold", size = 16, lineheight = 1.2, margin = margin(b = 20)))
+  theme(
+    plot.title = element_text(hjust = 0.5, face = "bold", size = 16, lineheight = 1.2),
+    plot.subtitle = element_text(size = 12, hjust = 0.5, margin = margin(t = 2)))
 ggsave("gasolina_more.jpg", plot = gasolina_more, width = 14, height = 6, units = "in"); gasolina_more
 
 #Marcas que emitem mais e menos  CO2 (GASOLEO)
@@ -208,13 +217,16 @@ make_less_polution_D$Color <- ifelse(make_less_polution_D$Is_Min == "Min", color
 gasoleo_less<-ggplot(make_less_polution_D, aes(x = make_D, y = mean_CO2_D, fill = Is_Min)) +
   geom_bar(stat = "identity", width = 0.5) +
   scale_fill_manual(values = c("Min" = color1, "Not Min" = color2)) +
-  labs(title = "Marcas com menor Média de Emissão de CO2, em carros a Gasóleo",
+  labs(title = "Marcas com menor Média de Emissão de CO2",
+       subtitle = "Diesel",
        x = "Marcas",
        y = "Média de CO2 (g/km)") +
   theme_minimal() +
   guides(fill=FALSE) +
   scale_y_continuous(limits = c(0, 500), breaks = seq(0, 500, by = 50)) +
-  theme(plot.title = element_text(hjust = 0.5, face = "bold", size = 16, lineheight = 1.2, margin = margin(b = 20)))
+  theme(
+    plot.title = element_text(hjust = 0.5, face = "bold", size = 16, lineheight = 1.2),
+    plot.subtitle = element_text(size = 12, hjust = 0.5, margin = margin(t = 2)))
 ggsave("gasoleo_less.jpg", plot = gasoleo_less, width = 14, height = 6, units = "in"); gasoleo_less
 
 
@@ -233,13 +245,16 @@ make_more_polution_D$Color <- ifelse(make_more_polution_D$Is_Max == "Max", color
 gasoleo_more<-ggplot(make_more_polution_D, aes(x = make_more_D, y = mean_more_CO2_D, fill = Is_Max)) +
   geom_bar(stat = "identity", width = 0.5) +
   scale_fill_manual(values = c("Max" = color3, "Not Max" = color4)) +
-  labs(title = "Marcas com maior Média de Emissão de CO2, em carros a Gasóleo",
+  labs(title = "Marcas com maior Média de Emissão de CO2",
+       subtitle = "Diesel",
        x = "Marcas",
        y = "Média de CO2 (g/km)") +
   theme_minimal() +
   guides(fill=FALSE) +
   scale_y_continuous(limits = c(0, 500), breaks = seq(0, 500, by = 50)) +
-  theme(plot.title = element_text(hjust = 0.5, face = "bold", size = 16, lineheight = 1.2, margin = margin(b = 20)))
+  theme(
+    plot.title = element_text(hjust = 0.5, face = "bold", size = 16, lineheight = 1.2),
+    plot.subtitle = element_text(size = 12, hjust = 0.5, margin = margin(t = 2)))
 ggsave("gasoleo_more.jpg", plot = gasoleo_more, width = 14, height = 6, units = "in"); gasoleo_more
 
 #Marcas que emitem mais e menos  CO2 (HIBRIDOS)
@@ -262,13 +277,16 @@ make_less_polution_H$Color <- ifelse(make_less_polution_H$Is_Min == "Min", color
 hibrido_less<-ggplot(make_less_polution_H, aes(x = make_H, y = mean_CO2_H, fill = Is_Min)) +
   geom_bar(stat = "identity", width = 0.5) +
   scale_fill_manual(values = c("Min" = color1, "Not Min" = color2)) +
-  labs(title = "Marcas com menor Média de Emissão de CO2, em carros Híbridos",
+  labs(title = "Marcas com menor Média de Emissão de CO2",
+       subtitle = "Híbridos",
        x = "Marcas",
        y = "Média de CO2 (g/km)") +
   theme_minimal() +
   guides(fill=FALSE) +
   scale_y_continuous(limits = c(0, 500), breaks = seq(0, 500, by = 50)) +
-  theme(plot.title = element_text(hjust = 0.5, face = "bold", size = 16, lineheight = 1.2, margin = margin(b = 20)))
+  theme(
+    plot.title = element_text(hjust = 0.5, face = "bold", size = 16, lineheight = 1.2),
+    plot.subtitle = element_text(size = 12, hjust = 0.5, margin = margin(t = 2)))
 ggsave("hibrido_less.jpg", plot = hibrido_less, width = 14, height = 6, units = "in"); hibrido_less
 
 make_mean_more_CO2_H <- sort(make_mean_H, decreasing = TRUE)
@@ -286,15 +304,20 @@ make_more_polution_H$Color <- ifelse(make_more_polution_H$Is_Max == "Max", color
 hibrido_more<-ggplot(make_more_polution_H, aes(x = make_more_H, y = mean_more_CO2_H, fill = Is_Max)) +
   geom_bar(stat = "identity", width = 0.5) +
   scale_fill_manual(values = c("Max" = color3, "Not Max" = color4)) +
-  labs(title = "Marcas com maior Média de Emissão de CO2, em carros Híbridos",
+  labs(title = "Marcas com maior Média de Emissão de CO2",
+       subtitle = "Híbridos",
        x = "Marcas",
        y = "Média de CO2 (g/km)") +
   theme_minimal() +
-  guides(fill=FALSE) +
+  guides(fill="none") +
   scale_y_continuous(limits = c(0, 500), breaks = seq(0, 500, by = 50)) +
-  theme(plot.title = element_text(hjust = 0.5, face = "bold", size = 16, lineheight = 1.2, margin = margin(b = 20)))
+  theme(
+    plot.title = element_text(hjust = 0.5, face = "bold", size = 16, lineheight = 1.2),
+    plot.subtitle = element_text(size = 12, hjust = 0.5, margin = margin(t = 2)))
 ggsave("hibrido_more.jpg", plot = hibrido_more, width = 14, height = 6, units = "in"); hibrido_more
 
+grid.arrange(gasolina_less, gasoleo_less, hibrido_less, nrow = 3)
+grid.arrange(gasolina_more, gasoleo_more, hibrido_more, nrow = 3)
 
 #Boxplot com variavel categórica (fuel type) e variaveis quantitativa (emissão de CO2)
 
@@ -341,9 +364,10 @@ cilind_fossilfuel<-ggplot(fossilfuels, aes(x= `Engine Capacity (cm3)`, y= `Combi
   theme_minimal() +
   theme(
     legend.position = "none",
-    plot.title = element_text(size = 14, face = "bold", hjust = 0.5)) +
-  ggtitle("Cilindradas (cm3) vs Consumo (L/100km), em carros a Combustível Fóssil") +
-  labs(x = "Cilindradas (cm3)", y = "Consumo (L/100km)"); cilind_fossilfuel
+    plot.title = element_text(size = 14, face = "bold", hjust = 0.5),
+    plot.subtitle = element_text(size = 12, hjust = 0.5, margin = margin(t = 2))) +
+  ggtitle("Cilindradas (cm3) vs Consumo (L/100km)") +
+  labs(subtitle = "Combustíveis Fosseis", x = "Cilindradas (cm3)", y = "Consumo (L/100km)"); cilind_fossilfuel
 ggsave("cilind_fossilfuel.jpg", plot = cilind_fossilfuel, width = 10, height = 6, units = "in")
 
 
@@ -357,9 +381,10 @@ cilind_hybrids<-ggplot(hybrids, aes(x= `Engine Capacity (cm3)`, y= `Combined (E)
   theme_minimal() +
   theme(
     legend.position = "none",
-    plot.title = element_text(size = 14, face = "bold", hjust = 0.5)) +
-  ggtitle("Cilindradas (cm3) vs Consumo (Le/100km), em carros Híbridos")+
-  labs(x = "Cilindradas (cm3)", y = "Consumo (Le/100km)"); cilind_hybrids
+    plot.title = element_text(size = 14, face = "bold", hjust = 0.5),
+    plot.subtitle = element_text(size = 12, hjust = 0.5, margin = margin(t = 2))) +
+  ggtitle("Cilindradas (cm3) vs Consumo (Le/100km)")+
+  labs(subtitle = "Híbridos", x = "Cilindradas (cm3)", y = "Consumo (Le/100km)"); cilind_hybrids
 ggsave("cilind_hybrids.jpg", plot = cilind_hybrids, width = 10, height = 6, units = "in")
 
 
@@ -373,9 +398,10 @@ cilind_eletrics<-ggplot(eletrics, aes(x= `Engine Power (kW)`, y= `Combined (E) (
   theme_minimal() +
   theme(
     legend.position = "none",
-    plot.title = element_text(size = 14, face = "bold", hjust = 0.5)) +
-  ggtitle("Potência (kw) vs Consumo (Le/100km), em carros Elétricos") +
-  labs(x = "Potência (kW)", y = "Consumo (Le/100km)"); cilind_eletrics
+    plot.title = element_text(size = 14, face = "bold", hjust = 0.5),
+    plot.subtitle = element_text(size = 12, hjust = 0.5, margin = margin(t = 2))) +
+  ggtitle("Potência (kw) vs Consumo (Le/100km)") +
+  labs(subtitle = "Elétricos", x = "Potência (kW)", y = "Consumo (Le/100km)"); cilind_eletrics
 ggsave("cilind_eletrics.jpg", plot = cilind_eletrics, width = 10, height = 6, units = "in")
 
 
@@ -389,7 +415,10 @@ cilind_eletrics1<-ggplot(eletrics, aes(x= `Engine Power (kW)`, y= `Combined (E) 
   theme_minimal() +
   theme(
     legend.position = "none",
-    plot.title = element_text(size = 14, face = "bold", hjust = 0.5)) +
-  ggtitle("Potência (kw) vs Consumo (kwh/100km), em carros Elétricos") +
-  labs(x = "Potência (kW)", y = "Consumo (kWh/100 km)"); cilind_eletrics1
+    plot.title = element_text(size = 14, face = "bold", hjust = 0.5),
+    plot.subtitle = element_text(size = 12, hjust = 0.5, margin = margin(t = 2))) +
+  ggtitle("Potência (kw) vs Consumo (kwh/100km)") +
+  labs(subtitle = "Elétricos", x = "Potência (kW)", y = "Consumo (kWh/100 km)"); cilind_eletrics1
 ggsave("cilind_eletrics1.jpg", plot = cilind_eletrics1, width = 10, height = 6, units = "in")
+
+grid.arrange(cilind_fossilfuel, cilind_hybrids, cilind_eletrics1, ncol = 3)

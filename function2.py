@@ -1,5 +1,6 @@
 import pandas as pd
 import matplotlib.pyplot as plt
+import numpy as np
 
 
 def compare_fuels(fuel1, fuel2):
@@ -40,6 +41,7 @@ def fuels(price_car, fuel_type, car):
     price_fuels = pd.read_csv('./modificated-data/fuels-price.csv', sep=',')
     price_fuels_2023 = price_fuels[price_fuels["Year"] == 2023]
 
+    print(price_car)
     total_price_car = [price_car]
     if fuel_type == 'G':
         price_gasoline = float(
@@ -47,9 +49,8 @@ def fuels(price_car, fuel_type, car):
         consumption = float(car["Combined (F) (L/100 km)"])
         # Considerando que por mês o carro percorre 800km
         # Soma dos preço dos combustivel de ano em ano
-        month_consumption = 10*consumption*price_gasoline
+        month_consumption = 15*consumption*price_gasoline
         year_price_comsumption = month_consumption*12
-        print(year_price_comsumption)
         for i in range(50):
             price_car = price_car + year_price_comsumption
             total_price_car.append(price_car)
@@ -58,9 +59,8 @@ def fuels(price_car, fuel_type, car):
         price_diesel = float(
             price_fuels_2023["Diesel (euro/liter)"].values[0])
         consumption = float(car["Combined (F) (L/100 km)"])
-        month_consumption = 10*consumption*price_diesel
+        month_consumption = 15*consumption*price_diesel
         year_price_comsumption = month_consumption*12
-        print(year_price_comsumption)
         for i in range(50):
             price_car = price_car + (year_price_comsumption*price_diesel)
             total_price_car.append(price_car)
@@ -79,11 +79,10 @@ def fuels(price_car, fuel_type, car):
             price_gasoline = float(
                 price_fuels_2023["Premium Gasoline (euro/liter)"].values[0])
 
-        month_consumption_eletrics = 10*consumption_eletrics*price_eletrics
-        month_consumption_fossilfuel = 10*consumption_fossilfuel*price_gasoline
+        month_consumption_eletrics = 15*consumption_eletrics*price_eletrics
+        month_consumption_fossilfuel = 15*consumption_fossilfuel*price_gasoline
         year_price_comsumption = (
             month_consumption_eletrics + month_consumption_fossilfuel)*12
-        print(year_price_comsumption)
         for i in range(50):
             price_car = price_car + year_price_comsumption
             total_price_car.append(price_car)
@@ -92,9 +91,8 @@ def fuels(price_car, fuel_type, car):
         price_eletrics = float(
             price_fuels_2023["Electricity (euro/kWh)"].values[0])
         consumption = float(car["Combined (E) (kWh/100 km)"])
-        month_consumption = 10*consumption*price_eletrics
+        month_consumption = 15*consumption*price_eletrics
         year_price_comsumption = month_consumption*12
-        print(year_price_comsumption)
         for i in range(50):
             price_car = price_car + year_price_comsumption
             total_price_car.append(price_car)
@@ -103,14 +101,26 @@ def fuels(price_car, fuel_type, car):
         price_gasoline = float(
             price_fuels_2023["Premium Gasoline (euro/liter)"].values[0])
         consumption = float(car["Combined (F) (L/100 km)"])
-        month_consumption = 10*consumption*price_gasoline
+        month_consumption = 15*consumption*price_gasoline
         year_price_comsumption = month_consumption*12
-        print(year_price_comsumption)
         for i in range(50):
             price_car = price_car + year_price_comsumption
             total_price_car.append(price_car)
 
     return total_price_car
+
+
+def find_intersections(x, y1, y2):
+    intersections = []
+    for i in range(len(x) - 1):
+        if (y1[i] - y2[i]) * (y1[i+1] - y2[i+1]) < 0:
+            # Encontrar a interseção por interpolação linear
+            inter_x = x[i] + (x[i+1] - x[i]) * (y2[i] - y1[i]) / \
+                ((y1[i+1] - y1[i]) - (y2[i+1] - y2[i]))
+            inter_y = y1[i] + (inter_x - x[i]) * \
+                (y1[i+1] - y1[i]) / (x[i+1] - x[i])
+            intersections.append((inter_x, inter_y))
+    return intersections
 
 
 # Leitura dos dados
@@ -167,7 +177,6 @@ options_mapping = {
 option_sum = str(option1 * option2)
 fuel1, fuel2 = options_mapping[option_sum]
 car1, car2 = compare_fuels(fuel1, fuel2)
-print(car1, car2)
 
 price_car1 = car1.loc["Price (euros)"]
 price_car2 = car2.loc["Price (euros)"]
@@ -197,18 +206,57 @@ for i in range(51):
     number = i
     months.append(number)
 
-print(total_price_car1, total_price_car2, months)
+if (fuel_type_car1 == "G") or (fuel_type_car1 == "PG"):
+    color_car1 = (245/255, 191/255, 76/255)
+elif fuel_type_car1 == "D":
+    color_car1 = (245/255, 140/255, 76/255)
+elif fuel_type_car1 == "H":
+    color_car1 = (12/255, 124/255, 250/255)
+elif fuel_type_car1 == "E":
+    color_car1 = (120/255, 200/255, 250/255)
+
+if (fuel_type_car2 == "G") or (fuel_type_car2 == "PG"):
+    color_car2 = (245/255, 191/255, 76/255)
+elif fuel_type_car2 == "D":
+    color_car2 = (245/255, 140/255, 76/255)
+elif fuel_type_car2 == "H":
+    color_car2 = (12/255, 124/255, 250/255)
+elif fuel_type_car2 == "E":
+    color_car2 = (120/255, 200/255, 250/255)
+
 
 # Criar gráfico de linhas com evolução dos custos para o utilizador
-plt.plot(months, total_price_car1, color="blue",
+plt.figure(figsize=(10, 6))
+plt.plot(months, total_price_car1, color=color_car1,
          label=f"{fuel_type_car1}:{make_car1}({model_car1})")
-plt.plot(months, total_price_car2, color="orange",
+plt.plot(months, total_price_car2, color=color_car2,
          label=f"{fuel_type_car2}:{make_car2}({model_car2})")
 
-plt.title('Evolução dos Custos para o Utilizador')
-plt.ylabel('Custos (euros)')
+plt.title('Evolução dos Custos para o Utilizador',
+          fontdict={'fontsize': 20, 'fontweight': 'bold'})
+plt.ylabel('Custos em euros (Preço Inicial + Preço Combustíveis)')
+plt.xlabel('Tempo de Utilização (Anos)')
 plt.ticklabel_format(axis='y', style='plain')
-plt.xticks(rotation=45, fontsize=8, color='black')
-plt.legend(title='Meses')
+plt.xticks(fontsize=8, color='black')
+plt.legend(title='Carros')
+
+
+# Converter os meses para índices numéricos para cálculo
+intersections = find_intersections(months, total_price_car1, total_price_car2)
+
+# Anotar interseções no gráfico
+for inter_x, inter_y in intersections:
+    month_index = int(round(inter_x))
+    if month_index < len(months):
+        month_label = months[month_index]
+        plt.annotate(f'Abate após {month_label} anos',
+                     (inter_x, inter_y),
+                     textcoords="offset points",
+                     xytext=(0, 10),
+                     ha='center',
+                     fontsize=10,
+                     fontweight='bold',
+                     color='red')
+        plt.scatter(inter_x, inter_y, color='red')
 
 plt.show()
