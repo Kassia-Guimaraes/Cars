@@ -341,6 +341,14 @@ boxpot <- ggplot(PT_all_without_E, aes(x =`Fuel Type`, y =`Test Emission CO2 (g/
   ggtitle("Emissões de CO2 (g/km) por tipo de Combustível")
 ggsave("boxplot.jpg", plot = boxpot, width = 8, height = 6, units = "in")
 
+summary(PT_all_D$`Test Emission CO2 (g/km)`)
+summary(PT_all_G$`Test Emission CO2 (g/km)`)
+summary(PT_all_H$`Test Emission CO2 (g/km)`)
+
+sd(PT_all_D$`Test Emission CO2 (g/km)`)
+sd(PT_all_G$`Test Emission CO2 (g/km)`)
+sd(PT_all_H$`Test Emission CO2 (g/km)`)
+
 #Gráfico circular com o número das marcas
 
 ################################CONSUMO####################################
@@ -356,7 +364,7 @@ eletrics <- read_csv("modificated-data/consumption-eletrics.csv")
 
 #Cilindradas (cm3) vs Consumo (L/100km), em carros a Combustivel Fossil
 
-cor(fossilfuels$`Engine Capacity (cm3)`, fossilfuels$`Combined (F) (L/100 km)`) #0.8308465
+cor(fossilfuels$`Engine Capacity (cm3)`, fossilfuels$`Combined (F) (L/100 km)`) #0.839183
 cilind_fossilfuel<-ggplot(fossilfuels, aes(x= `Engine Capacity (cm3)`, y= `Combined (F) (L/100 km)`)) +
   geom_point(color = rgb(245,191,76,maxColorValue = 255)) +
   theme_minimal() +
@@ -421,4 +429,4 @@ cilind_eletrics1<-ggplot(eletrics, aes(x= `Engine Power (kW)`, y= `Combined (E) 
   labs(subtitle = "Elétricos", x = "Potência (kW)", y = "Consumo (kWh/100 km)"); cilind_eletrics1
 ggsave("cilind_eletrics1.jpg", plot = cilind_eletrics1, width = 10, height = 6, units = "in")
 
-grid.arrange(cilind_fossilfuel, cilind_hybrids, cilind_eletrics1, ncol = 3)
+grid.arrange(cilind_fossilfuel, cilind_hybrids, cilind_eletrics, ncol = 3)
