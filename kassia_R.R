@@ -58,13 +58,13 @@ pgas_color <- '#F5D44C' #Gasolina 98
 
 # Criando dataframe apenas com os consumos dos combustíveis
 consum_e <- data.frame('Fuel'=consumption_eletrics$`Fuel Type`,
-                       'Combined'=consumption_eletrics$`Combined (E) (kWh/100 km)`)
+                       'Combined'=consumption_eletrics$`Combined (E) (Le/100 km)`)
 
 consum_fossil <- data.frame('Fuel'=consumption_fossilfuels$`Fuel Type`,
                             'Combined'=consumption_fossilfuels$`Combined (F) (L/100 km)`)
 
-consum_hy_ele <- data.frame('Fuel'=rep('H_E',length(consumption_hybrids$`Combined (E) (kWh/100 km)`)),
-                            'Combined'=consumption_hybrids$`Combined (E) (kWh/100 km)`)
+consum_hy_ele <- data.frame('Fuel'=rep('H_E',length(consumption_hybrids$`Combined (E) (Le/100 km)`)),
+                            'Combined'=consumption_hybrids$`Combined (E) (Le/100 km)`)
 
 consum_hy_fos <- data.frame('Fuel'=rep('H_F', length(consumption_hybrids$`Combined (F) (L/100 km)`)),
                             'Combined'=consumption_hybrids$`Combined (F) (L/100 km)`)
@@ -73,7 +73,7 @@ consum_hy_fos <- data.frame('Fuel'=rep('H_F', length(consumption_hybrids$`Combin
 fossil <- rbind(consum_fossil, consum_hy_fos)
 electric <- rbind(consum_hy_ele, consum_e)
 
-summary(fossil[fossil$Fuel=='G',]$Combined)
+summary(electric[electric$Fuel=='E',]$Combined)
 
 
 box_fossil <- ggplot(fossil, aes(x =Fuel, y =Combined)) +
@@ -107,7 +107,7 @@ box_electric <- ggplot(electric, aes(x =Fuel, y =Combined)) +
   scale_color_manual(values = c("H_E" = ehybrid_color,'E'=e_color)) + 
   scale_fill_manual(values = c("H_E" = ehybrid_color,'E'=e_color)) + 
   scale_x_discrete(labels = c("H_E" = "Híbrido parte Elétrico", 'E'='Elétrico')) + 
-  labs(x = "Tipo de Combustível", y = "Consumo Combinado a kWh/100 km",
+  labs(x = "Tipo de Combustível", y = "Consumo Combinado a Le/100 km",
        title = "Consumo Combinado dos Carros Elétricos vs Tipo de Combustível") +
   theme_minimal() +
   theme(
@@ -119,7 +119,7 @@ box_electric <- ggplot(electric, aes(x =Fuel, y =Combined)) +
   )
 
 library(patchwork)
-box_fossil + box_electric
+box_fossil / box_electric
 
 
 
