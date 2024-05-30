@@ -2,7 +2,7 @@ import pandas as pd
 import numpy as np
 
 # fuel prices
-fuels_price = pd.read_csv('./initial-data/fuel-prices.csv', sep=',')
+fuels_price = pd.read_csv('C:\Users\vanes\OneDrive\Desktop\LE\aulas.py\CO2_ProjectShared\initial-data\fuel-prices.csv', sep=',')
 
 fuels_price = fuels_price.rename(columns={'Anos': 'Year',
                                           'Gasolina Super com Chumbo ou Aditivada (Euro/litro)': 'Premium Gasoline (euro/liter)',
